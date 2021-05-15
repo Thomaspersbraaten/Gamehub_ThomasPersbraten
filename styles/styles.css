@@ -2,7 +2,15 @@
     width: 240px;
     height: 140px;
     background-color: rgb(255, 136, 0);
+    margin-left: 0px;
 }
+
+.dropdown:hover .dropbtn {
+    background-color: rgb(255, 136, 0);
+    border-radius: 50px;
+    color: black;
+}
+
 
 .padding {
     padding: 10px;
@@ -12,6 +20,7 @@ nav li, nav button {
    display: inline-block;
    padding-top: 20px;
    padding: 30px;
+   margin-left: 50px;
 
 }
 
@@ -24,13 +33,7 @@ nav a {
     color: black;
     font-family: nelson, fantasy;
     font-size: 2.5em;
-    padding: 25px;
 }
-
-li a {
-    padding: 10px;
-}
-
 
 nav li a:hover {
     background-color: rgb(255, 136, 0);
@@ -54,8 +57,10 @@ nav li a:hover {
     font-size: 2.5em;
     background-color: black;
     border: none;
+    cursor: pointer;
 
 }
+
 
 .dropdown {
     position: relative;
@@ -65,8 +70,6 @@ nav li a:hover {
 .dropdown-content {
     display: none;
     position: absolute;
-    text-align: center;
-
 }
 
 .page:hover {
@@ -82,9 +85,8 @@ nav li a:hover {
     background-color: rgb(255, 136, 0);
     border-radius: 20px;
     width: 270px;
-    margin-bottom: 50px;
+    align-content: center;
     
-
 }
 
 .dropbtn:hover {
@@ -95,7 +97,7 @@ nav li a:hover {
 }
 
 .dropdown-content a {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 
 }
@@ -103,4 +105,7 @@ nav li a:hover {
 .inactive {
     color: rgb(255, 136, 0);
 }
+
+
+
 
