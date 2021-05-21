@@ -30,24 +30,33 @@
                        
                     </div>
 
-                </div>
+            
 
             </ul>
 
         </nav>
-        <div>
-            <form action="success.html" method="GET">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required placeholder="First name + Last name">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required placeholder="me@example.com">
-                <button type="submit">Sign up</button>
+        
 
 
             </form>
     
         </div>
     </header>
+
+        <form action="success.html" method="GET">
+            <label for="name">Full name</label>   <input type="text" id="name" name="name" required placeholder="Full name">
+            <label for="email">Email</label><input type="email" name="email" id="email" required placeholder="me@example.com">
+            <label for="phonenumber">Phone number</label><input type="tel" name="phonenumber" id="phonenumber" required placeholder="+47 12 23 45 78">
+            <label for="streetname">Streetname</label><input type="text" name="streetname" id="streetname" required placeholder="streetname">
+            <label for="zip-code">Zip code</label><input type="number" name="zip-code" id="zip-code" required placeholder="Zip Code">
+            <label for="city">City</label><input type="text" name="city" id="city" required placeholder="City">
+            <label for="country">Country</label><input type="text" name="county" id="country" required placeholder="Country">
+
+
+            <div>
+            <button type="submit" class="cta">Sign up</button>
+        </div>
+        
     
 </body>
 </html>
