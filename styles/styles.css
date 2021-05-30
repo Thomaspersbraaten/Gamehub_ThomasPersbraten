@@ -1,7 +1,5 @@
 html {
     scroll-behavior: smooth;
-    padding: 0;
-    margin: 0; 
 }
 
 body {
@@ -26,8 +24,6 @@ header, footer {
     font-weight: bold;
 
 }
-
-
 
 .fa-shopping-basket {
     background-color: white;
@@ -119,22 +115,19 @@ h3 {
 
  .featured-games h2, view {
      position: relative;
-     left: 300px;
-     bottom: 80px;
+     left: 50px;
+     bottom: 60px;
      color: white;
-     width: 50%;
+     width: 80%;
      margin: 0;
     
  }
-
-
-
  .preorder h2 {
      position: relative;
-     left: 270px;
-     bottom: 120px;
+     left: 50px;
+     bottom: 75px;
      color: white;
-     width: 50%;
+     width: 80%;
      margin: 0;
 
  }
@@ -144,20 +137,17 @@ h3 {
      background-color:rgb(255, 136, 0);
      color: white;
      padding: 10px;
-     border: 1px solid black;
-     border-radius: 20px;
+     border: 3px solid black;
+     border-radius: 15px;
  }
   
  .product__mark {
      height: 400px;
  }
 
-
-
 .articles {
     background-color: #BBBBBB;
     width: 100%;
-
 } 
 
 .articles {
@@ -170,7 +160,7 @@ h3 {
 .articles img {
     width: 550px;
     border-radius: 20px;
-    margin: 30px 0;
+    margin: 10px 0;
 }
 
 .articles div {
@@ -181,21 +171,13 @@ h3 {
 
 .preorder div {
     text-align: center;
-    margin: 50px;
+    margin: 15px;
 }
 
 /* Footer */ 
 
 footer {
-    background-color:rgb(255, 136, 0);
-    height: 85px;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 0;
-    width: 100%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
 }
 
 footer ul, .copyright {
@@ -281,6 +263,25 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     .product__mark {
         height: 600px;
     }
+    
+ .featured-games h2, view {
+    position: relative;
+    left: 300px;
+    bottom: 80px;
+    color: white;
+    width: 50%;
+    margin: 0;
+   
+}
+.preorder h2 {
+    position: relative;
+    left: 270px;
+    bottom: 120px;
+    color: white;
+    width: 50%;
+    margin: 0;
+
+}
    
 
 }
