@@ -1,106 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Gamehub | Homepage</title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
-    <title>Gamehub | Homepage</title>
-    <link rel="stylesheet" href="https://use.typekit.net/nyh8jpx.css">
     <script src="https://kit.fontawesome.com/ba0e3e950c.js" crossorigin="anonymous"></script>
-
-
 </head>
+
 <body>
     <header>
-   
-        <nav>
-          
+        <a href="index.html"><img src="images/Gamehub-logo.png" alt="Gamehub logo" class="logo"></a> 
+        <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
+        <input type="checkbox" id="hamburger-menu">
+        <nav >
             <ul>
-                <a href="index.html"></a><img src="images/GameHub_Logo.png" alt="Gamehub logo" class="logo"></a>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="buy.html">Store</a></li>
+                <li><a href="signin.html">Sign in</a></li>
+            </ul> 
  
-                <li><a href="index.html" class="active padding">Home</a></li>
-                <li><a href="signin.html" class="inactive padding">Sign in</a></li>
-                <!-- <div class="dropdown">
-                    <button class="dropbtn padding">Store</button>
-                    <div class="dropdown-content">
-                        <a href="Buygames.html" class="page">Buy games</a>
-                        <a href="Sellgames.html" class="page">Sell games</a>
-
-                       
-                    </div>
-
-                </div> -->
-                <li class="dropdown"> 
-                    <button class="dropbtn padding">Store</button>
-            
-                    <div class="dropdown-content">
-                        <a href="Buygames.html" class="page" >Buy games</a>
-                        <a href="Sellgames.html" class="page">Sell games</a>
-                    </div>
-                </li>
-
-                <i class="fas fa-shopping-cart"></i>
-            </ul>
-                
-        
-        </nav>
+       </nav>
+       <div class="nav-right">
+        <input type="text" placeholder="Search.." class="search-bar">    
+        <i class="fas fa-shopping-basket"></i>
     </header>
     <main>
-    <div class="back">
-    <table class="styled">
-        <tr>
-            <th>cat
-            </th>
-            <td>Cats</td>
-            <td>Grey</td>
-            <td>Mostly birds</td>
-            <img src="" alt="">
+        <section>
+            <div class="featured-games">
+                <h1>FEATURED GAMES</h1>
+                <div><img src="images/Mark-featured.png" class="product__mark" alt="Product - Mark of the Ninja Remastered"></div>
+                <!-- <div><img src="images/Price-tag.png" alt="Price of product"></div> -->
+                <h2>Mark of the ninja: Remastered - 319,99kr <a href="product" class="view">VIEW PRODUCT</a></h2> 
+            </div>
+        </section>
+       
+        <section class="articles">
+            <div class="streamer"> 
+                <img src="images/gamer.jpg" alt="Man playing video games">     
+                <h2> Streamers are the new celebrities</h2>  
+                <h3>Find the game you want by watching streamers play. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur recusandae pariatur facilis aperiam sequi animi incidunt aut voluptatibus dolores.</h3>
+          
+            </div>
+            <div class="gh-article">
+                <img src="images/article2.png" alt="Games and consoles on a desk">
+                <h2>Game hub: Well, what can we do for you?</h2> 
+                <h3>One of the few places that buys your old games. Click here to read how. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur recusandae pariatur facilis aperiam sequi animi incidunt aut voluptatibus dolores.</h3>
+        
+            </div>
+        </section>
 
-        </tr>
-        <tr>
-            <td>Cats</td>
-            <td>Grey</td>
-            <td>Mostly birds</td>
-            <img src="" alt="">
-
-        </tr>
-        <tr>
-            <td>Cats</td>
-            <td>Grey</td>
-            <td>Mostly birds</td>
-            <img src="" alt="">
-
-        </tr>
-        <tr>
-            <td>Cats</td>
-            <td>Grey</td>
-            <td>Mostly birds</td>
-            <img src="" alt="">
-
-        </tr>
-        <tr>
-            <td>Cats</td>
-            <td>Grey</td>
-            <td>Mostly birds</td>
-            <img src="" alt="">
-
-        </tr>
-        <tr>
-            <td>Cats</td>
-            <td>Grey</td>
-            <td>Mostly birds</td>
-            <img src="" alt="">
-
-        </tr>
-
-
-    </table>
-    <p> yes</p>
-</div>
+        <section class="preorder">
+         <div>
+             <h1>PRE-ORDER GAMES</h1>
+             <div><img src="images/Mark-featured.png" class="product__mark" alt="Product - Mark of the Ninja Remastered"></div>
+             <h2>Mark of the ninja: Remastered - 319,99kr <a href="product" class="view">VIEW PRODUCT</a></h2>
+         </div>
+        </section>
+    
 </main>
 <footer>
-    Copyright &copy;
+    <ul>
+       <li> <a href="" class="contact">Contact and Support</a></li>
+       <li><a href="" class="faq">FAQ</a></li>
+    </ul>
+    <p class="copyright"> 2021 Game hub - Copyright  &copy;</p>
 </footer>
 </body>
 </html>
