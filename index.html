@@ -11,56 +11,64 @@
 <body>
     <header>
         <div class="header-top">
-            <div>
-                <a href="index.html"><img src="images/Gamehub-logo.png" alt="Gamehub logo" class="logo"></a>
-            </div> 
-
-            <div>
-                <input type="text" placeholder="Search.." class="search-bar">    
-            </div>
+            <a href="index.html"><img src="images/Gamehub-logo.png" alt="Gamehub logo" class="logo"></a>
             <div class="header-right">
                 <i class="fas fa-shopping-basket"></i>
                 <i class="fas fa-user"></i>
             </div>
-        </div>
-        <div class="navigation">
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="buy.html">Store</a></li>
-                    <li><a href="signin.html">Sign in</a></li>
-                </ul> 
-            </nav>
-        </div>
-        <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
+        </div>    
         <input type="checkbox" id="hamburger-menu">
+        <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="buy.html">Store</a></li>
+                <li><a href="signin.html">Sign in</a></li>
+            </ul> 
+            <div>
+                <input type="text" placeholder="Search.." class="search-bar">    
+            </div>
+        </nav>
     </header>
     <main>
+    
         <section class="featured-games">
             <h1>Featured games</h1>
+      
             <div class="featured__product">
-                <img src="images/Markoftheninja.jpg" class="product__mark"   alt="Product - Mark of the Ninja Remastered">
-                <h2>Mark of the ninja</h2> 
-                <p>29$</p> 
-                <a href="product.html" class="view">View product</a> 
+                <img src="images/Markoftheninja.jpg" class="product__mark" alt="Product - Mark of the Ninja remastered">
+                <div class="product__info">
+                    <h2>Mark of the ninja</h2> 
+                    <p>Tactical | Platformer</p>
+                    <p>29$</p> 
+                    <a href="product.html" class="view">View product</a> 
+                </div>    
             </div>
             <div class="featured__product">
-                <img src="images/chrono.jpg" class="product__mark"   alt="Product - Mark of the Ninja Remastered">
-                <h2>Chrono Trigger</h2> 
-                <p>29$</p> 
-                <a href="product.html" class="view">View product</a> 
+                    <img src="images/chrono.jpg" class="product__mark" alt="Product - Mark of the Ninja Remastered">
+                <div class="product__info">
+                    <h2>Chrono Trigger</h2> 
+                    <p>Roleplaying | Turn based</p>
+                    <p>29$</p> 
+                    <a href="product.html" class="view">View product</a> 
+                </div>
             </div>
             <div class="featured__product">
-                <img src="images/farcry.jpg" class="product__mark"   alt="Product - Mark of the Ninja Remastered">
-                <h2>Far Cry 3</h2> 
-                <p>29$</p> 
-                <a href="product.html" class="view">View product</a> 
+                <img src="images/farcry.jpg" class="product__mark" alt="Product - Mark of the Ninja Remastered">
+                <div class="product__info">
+                    <h2>Far Cry 3</h2> 
+                    <p>First-person shooter | Adventure</p>
+                    <p>29$</p> 
+                    <a href="product.html" class="view">View product</a>
+                </div> 
             </div>
             
         
         </section>
-       
+  
         <section class="articles">
+            <h1>Articles and News</h1>
+
             <div class="streamer"> 
                 <img src="images/gamer.jpg" alt="Man playing video games">     
                 <h2> Streamers are the new celebrities</h2>  
@@ -118,10 +126,9 @@
         </section>
 </main>
 <footer>
-    <ul>
-       <li> <a href="" class="contact">Contact Us</a></li>
-       <li><a href="" class="faq">FAQ</a></li>
-    </ul>
+    <a href="" class="contact">Contact Us</a>
+    <a href="" class="faq">FAQ</a>
+ 
     <p class="copyright"> 2021 Game hub - Copyright  &copy;</p>
 </footer>
 </body>
