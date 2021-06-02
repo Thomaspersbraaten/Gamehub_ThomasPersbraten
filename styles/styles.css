@@ -12,31 +12,54 @@ body {
 
 /* Header & Nav */
 
-header, footer {
-    background-color:rgb(255, 136, 0);
-    height: 85px;
+header {
+    text-align: center;
     display: flex;
+    flex-direction: column;
+}
+
+
+
+.header-top {
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-evenly;
-    margin: 0;
-    width: 100%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
+    max-height: 65px;
+}
+.header-right {
+    display: flex;
+    gap: 50px;
+}
+
+.navigation {
+    text-align: center;
+    padding: 0px 50px;
 
 }
 
-.fa-shopping-basket {
+.fa-shopping-basket, .fa-user {
     background-color: white;
     border-radius: 30%;
     border: 1px solid black;
-    padding: 5px;
-    font-size: 2.1em;
+    padding: 5px 10px;
+    font-size: 1.2em;
 }
 
+nav {
+    background-color: rgb(255, 136, 0);
+    border-radius: 50px;
+    padding: 0px;
+    margin: 0px;
+    border: 2px solid black;
+}
+
+nav ul {
+    padding: 0px 30px;
+    margin: 10px auto;
+}
 
 .fa-bars {
     font-size: 3em;
-
 }
 
 .nav-right {
@@ -44,14 +67,19 @@ header, footer {
     justify-content: space-evenly;
 }
 
-.search-bar {
-    padding: 7px 10px;
+.search-bar{
+    padding: 5px 150px 5px 10px;
+    border-radius: 10px;
+    margin: 5px;
+    border: 1px solid black;
+
 }
 
+
  .logo {
-    max-width: 130px;
-    max-height: 110px;
-    margin-top: 5px; 
+    width: 100%;
+    max-height: 60px;
+    margin-top: 50px;
 } 
 
 
@@ -60,11 +88,12 @@ nav li {
     padding: 0px 20px;
 }
 
-nav a, footer a {
+nav a {
     text-decoration: none;
     color: black;
-    font-size: 2em;
-    padding: 0px 10px;
+    font-size: 1.7em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
 }
 
 .active {
@@ -106,97 +135,134 @@ h3 {
     font-family: roboto, Verdana, Geneva, Tahoma, sans-serif;
 }
 
- .featured-games, .preorder {
-     text-align: center;
-     margin: 50px;
-     max-height: 700px;
 
- }
 
- .featured-games h2, view {
-     position: relative;
-     left: 50px;
-     bottom: 60px;
-     color: white;
-     width: 80%;
-     margin: 0;
-    
- }
- .preorder h2 {
-     position: relative;
-     left: 50px;
-     bottom: 75px;
-     color: white;
-     width: 80%;
-     margin: 0;
+.featured-games {
+    display: grid;
+    grid-template-rows: auto;
+    gap: 50px 0px;
+    margin: 0px auto;
+    max-width: 300px;
+}
 
- }
+.featured__product {
+    display: grid;
+    grid-column: 1fr auto;
+    align-items: center;
+}
 
- .view {
+.featured__product img{
+    width: 100%;
+    /* border: 2px solid black; */
+}
+
+.featured__product > * {
+    margin: 5px 0;
+
+}
+
+.featured__product p {
+    font-size: 2em;
+
+}
+
+.featured-games h1, .preorder h1 {
+    grid-column: -1/1;
+    text-align: center;
+}
+.view {
      text-decoration: none;
-     background-color:rgb(255, 136, 0);
-     color: white;
+     background-color: rgb(255, 136, 0);
+     color: rgb(0, 0, 0);
      padding: 10px;
      border: 3px solid black;
      border-radius: 15px;
+     text-transform: uppercase;
+     text-align: center;
+     font-size: 1.5em;
+     max-width: 220px;
+     font-family: roboto, Verdana, Geneva, Tahoma, sans-serif;
+
  }
   
- .product__mark {
-     height: 400px;
- }
+
+
+.featured__product h2 {
+    grid-column: 1;
+}
+
 
 .articles {
-    background-color: #BBBBBB;
-    width: 100%;
-} 
+   display: flex;
+flex-direction: column;
+width: 100%;
+margin: 10px auto;
+background-color: #BBBBBB;
+align-items: center;
+}
 
-.articles {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+.articles > * {
+    width: 300px;
 }
 
 .articles img {
-    width: 550px;
-    border-radius: 20px;
-    margin: 10px 0;
+    width: 100%;
 }
 
-.articles div {
-    padding: 50px;
-    max-width: 550px;
+.preorder {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 30px 30px;
+    margin: 50px auto;
+    max-width: 1000px;
 }
 
-
-.preorder div {
-    text-align: center;
-    margin: 15px;
+.preorder__product img {
+    width: 100%;
 }
 
 /* Footer */ 
-
 footer {
+    background-color:rgb(255, 136, 0);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     flex-direction: column;
+    margin: 0;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+
+} 
+
+footer a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.7em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
 }
 
 footer ul, .copyright {
     margin: 0;
+    padding: 0;
 }
 footer ul {
     display: flex;
-    justify-content: space-evenly;
-    gap: 100px;
+
 }
 footer li {
-    display: inline-block;
+    display: flex;
     padding: 0px 5px;
-    margin: 0px 100px;
+    margin: 0px 20px;
+
 }
 
 
 /* signup page */
-
+/* 
 input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="tel"]   {
     width: 50%;
     padding: 10x 10px;
@@ -223,19 +289,66 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     cursor: pointer;
     font-size: 1.2em;
     font-weight: bold;
+} */
+
+@media (min-width:900px) {
+    .logo {
+        max-height: 120px;
+        margin-top: 50px;
+    }
+    .fa-shopping-basket, .fa-user {
+        font-size: 2.1em;
+    }
+    .articles {
+        background-color: #BBBBBB;
+        width: 100%;
+    } 
+    
+    .articles {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    
+    }
+    
+    .articles > * {
+        display: flex;
+        flex-direction: row;
+        max-width: 400px;
+        height: 100%;
+        padding: 50px;
+    }
+    
+    
+    .articles img {
+        max-width: 100%;
+    }
+    
 }
-
-
 
 /* Tablet */
 
 @media (min-width:800px) {
     .articles {
         display: flex;
-        justify-items: center;
         text-align: left;
         justify-content: center;
         flex-direction: row;
+    }
+    .articles > * {
+        display: flex;
+        flex-direction: column;
+        max-width: 300px;
+        height: 100%;
+        padding: 50px;
+    }
+    .featured-games {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0px 30px;
+        margin: 50px auto;
+        max-width: 800px;
+       
     }
 
     
@@ -255,33 +368,97 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     nav li {
         display: inline-block;
     }
-
-
-}
-
-@media (min-width:400px) {
-    .product__mark {
-        height: 600px;
+    header {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
     }
     
- .featured-games h2, view {
-    position: relative;
-    left: 300px;
-    bottom: 80px;
-    color: white;
-    width: 50%;
-    margin: 0;
-   
-}
-.preorder h2 {
-    position: relative;
-    left: 270px;
-    bottom: 120px;
-    color: white;
-    width: 50%;
-    margin: 0;
+    
+    
+    .header-top {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        max-height: 65px;
+    }
+    .header-right {
+        display: flex;
+        gap: 50px;
+    }
+    
+    .navigation {
+        text-align: center;
+        padding: 0px 50px;
+    
+    }
+    
+    .fa-shopping-basket, .fa-user {
+        background-color: white;
+        border-radius: 30%;
+        border: 1px solid black;
+        padding: 5px 10px;
+        font-size: 1.2em;
+    }
+    
+    nav {
+        background-color: rgb(255, 136, 0);
+        border-radius: 50px;
+        padding: 0px;
+        margin: 0px;
+        border: 2px solid black;
+    }
+    
+    nav ul {
+        padding: 0px 30px;
+        margin: 10px auto;
+    }
+    
+    .fa-bars {
+        font-size: 3em;
+    }
+    
+    .nav-right {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .search-bar{
+        padding: 5px 150px 5px 10px;
+        border-radius: 10px;
+        margin: 5px;
+        border: 1px solid black;
+    
+    }
+    
+    
+     .logo {
+        width: 100%;
+        max-height: 60px;
+        margin-top: 50px;
+    } 
+    
+    
+    /* nav li {
+        display: none;
+        padding: 0px 20px;
+    } */
+    
+    nav a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.7em;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+    }
+    
+
 
 }
-   
+
+@media (min-width:350px) {
+
+    
+
 
 }

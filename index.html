@@ -10,28 +10,54 @@
 
 <body>
     <header>
-        <a href="index.html"><img src="images/Gamehub-logo.png" alt="Gamehub logo" class="logo"></a> 
+        <div class="header-top">
+            <div>
+                <a href="index.html"><img src="images/Gamehub-logo.png" alt="Gamehub logo" class="logo"></a>
+            </div> 
+
+            <div>
+                <input type="text" placeholder="Search.." class="search-bar">    
+            </div>
+            <div class="header-right">
+                <i class="fas fa-shopping-basket"></i>
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+        <div class="navigation">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="buy.html">Store</a></li>
+                    <li><a href="signin.html">Sign in</a></li>
+                </ul> 
+            </nav>
+        </div>
         <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
         <input type="checkbox" id="hamburger-menu">
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="buy.html">Store</a></li>
-                <li><a href="signin.html">Sign in</a></li>
-            </ul> 
-       </nav>
-       <div class="nav-right">
-        <input type="text" placeholder="Search.." class="search-bar">    
-        <i class="fas fa-shopping-basket"></i>
-       </div>
     </header>
     <main>
-        <section>
-            <div class="featured-games">
-                <h1>FEATURED GAMES</h1>
-                <div><img src="images/Mark-featured.png" class="product__mark" alt="Product - Mark of the Ninja Remastered"></div>
-                <h2>Mark of the ninja: Remastered - 319,99kr <a href="product" class="view">VIEW PRODUCT</a></h2> 
+        <section class="featured-games">
+            <h1>Featured games</h1>
+            <div class="featured__product">
+                <img src="images/Markoftheninja.jpg" class="product__mark"   alt="Product - Mark of the Ninja Remastered">
+                <h2>Mark of the ninja</h2> 
+                <p>29$</p> 
+                <a href="product.html" class="view">View product</a> 
             </div>
+            <div class="featured__product">
+                <img src="images/chrono.jpg" class="product__mark"   alt="Product - Mark of the Ninja Remastered">
+                <h2>Chrono Trigger</h2> 
+                <p>29$</p> 
+                <a href="product.html" class="view">View product</a> 
+            </div>
+            <div class="featured__product">
+                <img src="images/farcry.jpg" class="product__mark"   alt="Product - Mark of the Ninja Remastered">
+                <h2>Far Cry 3</h2> 
+                <p>29$</p> 
+                <a href="product.html" class="view">View product</a> 
+            </div>
+            
+        
         </section>
        
         <section class="articles">
@@ -48,16 +74,52 @@
         </section>
 
         <section class="preorder">
-         <div>
-             <h1>PRE-ORDER GAMES</h1>
-             <div><img src="images/Mark-featured.png" class="product__mark" alt="Product - Mark of the Ninja Remastered"></div>
-             <h2>Mark of the ninja: Remastered - 319,99kr <a href="product" class="view">VIEW PRODUCT</a></h2>
-         </div>
+            <h1>Pre-Order games</h1>
+            <div class="preorder__product">
+                <img src="images/Markoftheninja.jpg" class="preorder_img"   alt="Product - Mark of the Ninja Remastered">
+                <h2>Mark of the ninja</h2> 
+                <p>29$</p> 
+                <a href="product.html" class="view">View product</a> 
+            </div>
+            <div class="preorder__product">
+                <img src="images/Markoftheninja.jpg" class="preorder_img"   alt="Product - Mark of the Ninja Remastered">
+                <h2>Mark of the ninja</h2> 
+                <p>29$</p> 
+                <a href="product.html" class="view">View product</a> 
+            </div>
+            <div class="preorder__product">
+                <img src="images/Markoftheninja.jpg" class="preorder_img"   alt="Product - Mark of the Ninja Remastered">
+                <h2>Mark of the ninja</h2> 
+                <p>29$</p> 
+                <a href="product.html" class="view">View product</a> 
+            </div>
+
+            <div class="preorder__product">
+                <img src="images/Markoftheninja.jpg" class="preorder_img"   alt="Product - Mark of the Ninja Remastered">
+                <h2>Mark of the ninja</h2> 
+                <p>29$</p> 
+                <a href="product.html" class="view">View product</a> 
+            </div>
+            <div class="preorder__product">
+                <img src="images/Markoftheninja.jpg" class="preorder_img"   alt="Product - Mark of the Ninja Remastered">
+                <h2>Mark of the ninja</h2> 
+                <p>29$</p> 
+                <a href="product.html" class="view">View product</a> 
+            </div>
+
+            <div class="preorder__product">
+                <img src="images/Markoftheninja.jpg" class="preorder_img"   alt="Product - Mark of the Ninja Remastered">
+                <h2>Mark of the ninja</h2> 
+                <p>29$</p> 
+                <a href="product.html" class="view">View product</a> 
+            </div>
+            
+
         </section>
 </main>
 <footer>
     <ul>
-       <li> <a href="" class="contact">Contact and Support</a></li>
+       <li> <a href="" class="contact">Contact Us</a></li>
        <li><a href="" class="faq">FAQ</a></li>
     </ul>
     <p class="copyright"> 2021 Game hub - Copyright  &copy;</p>
