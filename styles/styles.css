@@ -22,7 +22,12 @@ img {
     width: 100%;
 }
 
+
 /* Header & Nav */
+
+.logo_left {
+    display: none;
+}
 
 header {
     text-align: center;
@@ -67,7 +72,7 @@ header {
 
 .navigation {
     margin: 5px auto;
-    padding: 10px 30px;
+    padding: 10px 10px;
     font-size: 1.3em;
 }
 
@@ -84,7 +89,7 @@ header {
 
 nav {
     display: none;
-    background-color: rgb(255, 136, 0);
+    background-color: var(--color-nelson);
     border-radius: 50px;
     padding: 0px;
     margin: 0px;
@@ -238,7 +243,7 @@ h3 {
 }
 .view {
      text-decoration: none;
-     background-color: rgb(255, 136, 0);
+     background-color: var(--color-nelson);
      color: rgb(0, 0, 0);
      padding: 5px;
      border: 1px solid black;
@@ -249,7 +254,9 @@ h3 {
      font-family: roboto, Verdana, Geneva, Tahoma, sans-serif;
  }
   
-
+.view-small {
+    font-size: 0.7em;
+}
 
 
 
@@ -285,16 +292,17 @@ align-items: center;
 }
 
 
+
+
 /* Footer */ 
 footer {
-    background-color:rgb(255, 136, 0);
-    height: 80px;
+    background-color:var(--color-nelson);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
+    height: 60px;
     margin: 0;
-    width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 
@@ -307,6 +315,12 @@ footer a {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     display: inline-block;
+}
+
+footer div {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
 }
 
 footer ul, .copyright {
@@ -328,78 +342,126 @@ footer li {
 
 
 /* signup page */
-/* 
-input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="tel"]   {
+
+/* input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="tel"]   {
     width: 50%;
     padding: 10x 10px;
     margin: 8px 0;
     border-radius: 4px;
     border: solid 1px #000;
+} */
+
+
+
+.signup {
+    text-align: left;
+    display: flex;
+    margin: 5px auto;
+    flex-direction: column;
+    width: 70%;
+    padding: 10px;
+    text-align: left;
+}
+
+.signup > * {
+    padding: 6px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.signup_btn {
+    text-align: center;
+    margin: 20px;
 }
 
 .cta {
     text-decoration: none;
     font-family: roboto, verdana;
-    background-color: #9BDD6F;
+    background-color:#10fd61;
     border: solid 1px #000;
     box-shadow: 2px 2px #9bdd6f38 ;
+    color: black;
     border-radius: 10px;
+    padding: 5px 50px;
     font-size: 1.2em;
     font-weight: bold;
     
 }
 
-.cta:hover {
-    background-color: #000;
-    color: #9BDD6F;
-    cursor: pointer;
-    font-size: 1.2em;
-    font-weight: bold;
-} */
+
+
 
 @media (min-width:900px) {
-    .logo {
-        max-height: 120px;
-        margin-top: 50px;
+    .logo {display: none;}
+    .header-top{margin-right: 10px;}
+
+    .logo_left {
+        display: inline;
+        grid-template-areas: header-left;
+        max-height: 110px;
+        margin: 0px 0px 0px 10px;
+        max-width: 110px;
+        
     }
+
     .fa-shopping-basket, .fa-user {
         font-size: 2.1em;
     }
-    .articles {
-        background-color: #BBBBBB;
-        width: 100%;
-    } 
+    .header-right{
+        gap: 20px;
+    }
     
-    .articles {
-        display: flex;
-        flex-direction: row;
+
+
+    header label {
+        display: none;
+    }
+    
+    nav {
+        display: inline-block;
+    }
+
+    header {
+        grid-template-areas: 
+        "Header-left header-bottom header-top";
+        gap: 20px;
+        justify-content: space-evenly;
         align-items: center;
-    
+        min-width: 900px;
+        max-width: 1300px;
+        margin: 0px auto;
+        border-radius: 60px;
     }
-    
-    .articles > * {
-        display: flex;
-        flex-direction: row;
-        max-width: 400px;
-        height: 100%;
-        padding: 50px;
+
+    .navigation {
+        margin: 5px 0px;
+        padding: 10px 0px;
+        font-size: 1.3em;
+        border: none;
     }
-    
-    
-    .articles img {
-        max-width: 100%;
-    }
-    
+
+
+
 }
 
-/* Tablet */
+/* desktop */
+
+@media (min-width:900px){
+    .cta:hover {
+        background-color: #3D1565;
+        color: white;
+        cursor: pointer;
+        font-size: 1.2em;
+        font-weight: bold;
+    } 
+}
 
 @media (min-width:800px) {
     .articles {
         display: flex;
         text-align: left;
         justify-content: center;
-        flex-direction: row;
+        flex-direction: column;
     }
     .articles > * {
         display: flex;
@@ -420,107 +482,27 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     
 }
 
-/* Mobile */
+/* tablet */
 
 @media (min-width:600px) {
-    header label {
-        display: none;
-        font-size: 1.5em;
-    }
-    nav {
-    display: inline-block;
-    padding: 0px 5px;
-    }
-    nav li {
-        display: inline-block;
-    }
-    header {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .search-bar {
-        display: inline;
-    }
-    
-    .header-top {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        max-height: 65px;
-    }
-    .header-right {
-        display: flex;
-        gap: 50px;
-    }
-    
-    .navigation {
-        text-align: center;
-        padding: 0px 50px;
-    
-    }
-    
-    .fa-shopping-basket, .fa-user {
-        background-color: white;
-        border-radius: 30%;
-        border: 1px solid black;
-        padding: 5px 10px;
-        font-size: 1.2em;
-    }
-    
-    nav {
-        background-color: rgb(255, 136, 0);
-        border-radius: 50px;
-        padding: 0px;
-        margin: 0px;
-        border: 2px solid black;
-    }
-    
-    nav ul {
-        padding: 0px 30px;
-        margin: 10px auto;
-    }
-    
-    .fa-bars {
-        font-size: 3em;
-    }
-    
-    .nav-right {
-        display: flex;
-        justify-content: space-evenly;
-    }
-    
-    .search-bar{
-        padding: 5px 150px 5px 10px;
-        border-radius: 10px;
-        margin: 5px;
-        border: 1px solid black;
-    
-    }
-    
-    
-     .logo {
-        width: 100%;
+    .logo {
         max-height: 60px;
-        margin-top: 50px;
-    } 
-    
-    
-    /* nav li {
-        display: none;
-        padding: 0px 20px;
-    } */
-    
-    nav a {
-        text-decoration: none;
-        color: black;
-        font-size: 1.7em;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-weight: bold;
     }
-    
+    .articles h3  {
+        font-size: 0.8em;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .articles h2 {
+        font-size: 1.2em;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
 
+
+
+    header label {
+        margin-top: 14px;
+    }
+ 
 
 }
 

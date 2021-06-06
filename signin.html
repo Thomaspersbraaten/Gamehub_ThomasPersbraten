@@ -13,23 +13,33 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="images/Gamehub-logo.png" alt="Gamehub logo" class="logo"></a> 
-        <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
+        <div class="logo_left">
+            <a href="index.html"><img src="images/GameHub_Logo.png" alt="Gamehub logo" class="logo_big" ></a>
+        </div>
+        <div class="header-top">
+            <a href="index.html"><img src="images/Gamehub-logo.png" alt="Gamehub logo" class="logo"></a>
+            <div class="header-right">
+                <i class="fas fa-shopping-basket"></i>
+                <i class="fas fa-user"></i>
+            </div>
+        </div>    
         <input type="checkbox" id="hamburger-menu">
-        <nav >
+        <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
+        <nav class="navigation">
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html" >Home</a></li>
                 <li><a href="buy.html">Store</a></li>
-                <li><a href="signin.html">Sign in</a></li>
+                <li><a href="signin.html" class="active">Sign in</a></li>
             </ul> 
- 
-       </nav>
-       <div class="nav-right">
-        <input type="text" placeholder="Search.." class="search-bar">    
-        <i class="fas fa-shopping-basket"></i>
+            <div>
+                <input type="text" placeholder="Search.." class="search-bar">    
+            </div>
+        </nav>
     </header>
-
-        <form action="success.html" method="GET">
+    <main>
+        <form action="success.html" method="GET" class="form">
+        <section class="signup">
+    
             <label for="name">Full name</label>   <input type="text" id="name" name="name" required placeholder="Full name">
             <label for="email">Email</label><input type="email" name="email" id="email" required placeholder="me@example.com">
             <label for="phonenumber">Phone number</label><input type="tel" name="phonenumber" id="phonenumber" required placeholder="+47 12 23 45 78">
@@ -39,17 +49,20 @@
             <label for="country">Country</label><input type="text" name="county" id="country" required placeholder="Country">
 
 
-            <div>
+        </section>
+        
+        <div class="signup_btn">
             <button type="submit" class="cta">Sign up</button>
         </div>
-
-    <footer>
-        <ul>
-            <li> <a href="" class="contact">Contact and Support</a></li>
-            <li><a href="" class="faq">FAQ</a></li>
-        </ul>
-        <p class="copyright"> 2021 Game hub - Copyright  &copy;</p>
-    </footer>
+    </main>
+        <footer>
+            <div>
+                <a href="contact.html" class="contact">Contact Us</a>
+                <a href="faq.html" class="faq">FAQ</a>
+             </div>
+    
+            <p class="copyright"> 2021 Game hub - Copyright  &copy;</p>
+        </footer>
     
 </body>
 </html>
