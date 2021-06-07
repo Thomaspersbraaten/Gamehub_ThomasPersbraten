@@ -138,6 +138,7 @@ header button {
  .logo {
     max-height: 50px;
     margin-top: 10px;
+    width: 70.833px;
 
 } 
 
@@ -418,6 +419,8 @@ footer li {
     .signup{max-width: 900px;}
     .search-bar {padding-top:9px}
     .header-top{margin-right: 10px;}
+    .active{text-decoration-thickness: 0.2em;}
+
 
     .logo_left {
         display: inline;
