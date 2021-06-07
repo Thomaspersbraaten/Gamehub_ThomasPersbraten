@@ -28,11 +28,14 @@
         <nav class="navigation">
             <ul>
                 <li><a href="index.html" >Home</a></li>
-                <li><a href="buy.html">Store</a></li>
+                <li><a href="store.html">Store</a></li>
                 <li><a href="signin.html" class="active">Sign in</a></li>
             </ul> 
             <div>
-                <input type="text" placeholder="Search.." class="search-bar">    
+                <form action="store.html">
+                    <input type="text" placeholder="Search.." class="search-bar">    
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
             </div>
         </nav>
     </header>
@@ -42,6 +45,8 @@
     
             <label for="name">Full name</label>   <input type="text" id="name" name="name" required placeholder="Full name">
             <label for="email">Email</label><input type="email" name="email" id="email" required placeholder="me@example.com">
+            <label for="password">Password</label><input type="password" name="password" id="password" required placeholder="*****">
+            
             <label for="phonenumber">Phone number</label><input type="tel" name="phonenumber" id="phonenumber" required placeholder="+47 12 23 45 78">
             <label for="streetname">Streetname</label><input type="text" name="streetname" id="streetname" required placeholder="streetname">
             <label for="zip-code">Zip code</label><input type="number" name="zip-code" id="zip-code" required placeholder="Zip Code">

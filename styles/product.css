@@ -116,5 +116,8 @@
 
     .product__order {
         flex-direction: row;
+        max-width: 900px;
+        gap: 100px;
+        margin: 40px auto;
     }
 }

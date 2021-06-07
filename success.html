@@ -13,30 +13,28 @@
 </head>
 <body>
     <header>
-
-      
-
-        <nav>
-          
-            <ul>
-                <img src="images/GameHub_Logo.png" alt="Gamehub logo" class="logo">
-                <li><a href="index.html" class="active padding">Home</a></li>
-                <li><a href="index.html" class="inactive padding">Sign in</a></li>
-                <div class="dropdown">
-                    <button class="dropbtn padding">Store</button>
-                    <div class="dropdown-content">
-                        <a href="Buygames.html" class="page">Buy games</a>
-                        <a href="Sellgames.html" class="page">Sell games</a>
-                       
-                    </div>
-
-                </div>
+        <div class="logo_left">
+            <a href="index.html"><img src="images/GameHub_Logo.png" alt="Gamehub logo" class="logo_big" ></a>
+        </div>
+        <div class="header-top">
+            <a href="index.html"><img src="images/Gamehub-logo.png" alt="Gamehub logo" class="logo"></a>
+            <div class="header-right">
                 <i class="fas fa-shopping-basket"></i>
-            </ul>
-
+                <i class="fas fa-user"></i>
+            </div>
+        </div>    
+        <input type="checkbox" id="hamburger-menu">
+        <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="buy.html">Store</a></li>
+                <li><a href="signin.html">Sign in</a></li>
+            </ul> 
+            <div>
+                <input type="text" placeholder="Search.." class="search-bar">    
+            </div>
         </nav>
-        
-
     </header>
     
 </body>

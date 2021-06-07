@@ -1,0 +1,40 @@
+ #rpg, #fps, #base, #platformer {
+    border: 1px solid black;
+} 
+
+.filter__games label {
+
+    text-align: center;
+    padding: 2px 5px;
+
+}
+.filter__games label:hover {
+    cursor: pointer;
+}
+
+.filters {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin: 0px auto;
+    justify-content: center;
+  
+}
+
+.filters label {
+    background-color:var(--color-nelson);
+    margin: 5px;
+    border: 1px solid black;
+}
+
+.div {
+    display: none;
+}
+
+#fps:checked ~ .div {
+    display: inline-block;
+}
+
+@media (min-width:600px){
+    
+}
