@@ -33,7 +33,7 @@ header {
     text-align: center;
     display: flex;
     flex-direction: column;
-    min-width: 350px;
+    min-width: 325px;
     overflow: hidden;
 }
 
@@ -138,7 +138,7 @@ header button {
  .logo {
     max-height: 50px;
     margin-top: 10px;
-    max-width: 50px;
+
 } 
 
 
@@ -190,8 +190,8 @@ header label {
 
 h1 {
     font-family: nelson, roboto, Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 3rem; 
-    margin: 5px 0px 20px 0px;
+    font-size: 2rem; 
+    margin: 10px 0px 0px 0px;
     text-align: center;
     }
 
@@ -266,7 +266,7 @@ h3 {
      text-decoration: none;
      background-color: var(--color-nelson);
      color: rgb(0, 0, 0);
-     padding: 5px;
+     padding: 4px;
      border: 1px solid black;
      border-radius: 8px;
      text-transform: uppercase;
@@ -307,7 +307,7 @@ align-items: center;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    gap: 30px 30px;
+    gap: 30px 10px;
     margin: 50px auto;
     max-width: 1000px;
 }
