@@ -21,6 +21,8 @@
   
 }
 
+
+
 .filters label {
     background-color:var(--color-nelson);
     margin: 5px;
@@ -35,6 +37,14 @@
     display: inline-block;
 }
 
+#fps:checked ~ .filters label {
+    background-color: green;
+}
+
+#fps input:checked {
+    background-color: green;
+}
+
 @media (min-width:600px){
-    
+
 }
