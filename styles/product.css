@@ -17,6 +17,14 @@
     
 }
 
+.product_page h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.product__images_small > * {
+    max-width: 50%;
+}
+
 .product_description {
     margin: 0px 20px;
 }
