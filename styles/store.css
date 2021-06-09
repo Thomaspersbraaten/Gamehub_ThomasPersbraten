@@ -21,7 +21,9 @@
   
 }
 
-
+.store h1 {
+    margin-bottom: 10px;
+}
 
 .filters label {
     background-color:var(--color-nelson);

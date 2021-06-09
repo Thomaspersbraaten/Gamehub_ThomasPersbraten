@@ -13,12 +13,13 @@
 .product__images_small {
     display: flex;
     flex-direction: row;
-    gap: 5px
+    gap: 5px;
     
 }
 
 .product_page h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
 }
 
 .product__images_small > * {
@@ -88,6 +89,9 @@
     }
     .products__images_big {
         margin: 0px auto;
+    }
+    .product_page h1 {
+        font-size: 2rem;
     }
 
 

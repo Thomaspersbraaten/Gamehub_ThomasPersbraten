@@ -1,0 +1,103 @@
+/* .myaccount {
+    display: flex;
+    max-width: 950px;
+    gap: 30px;
+    text-align: left;
+    margin: 10px auto;
+    justify-content: center;
+    
+}
+
+.myaccount > * {
+    border: 2px solid black;
+}
+
+.myaccount img {
+    width: 200px;
+    margin: 20px 20px;
+}
+
+.myaccount h2 {
+    font-size: 1.4em;
+}
+
+.account_info, .order_history {
+    display: flex;
+}
+
+.account_info div > *, .order_history div > * {
+    margin: 10px;
+}
+
+.logout {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.logout a {
+    padding: 5px 100px;
+
+} */
+
+.myaccount {
+    display: flex;
+    flex-direction: column;
+    max-width: 315px;
+    gap: 30px;
+    text-align: left;
+    margin: 10px auto;
+}
+
+.myaccount img {
+    width: 100px;
+    margin: 10px 10px;
+}
+
+.myaccount > * {
+    border: 2px solid black;
+}
+
+.logout {
+    text-align: center;
+    margin: 50px;
+}
+
+.account_info button {
+    margin: 10px;
+}
+
+@media (min-width:900px){
+    .myaccount {
+        max-width: 950px;
+        justify-content: center;
+        flex-direction: row;
+        
+    }
+    
+
+    .myaccount img {
+        width: 200px;
+        margin: 20px 20px;
+    }
+    
+    .myaccount h2 {
+        font-size: 1.4em;
+    }
+    
+    .account_info, .order_history {
+        display: flex;
+
+    }
+    
+    .account_info div > *, .order_history div > * {
+        margin: 10px;
+    }
+    
+
+    
+    .logout a {
+        padding: 5px 100px;
+    
+    }
+
+}

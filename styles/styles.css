@@ -68,6 +68,8 @@ header {
 .header-right {
     display: flex;
     gap: 15px;
+    justify-content: center;
+    align-items: center;
 }
 
 .navigation {
@@ -82,9 +84,17 @@ header {
     border: 1px solid black;
     padding: 5px 10px;
     font-size: 1.7em;
+    color: black;
 }
 
+.account_basket {
+    padding: 10px;
+}
 
+.account_img {
+    width: 50px;
+    height: 53px;
+}
 
 
 nav {
@@ -145,7 +155,7 @@ header button {
 
 nav li {
     display: inline-block;
-    padding: 0px 17px;
+    padding: 5px 17px;
 }
 
 nav a {
@@ -357,10 +367,27 @@ footer ul {
 
 }
 footer li {
-
     padding: 0px 5px;
     margin: 0px 20px;
 
+}
+
+.contact_page {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 20px 10px;
+    align-items: center;
+}
+.fa-facebook, .fa-twitter-square, .fa-instagram-square {
+    font-size: 2em;
+    margin: 0px 10px;
+
+}
+
+.contact_page img {
+    max-width: 400px;
+    margin: 0px auto;
 }
 
 
@@ -409,6 +436,7 @@ footer li {
     padding: 5px 50px;
     font-size: 1.2em;
     font-weight: bold;
+    margin: 30px auto;
     
 }
 
@@ -476,7 +504,6 @@ footer li {
         font-size: 1.2em;
         font-weight: bold;
     } 
-
 }
 
 
@@ -519,6 +546,18 @@ footer li {
     .articles h2 {
         font-size: 1.2em;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .contact_page {
+        display: flex;
+    max-width:700px;
+    margin: 50px auto;
+    align-items: center;
+    gap: 30px;
+    }
+    
+    .fa-facebook, .fa-twitter-square, .fa-instagram-square {
+        font-size: 3em;
+    
     }
 
     /* header label {

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gamehub | Homepage</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Find the game you are looking for here on Gamehub">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/checkout.css">
+    <script src="https://kit.fontawesome.com/ba0e3e950c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/nyh8jpx.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo_left">
+            <a href="index.html"><img src="../images/ghtry.png" alt="Gamehub logo" class="logo_big" ></a>
+        </div>
+        <div class="header-top">
+            <a href="index.html"><img src="../images/ghtry.png" alt="Gamehub logo" class="logo"></a>
+            <div class="header-right">
+                <i class="fas fa-shopping-basket account_basket"></i>
+                <a href="account.html"><img src="../images/loginpic.png" alt="your account picture" class="account_img"></a>
+                <!-- <i class="fas fa-user"></i> -->
+            </div>
+        </div>    
+        <input type="checkbox" id="hamburger-menu">
+        <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
+        <nav class="navigation">
+            <ul>
+                <li><a href="../index.html" >Home</a></li>
+                <li><a href="../store.html">Store</a></li>
+                <li><a href="account.html" class="active">My account</a></li>
+            </ul> 
+            <div>
+                <form action="store.html">
+                    <input type="text" placeholder="Search.." class="search-bar">    
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main>
+    <h1>Checkout page</h1>
+    <section class="checkout">
+        <h2>Payment Method</h2>
+        <div>
+           
+        <form action="">
+
+            <input type="radio" id="credit" name="payment" value="credit">   <label for="credit">Credit Card</label>
+         
+   
+            <input type="radio" id="vipps" name="payment" value="vipps">  <label for="vipps">Vipps</label>
+          
+            <div class="creditcard_fields">
+                <input type="number" name="creditcard" id="creditcard" required placeholder="Credit card number">
+                <input type="name" name="creditcard" id="cardholdername" required placeholder="Cardholders name">
+                <input type="date" name="creditcard" id="expiredate" required placeholder="expire date">
+                <input type="number" name="creditcard" id="cvc" required placeholder="***">
+            </div>
+            <div class="vipps_fields">
+                <input type="tel" name="vipps" id="vippsnr" required placeholder="Phonenumber">
+                <input type="name" name="vipps" id="vippsname" required placeholder="Your name">
+            </div>
+   
+  
+        </form>
+
+        </div>
+
+
+
+        <div>
+            <h2>Shipment Method</h2>
+            <form action="">
+
+        
+                <input type="radio" id="pickup" name="shipment" value="pickup">
+                <label for="credit">Pick-up Point</label>
+                <input type="radio" id="mailbox" name="shipment" value="mailbox">
+                <label for="vipps">Mailbox</label>
+                <input type="radio" id="post-office" name="shipment" value="post-office">
+                <label for="paypal">Post office</label>
+            
+                <div class="pickup_p">
+                    <p>You can pick up the package at our warehouse after 1 hour of order confirmation</p>
+                </div>
+                <div class="mailbox_p">
+                    <p>We will pack and send the products within 24hours. You will receive the products in your mailbox</p>
+                </div>
+                <div class="post-office_p">
+                    <p>We will pack and send the products within 24hours. The package will be sent to your local post-office</p>
+                </div>
+    
+            </form>
+        </div>
+        <a href="revieworder.html" class="cta cta_review">Review order</a>
+ 
+ 
+    </section>
+
+
+
+    </main>
+    <footer>
+        <div>
+            <a href="contact.html" class="contact">Contact Us</a>
+            <a href="faq.html" class="faq">FAQ</a>
+        </div>
+        <p class="copyright"> 2021 Game hub - Copyright  &copy;</p>
+    </footer>
+</body>
+</html>
