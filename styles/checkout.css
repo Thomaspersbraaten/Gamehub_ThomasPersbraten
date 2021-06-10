@@ -13,6 +13,7 @@
     flex-direction: column;
     padding: 10px;
     margin: 10px auto;
+    height: 171px;
 }
 
 #vipps:checked ~ .vipps_fields {
@@ -20,6 +21,7 @@
     flex-direction: column;
     padding: 10px;
     margin: 10px auto;
+    height: 171px;
     
 }
 
@@ -52,39 +54,23 @@
 
 .pickup_p, .mailbox_p, .post-office_p {
     display: none;
+    
 
 }
 
-#post-office:checked ~ .post-office_p, #mailbox:checked ~ .mailbox_p, #pickup:checked ~ .pickup_p, .review_main div {
+#post-office:checked ~ .post-office_p, #mailbox:checked ~ .mailbox_p, #pickup:checked ~ .pickup_p, .review_methods div {
     display: block;
     padding: 10px;
     border: 2px solid black;
     background-color: white;
     max-width: 325px;
     margin: 20px auto;
+    
 
 }
 
-
-
-/* Review order */ 
-
-.review_main {
-    text-align: center;
-}
-
-.review_img img {
-    max-width: 315px;
-}
-
-.review_product {
-    border: 2px solid black;
-    max-width: 315px;
-    display: flex;
-    margin: 30px auto;
-    justify-content: center;
-    gap: 50px;
-    align-items: center;
+#post-office:checked ~ .post-office_p, #mailbox:checked ~ .mailbox_p, #pickup:checked ~ .pickup_p {
+    height: 90px;
 }
 
 
@@ -105,8 +91,8 @@
    
         
     }
-    .review_product {
-        flex-direction: ;
+    .review_main > * {
+        max-width: 950px;
     }
 
 }

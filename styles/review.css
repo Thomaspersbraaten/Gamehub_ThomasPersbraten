@@ -1,0 +1,87 @@
+/* Review order */ 
+
+.review_main {
+    text-align: center;
+}
+
+.review_img img {
+    max-width: 325px;
+}
+
+.review_product {
+    border: 2px solid black;
+    max-width: 325px;
+    display: inline-block;
+    margin: 30px auto;
+    justify-content: center;
+    gap: 50px;
+    padding: 10px;
+    align-items: center;
+    background-color:white;
+}
+
+ .review_methods  {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 10px;
+    border: 2px solid black;
+    background-color: white;
+    max-width: 325px;
+    margin: 30px auto;
+
+}
+.place_order {
+    text-align: center;
+    margin: 30px ;
+}
+
+/*  order received */ 
+
+.confirmation__main {
+    text-align: center;
+}
+
+.order__info {
+    border: 2px solid black;
+    background-color: white;
+    margin: 30px auto;
+
+}
+
+.order__info > * {
+    padding: 0px 10px;
+    text-align: left;
+} 
+
+.confirmation__main h2 {
+    margin: 40px auto;
+}
+
+@media (min-width:900px){
+    .review_img img {
+        width: 900px;
+    }
+    .review_product {
+        width: 900px;
+        margin: 30px auto;
+        justify-content: center;
+        padding: 10px;
+        align-items: center;
+        background-color:white;
+        text-align: left;
+    }
+
+     .review_methods  {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 10px;
+        border: 2px solid black;
+        background-color: white;
+        max-width: 325px;
+        margin: 30px auto;
+    
+    }
+
+}

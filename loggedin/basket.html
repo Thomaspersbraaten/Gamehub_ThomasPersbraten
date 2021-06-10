@@ -6,7 +6,7 @@
     <meta name="description" content="Find the game you are looking for here on Gamehub">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="stylesheet" href="../styles/account.css">
+    <link rel="stylesheet" href="../styles/basket.css">
     <script src="https://kit.fontawesome.com/ba0e3e950c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.typekit.net/nyh8jpx.css">
 </head>
@@ -29,8 +29,8 @@
         <nav class="navigation">
             <ul>
                 <li><a href="../index.html" >Home</a></li>
-                <li><a href="../store.html">Store</a></li>
-                <li><a href="account.html" class="active">My account</a></li>
+                <li><a href="../store.html" class="active">Store</a></li>
+                <li><a href="account.html" >My account</a></li>
             </ul> 
             <div>
                 <form action="store.html">
@@ -45,27 +45,32 @@
 
     <section class="basket_contents">
         <div>
-        <p>Qty: 1</p>
-        <p>Product: Mark of the Ninja : Remastered - New copy</p>
-        <p>Price: kr 129,99</p>
-        <p>4 in stock</p>
-    </div>
-    <div>
+            <p>Qty: 1</p>
+            <p>Product: Mark of the Ninja : Remastered - New copy</p>
+            <p>Price: kr 129,99</p>
+            <p>4 in stock</p>
+        </div>
+        <div>
         <img src="../images/Markoftheninja.jpg" alt="">
-        <i class="fas fa-trash-alt"></i>
-    </div>
+       
+        </div>
+        <div class="remove_item">
+            <p>Remove</p> 
+            <i class="fas fa-trash-alt"></i>
+        </div>
     </section>
     <section class="basket_price">
-        <div>
-            <a href="checkout.html" class="cta">Proceed to checkout</a>
-        </div>
+   
         <div>
             <p>price: kr 129,99</p>
             <p>VAT: kr 0</p>
             <p>Shipping: kr 0</p>
-            <p>Sum to pay: kr 129,99</p>
+            <p class="sum">Sum to pay: kr 129,99</p> 
         </div>
     </section>
+    <div class="to_checkout">
+        <a href="checkout.html" class="cta">Proceed to checkout</a>
+    </div>
   
 
 
