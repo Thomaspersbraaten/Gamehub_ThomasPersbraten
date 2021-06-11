@@ -3,27 +3,40 @@
 } 
 
 .filter__games label {
-
     text-align: center;
     padding: 2px 5px;
+    max-width: 50px;
+    border-radius: 10px;
 
 }
 .filter__games label:hover {
     cursor: pointer;
 }
 
-.filters {
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    margin: 0px auto;
-    justify-content: center;
+
+ .filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0px 30px;
+    margin: 20px auto;
+    max-width: 800px;
   
+} 
+.filters div {
+    display: none;
+}
+
+
+#fps:checked ~ .filters div {
+    display: flex;
 }
 
 .store h1 {
     margin-bottom: 10px;
 }
+
+
+
 
 .filters label {
     background-color:var(--color-nelson);
@@ -31,22 +44,5 @@
     border: 1px solid black;
 }
 
-.div {
-    display: none;
-}
 
-#fps:checked ~ .div {
-    display: inline-block;
-}
 
-#fps:checked ~ .filters label {
-    background-color: green;
-}
-
-#fps input:checked {
-    background-color: green;
-}
-
-@media (min-width:600px){
-
-}

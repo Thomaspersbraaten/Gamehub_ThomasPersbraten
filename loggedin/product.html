@@ -5,36 +5,37 @@
     <meta charset="UTF-8">
     <meta name="description" content="Mark of the Ninja : Remastered brings out the stealth fighter in you.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/product.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/product.css">
     <script src="https://kit.fontawesome.com/ba0e3e950c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
         <div class="logo_left">
-            <a href="index.html"><img src="images/GameHub_Logo.png" alt="Gamehub logo" class="logo_big" ></a>
+            <a href="loggedin.html"><img src="../images/ghtry.png" alt="Gamehub logo" class="logo_big" ></a>
         </div>
         <div class="header-top">
-            <a href="index.html"><img src="images/Gamehub-logo.png" alt="Gamehub logo" class="logo"></a>
+            <a href="loggedin.html"><img src="../images/ghtry.png" alt="Gamehub logo" class="logo"></a>
             <div class="header-right">
-                <i class="fas fa-shopping-basket"></i>
-                <i class="fas fa-user"></i>
+                <a href="basket.html"><i class="fas fa-shopping-basket account_basket"></i></a>
+                <a href="account.html"><img src="../images/loginpic.png" alt="your account picture" class="account_img"></a>
+       
             </div>
         </div>    
         <input type="checkbox" id="hamburger-menu">
         <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
         <nav class="navigation">
             <ul>
-                <li><a href="index.html" >Home</a></li>
-                <li><a href="buy.html" class="active">Store</a></li>
-                <li><a href="signin.html">Sign in</a></li>
+                <li><a href="loggedin.html" >Home</a></li>
+                <li><a href="store.html" class="active">Store</a></li>
+                <li><a href="account.html">My account</a></li>
             </ul> 
             <div>
                 <form action="store.html">
                     <input type="text" placeholder="Search.." class="search-bar">    
                     <button type="submit"><i class="fas fa-search"></i></button>
-                </form>   
+                </form>
             </div>
         </nav>
     </header>
@@ -42,11 +43,11 @@
      <section class="product_page">  
         <section class="product__images">
             <div class="products__images_big">
-                <img src="images/Markoftheninja.jpg" alt="">
+                <img src="../images/Markoftheninja.jpg" alt="">
             </div>
             <div class="product__images_small">
-                <img src="images/Markprod1.jpg" alt="">
-                <img src="images/Markprod2.jpg" alt="">
+                <img src="../images/Markprod1.jpg" alt="">
+                <img src="../images/Markprod2.jpg" alt="">
             </div>
         </section>
         <section class="product_description">
@@ -67,35 +68,39 @@
             <p> Storage: 8 GB Available space   </p>         
         </section>
         <section class="product__order">
-            <div class="product_used cta_area">
+            <div class="cta_area">
                 <div>
                     <p>New copy</p>
                     <p class="in-stock">4 in stock</p>
-                </div>
-                <div>         
                     <p>kr 129,99,-</p>
-                    <a href="" class="cta">Add to Cart</a>
                 </div>
-    
+                <div class="add_main">         
+                  
+                    <input type="checkbox" name="add" id="add" ><label for="add" class="cta">Add to cart</label>
+                   <p class="added_text">Item added to shopping basket</p>
+
+                </div>
             </div>
-            <div class="product_new cta_area">
+            <!-- divider comment -->
+            <div class="cta_area">
                 <div>
                     <p>Used copy</p>
                     <p class="not-in-stock">0 in stock</p>
-                </div>
-                <div>         
                     <p>kr 100,-</p>
-                    <a href="" class="cta">Add to Cart</a>
                 </div>
-
+                <div class="add_main">         
+                    <input type="checkbox" name="out" id="out" ><label for="out" class="cta">Add to cart</label>
+                    <p class="notadded_text">Item is out of stock</p>
+                </div>
             </div>
-
         </section>
     </section> 
+ 
+  
     </main>
 <footer>
     <div>
-        <a href="contact.html" class="contact">Contact Us</a>
+        <a href="../contact.html" class="contact">Contact Us</a>
         <a href="faq.html" class="faq">FAQ</a>
      </div>
 

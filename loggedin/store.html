@@ -5,30 +5,31 @@
     <meta charset="UTF-8">
     <meta name="description" content="Visit out store to browse for your next purchase, or even check out upcoming games in the preorder section">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/store.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/store.css">
     <script src="https://kit.fontawesome.com/ba0e3e950c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
         <div class="logo_left">
-            <a href="index.html"><img src="images/GameHub_Logo.png" alt="Gamehub logo" class="logo_big" ></a>
+            <a href="loggedin.html"><img src="../images/ghtry.png" alt="Gamehub logo" class="logo_big" ></a>
         </div>
         <div class="header-top">
-            <a href="index.html"><img src="images/Gamehub-logo.png" alt="Gamehub logo" class="logo"></a>
+            <a href="loggedin.html"><img src="../images/ghtry.png" alt="Gamehub logo" class="logo"></a>
             <div class="header-right">
-                <i class="fas fa-shopping-basket"></i>
-                <i class="fas fa-user"></i>
+                <a href="basket.html"><i class="fas fa-shopping-basket account_basket"></i></a>
+                <a href="account.html"><img src="../images/loginpic.png" alt="your account picture" class="account_img"></a>
+       
             </div>
         </div>    
         <input type="checkbox" id="hamburger-menu">
         <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
         <nav class="navigation">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="loggedin.html" >Home</a></li>
                 <li><a href="store.html" class="active">Store</a></li>
-                <li><a href="signin.html">Sign in</a></li>
+                <li><a href="account.html">My account</a></li>
             </ul> 
             <div>
                 <form action="store.html">
@@ -45,7 +46,7 @@
                 <h1>Store</h1>
        
             <div class="featured__product">
-                <img src="images/Markoftheninja.jpg" class="product__mark" alt="Product - Mark of the Ninja remastered">
+                <img src="../images/Markoftheninja.jpg" class="product__mark" alt="Product - Mark of the Ninja remastered">
                 <div class="product__info">
                     <h2>Mark of the ninja</h2> 
                     <p>Tactical | Platformer</p>
@@ -54,7 +55,7 @@
                 </div>    
             </div>
             <div class="featured__product">
-                    <img src="images/chrono.jpg" class="product__mark" alt="Product - Mark of the Ninja Remastered">
+                    <img src="../images/chrono.jpg" class="product__mark" alt="Product - Mark of the Ninja Remastered">
                 <div class="product__info">
                     <h2>Chrono Trigger</h2> 
                     <p>RPG | Turn based</p>
@@ -63,7 +64,7 @@
                 </div>
             </div>
             <div class="featured__product">
-                <img src="images/farcry.jpg" class="product__mark" alt="Product - Mark of the Ninja Remastered">
+                <img src="../images/farcry.jpg" class="product__mark" alt="Product - Mark of the Ninja Remastered">
                 <div class="product__info">
                     <h2>Far Cry 3</h2> 
                     <p>FPS | Adventure</p>
@@ -83,16 +84,37 @@
         <section class="filter__games">
   
             <div class="filters">
-                <div>
-                    <label for="rpg">RPG</label><input type="checkbox" id="rpg">
-                    <label for="fps">FPS</label><input type="checkbox" id="fps">
-                    <label for="base">Base Management</label><input type="checkbox" id="base">
-                    <label for="platformer">Platformer</label><input type="checkbox" id="platformer">
-                    <div class="div">
-                        <p>aaa</p>
-                       </div>
+                
+                <label for="rpg">RPG</label><input type="checkbox" id="rpg">
+                <label for="fps">FPS</label><input type="checkbox" id="fps">
+                <label for="tactical">Tactical</label><input type="checkbox" id="tactical">
+                <div class="filter_tactical">
+                    <img src="images/Markoftheninja.jpg" class="product__mark" alt="Product - Mark of the Ninja remastered">
+                    <div class="product__info">
+                        <h2>Mark of the ninja</h2> 
+                        <p>Tactical | Platformer</p>
+                        <p>29$</p> 
+                        <a href="product.html" class="view">View product</a> 
+                    </div>    
                 </div>
-          
+                <div class="filter_rpg">
+                        <img src="images/chrono.jpg" class="product__mark" alt="Product - Mark of the Ninja Remastered">
+                    <div class="product__info">
+                        <h2>Chrono Trigger</h2> 
+                        <p>RPG | Turn based</p>
+                        <p>29$</p> 
+                        <a href="product.html" class="view">View product</a> 
+                    </div>
+                </div>
+                <div class="filter_fps">
+                    <img src="images/farcry.jpg" class="product__mark" alt="Product - Mark of the Ninja Remastered">
+                    <div class="product__info">
+                        <h2>Far Cry 3</h2> 
+                        <p>FPS | Adventure</p>
+                        <p>29$</p> 
+                        <a href="product.html" class="view">View product</a>
+                    </div> 
+                </div>
              </div>
         
    

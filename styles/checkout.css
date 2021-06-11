@@ -38,7 +38,10 @@
     flex-direction: column;
     max-width: 325px;
   
+}
 
+.checkout div {
+    height: 236.5px;
 }
 
 

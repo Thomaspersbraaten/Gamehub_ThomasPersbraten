@@ -6,6 +6,7 @@
     <meta name="description" content="Find the game you are looking for here on Gamehub">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/basket.css">
     <link rel="stylesheet" href="../styles/review.css">
     <script src="https://kit.fontawesome.com/ba0e3e950c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.typekit.net/nyh8jpx.css">
@@ -14,23 +15,23 @@
 <body>
     <header>
         <div class="logo_left">
-            <a href="index.html"><img src="../images/ghtry.png" alt="Gamehub logo" class="logo_big" ></a>
+            <a href="loggedin.html"><img src="../images/ghtry.png" alt="Gamehub logo" class="logo_big" ></a>
         </div>
         <div class="header-top">
-            <a href="index.html"><img src="../images/ghtry.png" alt="Gamehub logo" class="logo"></a>
+            <a href="loggedin.html"><img src="../images/ghtry.png" alt="Gamehub logo" class="logo"></a>
             <div class="header-right">
-                <i class="fas fa-shopping-basket account_basket"></i>
+                <a href="basket.html"><i class="fas fa-shopping-basket account_basket"></i></a>
                 <a href="account.html"><img src="../images/loginpic.png" alt="your account picture" class="account_img"></a>
-                <!-- <i class="fas fa-user"></i> -->
+       
             </div>
         </div>    
         <input type="checkbox" id="hamburger-menu">
         <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
         <nav class="navigation">
             <ul>
-                <li><a href="../index.html" >Home</a></li>
-                <li><a href="../store.html">Store</a></li>
-                <li><a href="account.html" class="active">My account</a></li>
+                <li><a href="loggedin.html" >Home</a></li>
+                <li><a href="store.html" class="active">Store</a></li>
+                <li><a href="account.html">My account</a></li>
             </ul> 
             <div>
                 <form action="store.html">
@@ -44,22 +45,25 @@
     <h1>Review order</h1>
     <section class="review_main">
      
-        <div class="review_product">
-            <h2>Product information</h2>
-            <div class="review_img">
-                <img src="../images/Markoftheninja.jpg" alt="">
-            </div>
+        <div class="review_product" >
             <div>
-                <p>price: kr 129,99</p>
-                <p>VAT: kr 0</p>
-                <p>Shipping: kr 0</p>
-                <p>Sum to pay: kr 129,99</p>
+                <h2>Product information</h2>
+                <div class="review_img">
+                    <img src="../images/Markoftheninja.jpg" alt="">
+                </div>
+                <div>
+                    <p>Product: Mark of the Ninja : Remastered</p>
+                    <p>price: kr 129,99</p>
+                    <p>VAT: kr 0</p>
+                    <p>Shipping: kr 0</p>
+                    <p class="sum">Sum to pay: kr 129,99</p>
+                </div>
             </div>
         </div>
         <div class="review_methods">
             <div>
                 <h2>Payment Method</h2>
-                <p>Credit card nr: ***** ** ** ***</p>
+                <p>Credit card nr: ***** ** ** 1855</p>
             </div>
             <div>
                 <h2>Shipment Method</h2>
