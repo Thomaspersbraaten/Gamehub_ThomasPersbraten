@@ -41,44 +41,31 @@
         </nav>
     </header>
     <main>
-    <h1>Checkout page</h1>
-    <section class="checkout">
-        <h2>Payment Method</h2>
-        <div>
-           
-        <form action="">
-            <input type="radio" id="credit" name="payment"><label for="credit">Credit Card</label>
-            <input type="radio" id="vipps" name="payment"><label for="vipps">Vipps</label>
-            <div class="creditcard_fields">
-                <input type="number" name="creditcard" id="creditcard" required placeholder="Credit card number">
-                <input type="name" name="creditcard" id="cardholdername" required placeholder="Cardholders name">
-                <input type="date" name="creditcard" id="expiredate" required placeholder="expire date">
-                <input type="number" name="creditcard" id="cvc" required placeholder="***">
+        <h1>Checkout page</h1>
+        <section class="checkout">
+            <h2>Payment Method</h2>
+            <div>
+                <input type="radio" id="credit" name="payment"><label for="credit">Credit Card</label>
+                <input type="radio" id="vipps" name="payment"><label for="vipps">Vipps</label>
+                <div class="creditcard_fields">
+                    <input type="number" name="creditcard" id="creditcard" placeholder="Credit card number">
+                    <input type="name" name="creditcard" id="cardholdername" placeholder="Cardholders name">
+                    <input type="date" name="creditcard" id="expiredate" placeholder="expire date">
+                    <input type="number" name="creditcard" id="cvc" placeholder="Cvc">
+                </div>
+                <div class="vipps_fields">
+                    <input type="tel" name="vipps" id="vippsnr" placeholder="Phonenumber">
+                    <input type="name" name="vipps" id="vippsname" placeholder="Your name">
+                </div>
             </div>
-            <div class="vipps_fields">
-                <input type="tel" name="vipps" id="vippsnr" required placeholder="Phonenumber">
-                <input type="name" name="vipps" id="vippsname" required placeholder="Your name">
-            </div>
-   
-  
-        </form>
-
-        </div>
-
-
-
-        <div>
             <h2>Shipment Method</h2>
-            <form action="">
-
-        
+            <div>
                 <input type="radio" id="pickup" name="shipment">
                 <label for="pickup">Pick-up Point</label>
                 <input type="radio" id="mailbox" name="shipment">
                 <label for="mailbox">Mailbox</label>
                 <input type="radio" id="post-office" name="shipment">
                 <label for="post-office">Post</label>
-            
                 <div class="pickup_p">
                     <p>You can pick up the package at our warehouse after 1 hour of order confirmation</p>
                 </div>
@@ -88,16 +75,9 @@
                 <div class="post-office_p">
                     <p>We will pack and send the products within 24hours. The package will be sent to your local post-office</p>
                 </div>
-    
-            </form>
-        </div>
-        <a href="revieworder.html" class="cta cta_review">Review order</a>
- 
- 
-    </section>
-
-
-
+            </div>
+            <a href="revieworder.html" class="cta cta_review">Review order</a>    
+        </section>
     </main>
     <footer>
         <div>
