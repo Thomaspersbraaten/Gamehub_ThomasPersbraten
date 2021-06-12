@@ -45,15 +45,15 @@
     
 } 
 
+.go__home {
+    margin-bottom: 30px;
+}
+
 .confirmation__main h2 {
     margin: 40px auto;
 }
 
-@media {
-    .review_img {
-        max-width: 600px;
-    }
-}
+
 
 @media (min-width:900px){
 

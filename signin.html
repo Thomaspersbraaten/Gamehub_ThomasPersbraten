@@ -15,10 +15,10 @@
 <body>
     <header>
         <div class="logo_left">
-            <a href="index.html"><img src="images/GameHub_Logo.png" alt="Gamehub logo" class="logo_big" ></a>
+            <a href="index.html"><img src="images/gamehub_logo.png" alt="Gamehub logo" class="logo_big" ></a>
         </div>
         <div class="header-top">
-            <a href="index.html"><img src="images/Gamehub-logo.png" alt="Gamehub logo" class="logo"></a>
+            <a href="index.html"><img src="images/gamehub_logo.png" alt="Gamehub logo" class="logo"></a>
             <div class="header-right">
                 <i class="fas fa-shopping-basket"></i>
                 <i class="fas fa-user"></i>
@@ -28,12 +28,12 @@
         <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
         <nav class="navigation">
             <ul>
-                <li><a href="index.html" >Home</a></li>
-                <li><a href="store.html">Store</a></li>
-                <li><a href="signin.html" class="active">Sign in</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="loggedin/store.html">Store</a></li>
+                <li><a href="signin.html">Sign in</a></li>
             </ul> 
             <div>
-                <form action="store.html">
+                <form action="loggedin/store.html">
                     <input type="text" placeholder="Search.." class="search-bar">    
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </form>
@@ -43,21 +43,16 @@
     <main>
         <form action="success.html" method="GET" class="form">
         <section class="signup">
-    
             <label for="name">Full name</label>   <input type="text" id="name" name="name" required placeholder="Full name">
             <label for="email">Email</label><input type="email" name="email" id="email" required placeholder="me@example.com">
             <label for="password">Password</label><input type="password" name="password" id="password" required placeholder="*****">
-            
             <label for="phonenumber">Phone number</label><input type="tel" name="phonenumber" id="phonenumber" required placeholder="+47 12 23 45 78">
             <label for="streetname">Streetname</label><input type="text" name="streetname" id="streetname" required placeholder="streetname">
             <label for="zip-code">Zip code</label><input type="number" name="zip-code" id="zip-code" required placeholder="Zip Code">
             <label for="city">City</label><input type="text" name="city" id="city" required placeholder="City">
             <label for="country">Country</label><input type="text" name="county" id="country" required placeholder="Country">
-
-
         </section>
         <div class="signup_btn">
-         
             <button type="submit" class="cta">Sign up</button>
             <a href="loggedin/loggedin.html" class="cta">Log in</a>
         </div>

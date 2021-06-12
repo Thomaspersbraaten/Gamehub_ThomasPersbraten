@@ -7,7 +7,7 @@
     margin: 20px auto;
     padding: 20px;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 .sum {
    
@@ -15,6 +15,10 @@
     
     
 
+}
+
+.basket_contents img {
+    width: 150px;
 }
 
 .fa-trash-alt {
@@ -40,6 +44,9 @@
     .basket_contents {
         flex-direction: row;
 
+    }
+    .basket_contents img {
+        width: 75%;
     }
 
 }

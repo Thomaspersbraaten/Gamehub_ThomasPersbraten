@@ -1,35 +1,4 @@
- #rpg, #fps, #base, #platformer {
-    border: 1px solid black;
-} 
 
-.filter__games label {
-    text-align: center;
-    padding: 2px 5px;
-    max-width: 50px;
-    border-radius: 10px;
-
-}
-.filter__games label:hover {
-    cursor: pointer;
-}
-
-
- .filters {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0px 30px;
-    margin: 20px auto;
-    max-width: 800px;
-  
-} 
-.filters div {
-    display: none;
-}
-
-
-#fps:checked ~ .filters div {
-    display: flex;
-}
 
 .store h1 {
     margin-bottom: 10px;
@@ -38,11 +7,68 @@
 
 
 
-.filters label {
-    background-color:var(--color-nelson);
-    margin: 5px;
-    border: 1px solid black;
+
+ .page__nav {
+    display: flex;
+    flex-direction: row;
+    max-width: 950px;
+    margin: 0px auto;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 
 
+.fa-chevron-circle-left, .fa-chevron-circle-right {
+    display: none;
+}
+
+.page__nav_number {
+    display:flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+   
+} 
+
+.page__nav_number p {
+    font-size: 1.5em;
+    margin:0px auto;
+    padding: 0px 10px;
+    border-radius: 50%;
+}
+
+.inactive__page {
+    background-color:#2F3C8A ;
+    color: white;
+}
+
+
+.active__page {
+    background-color: white;
+    color: #2F3C8A;
+    text-decoration: underline;
+}
+
+@media (min-width:600px) {
+    .fa-chevron-circle-left, .fa-chevron-circle-right {
+        font-size: 2em;
+        color: #2F3C8A;
+        display: inline-block;
+ 
+       
+    }
+    .left {
+        text-align: right;
+        margin-right: 0px;
+    }
+    .right {
+        text-align: left;
+        margin-left: 0px;
+    }
+
+
+    
+
+}

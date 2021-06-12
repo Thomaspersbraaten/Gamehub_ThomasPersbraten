@@ -514,7 +514,7 @@ footer li {
     .featured-games {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 0px 30px;
+        gap:30px;
         margin-bottom: 50px;
         max-width: 950px;
        
