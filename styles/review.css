@@ -3,7 +3,7 @@
 .review_main {
     display: flex;
     flex-direction: column;
-    max-width: 950px;
+    max-width:var(--page-width);
     gap: 30px;
     padding: 10px;
     margin: 0px auto;
@@ -23,6 +23,7 @@
     margin: 20px auto;
     padding: 20px;
 }
+
 /*  order received */ 
 
 .confirmation__main {

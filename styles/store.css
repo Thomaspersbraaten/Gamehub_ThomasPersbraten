@@ -1,13 +1,6 @@
-
-
 .store h1 {
     margin-bottom: 10px;
 }
-
-
-
-
-
  .page__nav {
     display: flex;
     flex-direction: row;
@@ -18,9 +11,7 @@
     margin-top: 30px;
 }
 
-
-
-.fa-chevron-circle-left, .fa-chevron-circle-right {
+.left, .right {
     display: none;
 }
 
@@ -29,7 +20,6 @@
     flex-direction: row;
     gap: 20px;
     justify-content: center;
-   
 } 
 
 .page__nav_number p {
@@ -44,7 +34,6 @@
     color: var(--white);
 }
 
-
 .active__page {
     background-color: var(--white);
     color: #2F3C8A;
@@ -55,20 +44,16 @@
     .fa-chevron-circle-left, .fa-chevron-circle-right {
         font-size: 2em;
         color: #2F3C8A;
-        display: inline-block;
- 
-       
+        display: inline-block; 
     }
     .left {
         text-align: right;
         margin-right: 0px;
+        display: inline-block; 
     }
     .right {
         text-align: left;
         margin-left: 0px;
-    }
-
-
-    
-
+        display: inline-block; 
+    } 
 }

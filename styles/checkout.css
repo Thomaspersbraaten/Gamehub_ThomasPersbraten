@@ -21,8 +21,7 @@
     flex-direction: column;
     padding: 10px;
     margin: 10px auto;
-    height: 171px;
-    
+    height: 171px;    
 }
 
 .checkout h2 {
@@ -83,5 +82,4 @@
     .review_main > * {
         max-width: var(--page-width);
     }
-
 }
