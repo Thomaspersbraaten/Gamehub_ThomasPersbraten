@@ -1,5 +1,7 @@
 :root {
     --color-nelson: #FA801A;
+    --page-width:950px;
+    --white:#fff;
 }
 
 html {
@@ -10,7 +12,7 @@ body {
     background-color: #E2E2E2; 
     margin: 0; 
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto 1fr auto; 
     min-height: 100vh;
 }
 
@@ -22,20 +24,16 @@ img {
     width: 100%;
 }
 
-
 /* Header & Nav */
+
+#hamburger-menu {  grid-area: bars;}
+.header-top {grid-area: header-top;}
+.navigation {grid-area: header-bottom;}
+
 
 .logo_left {
     display: none;
-}
-
-header {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    min-width: 325px;
-    overflow: hidden;
-}
+} 
 
 header {
     display: grid;
@@ -44,6 +42,8 @@ header {
     "header-bottom header-bottom header-bottom";
     background-color: var(--color-nelson);
     border-radius: 30px;
+    text-align: center;
+    min-width: 325px;
 }
 
 .header-top {
@@ -51,18 +51,6 @@ header {
     justify-content: space-evenly;
     align-items: center;
     overflow: hidden;
-}
-
-#hamburger-menu {
-    grid-area: bars;
-}
-
-.header-top {
-    grid-area: header-top;
-}
-
-.navigation {
-    grid-area: header-bottom;
 }
 
 .header-right {
@@ -79,7 +67,7 @@ header {
 }
 
 .fa-shopping-basket, .fa-user {
-    background-color: white;
+    background-color: var(--white);
     border-radius: 30%;
     border: 1px solid black;
     padding: 5px 10px;
@@ -97,7 +85,6 @@ header {
     margin-top: 3px;
 }
 
-
 nav {
     display: none;
     background-color: var(--color-nelson);
@@ -106,6 +93,12 @@ nav {
     margin: 0px;
     border: 2px solid black;
 }
+
+nav a:hover {
+    text-decoration: underline;
+    color: black;
+    text-decoration-thickness: 0.2em;
+} 
 
 nav ul {
     padding: 0px 10px;
@@ -116,24 +109,21 @@ nav ul {
     font-size: 3em;
 }
 
-.nav-right {
-    display: flex;
-    justify-content: space-evenly;
-}
-
 .search-bar{
     display: inline-block;
     padding: 10px 40px 5px 10px;
     border-radius: 10px 0px 0px 10px;
     margin: 5px;
     border: 1px solid black;
+}
 
+header button:hover {
+    cursor: pointer;
 }
 
 .fa-search {
     font-size: 1.5em;
-    background-color: white;
-    
+    background-color: var(--white);
 }
 
 header button {
@@ -141,18 +131,14 @@ header button {
     border-radius: 0px 5px 5px 0px;
     margin: 0px 0px 0px -11px;
     padding: 5px;
-    background-color: white;
-
-
+    background-color: var(--white);
 }
 
  .logo {
     max-height: 50px;
     margin-top: 10px;
     width: 70.833px;
-
 } 
-
 
 nav li {
     display: inline-block;
@@ -172,15 +158,8 @@ nav a {
     color: black;
 }
 
-nav a:hover {
-    text-decoration: underline;
-    color: black;
-    text-decoration-thickness: 3px;
-} 
-
 #hamburger-menu {
     display: none;
-
 }   
 
 header label {
@@ -199,14 +178,12 @@ header label {
 
 /* Main content */ 
 
-
 h1 {
     font-family: nelson, roboto, Verdana, Geneva, Tahoma, sans-serif;
     font-size: 2rem; 
     margin: 10px 0px 0px 0px;
     text-align: center;
-    }
-
+}
 
 h2 {
     font-family: roboto, Verdana, Geneva, Tahoma, sans-serif;
@@ -222,8 +199,6 @@ h3 {
 
 /* featured games */
 
-
-
  .featured-games{
     display: grid;
     grid-template-rows: auto;
@@ -236,7 +211,6 @@ h3 {
     display: flex;
     flex-direction: column;
 } 
-
 
 .featured__product h2 {
     grid-column: 1;
@@ -271,8 +245,8 @@ h3 {
 
 .featured-games h1, .preorder h1 {
     grid-column: -1/1;
-    text-align: center;
 }
+
 .view {
      text-decoration: none;
      background-color: var(--color-nelson);
@@ -285,20 +259,13 @@ h3 {
      font-size: 1em;
      font-family: roboto, Verdana, Geneva, Tahoma, sans-serif;
  }
-  
-.view-small {
-    font-size: 0.7em;
-}
-
-
 
 .articles {
-   display: flex;
-flex-direction: column;
-width: 100%;
-margin: 10px auto;
-background-color: white;
-align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px auto;
+    background-color: var(--white);
 }
 
 .articles img {
@@ -320,13 +287,37 @@ align-items: center;
     margin-bottom: 0px;
 }
 
+/* Preorder section */
 
+.preorder {
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: auto;
+    gap: 20px 15px;
+    margin: 50px auto;
+    max-width: 300px;
+}
 
+.preorder__product {
+    margin: 0px auto;
+}
 
-
-
+.cta {
+    text-decoration: none;
+    font-family: roboto, Verdana, Geneva, Tahoma, sans-serif;
+    background-color:#10fd61;
+    border: solid 1px #000;
+    box-shadow: 5px 3px 5px;
+    color: black;
+    border-radius: 10px;
+    padding: 5px 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 30px auto;   
+}
 
 /* Footer */ 
+
 footer {
     background-color:var(--color-nelson);
     display: flex;
@@ -337,7 +328,6 @@ footer {
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-
 } 
 
 footer a {
@@ -355,21 +345,13 @@ footer div {
     gap: 50px;
 }
 
-footer ul, .copyright {
+.copyright {
     margin: 0;
     padding: 0;
     font-size: 0.7em;
 }
-footer ul {
-    display: block;
 
-
-}
-footer li {
-    padding: 0px 5px;
-    margin: 0px 20px;
-
-}
+/* Contact page */
 
 .contact_page {
     display: flex;
@@ -378,10 +360,10 @@ footer li {
     margin: 20px 10px;
     align-items: center;
 }
+
 .fa-facebook, .fa-twitter-square, .fa-instagram-square {
     font-size: 2em;
     margin: 0px 10px;
-
 }
 
 .contact_page img {
@@ -389,18 +371,7 @@ footer li {
     margin: 0px auto;
 }
 
-
 /* signup page */
-
-/* input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="tel"]   {
-    width: 50%;
-    padding: 10x 10px;
-    margin: 8px 0;
-    border-radius: 4px;
-    border: solid 1px #000;
-} */
-
-
 
 .signup {
     text-align: left;
@@ -409,7 +380,6 @@ footer li {
     flex-direction: column;
     max-width: 75%;
     padding: 10px;
-  
 }
 
 .signup > * {
@@ -426,43 +396,7 @@ footer li {
     flex-direction: column;
 }
 
-.cta {
-    text-decoration: none;
-    font-family: roboto, verdana;
-    background-color:#10fd61;
-    border: solid 1px #000;
-    box-shadow: 5px 3px 5px;
-    color: black;
-    border-radius: 10px;
-    padding: 5px 50px;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 30px auto;
-    
-}
-
-
-/* desktop */
-
-
-
-
-.preorder {
-    display: grid;
-    grid-template-columns: 1fr ;
-    grid-template-rows: auto;
-    gap: 20px 15px;
-    margin: 50px auto;
-    max-width: 950px;
-}
-
-.preorder__product {
-    margin: 0px auto;
-
-}
-
-
-/* tablet  */
+/* Media queries  */
 
 @media (min-width:600px){
     .logo {
@@ -478,67 +412,50 @@ footer li {
     }
     .contact_page {
         display: flex;
-    max-width:700px;
-    margin: 50px auto;
-    align-items: center;
-    gap: 30px;
+        max-width:700px;
+        margin: 50px auto;
+        align-items: center;
+        gap: 30px;
     }
- 
     
     .fa-facebook, .fa-twitter-square, .fa-instagram-square {
         font-size: 3em;
-    
     }
     .streamer, .gh-article {
         max-width: 600px;
     }
     .preorder {
-   
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
         gap: 15px 15px;
         margin: 50px auto;
-        max-width: 950px;
+        max-width:var(--page-width);
     }
-
-
-
- 
-
 }
 
-
-@media (min-width:800px) {
-
-
+@media (min-width:750px) {
     .featured-games {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap:30px;
         margin-bottom: 50px;
-        max-width: 950px;
-       
-    }
-
-    
+        max-width:var(--page-width);
+    }   
 }
-
 
 @media (min-width:900px) {
     .logo {display: none;}
-    .signup{max-width: 900px;}
+    .signup{max-width: var(--page-width)}
     .search-bar {padding-top:9px}
     .header-top{margin-right: 10px;}
     .active{text-decoration-thickness: 0.2em;}
-
 
     .logo_left {
         display: inline;
         grid-template-areas: header-left;
         max-height: 110px;
         margin: 0px 0px 0px 10px;
-        max-width: 110px;
-        
+        max-width: 110px;  
     }
 
     .fa-shopping-basket, .fa-user {
@@ -548,9 +465,8 @@ footer li {
         gap: 20px;
     }
     .streamer, .gh-article {
-        max-width: 900px;
+        max-width:var(--page-width);
     }
-
 
     header label {
         display: none;
@@ -578,14 +494,13 @@ footer li {
         font-size: 1.3em;
         border: none;
     }
+
     .cta:hover {
         background-color: #3D1565;
         box-shadow: 5px 3px 5px #3D1565;
-        color: white;
+        color: var(--white);
         cursor: pointer;
         font-size: 1.2em;
         font-weight: bold;
     } 
-
-
 }

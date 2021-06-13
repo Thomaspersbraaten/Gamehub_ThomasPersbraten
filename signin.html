@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/nyh8jpx.css">
     <script src="https://kit.fontawesome.com/ba0e3e950c.js" crossorigin="anonymous"></script>
-
-
 </head>
 <body>
     <header>
@@ -20,17 +18,17 @@
         <div class="header-top">
             <a href="index.html"><img src="images/gamehub_logo.png" alt="Gamehub logo" class="logo"></a>
             <div class="header-right">
-                <i class="fas fa-shopping-basket"></i>
-                <i class="fas fa-user"></i>
+                <a href="loggedin/basket.html"><i class="fas fa-shopping-basket"></i></a>
+                <a href="signin.html"><i class="fas fa-user"></i></a>
             </div>
         </div>    
         <input type="checkbox" id="hamburger-menu">
         <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
         <nav class="navigation">
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="loggedin/store.html">Store</a></li>
-                <li><a href="signin.html">Sign in</a></li>
+                <li><a href="signin.html" class="active">Sign in</a></li>
             </ul> 
             <div>
                 <form action="loggedin/store.html">
@@ -41,6 +39,7 @@
         </nav>
     </header>
     <main>
+        <h1>Sign up or log in</h1>
         <form action="success.html" method="GET" class="form">
         <section class="signup">
             <label for="name">Full name</label>   <input type="text" id="name" name="name" required placeholder="Full name">
@@ -60,11 +59,9 @@
         <footer>
             <div>
                 <a href="contact.html" class="contact">Contact Us</a>
-                <a href="faq.html" class="faq">FAQ</a>
+                <a href="#" class="faq">FAQ</a>
              </div>
-    
             <p class="copyright"> 2021 Game hub - Copyright  &copy;</p>
         </footer>
-    
 </body>
 </html>

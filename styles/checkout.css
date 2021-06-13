@@ -25,7 +25,6 @@
     
 }
 
-
 .checkout h2 {
     margin: 20px;
     font-size: 1.3em;
@@ -37,28 +36,23 @@
     display: flex;
     flex-direction: column;
     max-width: 325px;
-  
 }
 
 .checkout div {
     height: 236.5px;
 }
 
-
 .checkout input {
     padding: 5px 10px;
     border-radius: 5px;
     border: 1px solid black;
     margin-top: 10px;
- 
 }
 
 /* Shipment Method */ 
 
 .pickup_p, .mailbox_p, .post-office_p {
     display: none;
-    
-
 }
 
 #post-office:checked ~ .post-office_p, #mailbox:checked ~ .mailbox_p, #pickup:checked ~ .pickup_p, .review_methods div {
@@ -68,34 +62,26 @@
     background-color: white;
     max-width: 325px;
     margin: 20px auto;
-    
-
 }
 
 #post-office:checked ~ .post-office_p, #mailbox:checked ~ .mailbox_p, #pickup:checked ~ .pickup_p {
     height: 90px;
 }
 
-
-
 @media (min-width:600px) {
     .checkout {
-        max-width: 950px;
-    
+        max-width: var(--page-width);
     }
 
     #credit:checked ~ .creditcard_fields {
        max-width: 350px;
- 
     }
     
     #vipps:checked ~ .vipps_fields {
         max-width: 350px;
-   
-        
     }
     .review_main > * {
-        max-width: 950px;
+        max-width: var(--page-width);
     }
 
 }

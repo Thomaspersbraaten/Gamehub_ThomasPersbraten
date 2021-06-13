@@ -41,12 +41,12 @@
 
 .inactive__page {
     background-color:#2F3C8A ;
-    color: white;
+    color: var(--white);
 }
 
 
 .active__page {
-    background-color: white;
+    background-color: var(--white);
     color: #2F3C8A;
     text-decoration: underline;
 }
