@@ -30,7 +30,6 @@ img {
 .header-top {grid-area: header-top;}
 .navigation {grid-area: header-bottom;}
 
-
 .logo_left {
     display: none;
 } 
@@ -43,7 +42,6 @@ header {
     background-color: var(--color-nelson);
     border-radius: 30px;
     text-align: center;
-    min-width: 325px;
 }
 
 .header-top {
