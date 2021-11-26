@@ -1,68 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Gamehub | Sign in</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="Sign in or create an account at Gamehub.">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="https://use.typekit.net/nyh8jpx.css">
-    <script src="https://kit.fontawesome.com/ba0e3e950c.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Sign in or create an account at Gamehub."
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/nyh8jpx.css" />
+    <script
+      src="https://kit.fontawesome.com/ba0e3e950c.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Hotjar Tracking Code for My site -->
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 2721320, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
+  </head>
+  <body>
     <header>
-        <div class="logo_left">
-            <a href="index.html"><img src="images/gamehub_logo.png" alt="Gamehub logo" class="logo_big" ></a>
+      <div class="logo_left">
+        <a href="index.html"
+          ><img
+            src="images/gamehub_logo.png"
+            alt="Gamehub logo"
+            class="logo_big"
+        /></a>
+      </div>
+      <div class="header-top">
+        <a href="index.html"
+          ><img src="images/gamehub_logo.png" alt="Gamehub logo" class="logo"
+        /></a>
+        <div class="header-right">
+          <a href="loggedin/basket.html"
+            ><i class="fas fa-shopping-basket"></i
+          ></a>
+          <a href="signin.html"><i class="fas fa-user"></i></a>
         </div>
-        <div class="header-top">
-            <a href="index.html"><img src="images/gamehub_logo.png" alt="Gamehub logo" class="logo"></a>
-            <div class="header-right">
-                <a href="loggedin/basket.html"><i class="fas fa-shopping-basket"></i></a>
-                <a href="signin.html"><i class="fas fa-user"></i></a>
-            </div>
-        </div>    
-        <input type="checkbox" id="hamburger-menu">
-        <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
-        <nav class="navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="loggedin/store.html">Store</a></li>
-                <li><a href="signin.html" class="active">Sign in</a></li>
-            </ul> 
-            <div>
-                <form action="loggedin/store.html">
-                    <input type="text" placeholder="Search.." class="search-bar">    
-                    <button type="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-        </nav>
+      </div>
+      <input type="checkbox" id="hamburger-menu" />
+      <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
+      <nav class="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="loggedin/store.html">Store</a></li>
+          <li><a href="signin.html" class="active">Sign in</a></li>
+        </ul>
+        <div>
+          <form action="loggedin/store.html">
+            <input type="text" placeholder="Search.." class="search-bar" />
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
+      </nav>
     </header>
     <main>
-        <h1>Sign up or log in</h1>
-        <form action="success.html" method="GET" class="form">
+      <h1>Sign up or log in</h1>
+      <form action="success.html" method="GET" class="form">
         <section class="signup">
-            <label for="name">Full name</label>   <input type="text" id="name" name="name" required placeholder="Full name">
-            <label for="email">Email</label><input type="email" name="email" id="email" required placeholder="me@example.com">
-            <label for="password">Password</label><input type="password" name="password" id="password" required placeholder="*****">
-            <label for="phonenumber">Phone number</label><input type="tel" name="phonenumber" id="phonenumber" required placeholder="+47 12 23 45 78">
-            <label for="streetname">Streetname</label><input type="text" name="streetname" id="streetname" required placeholder="streetname">
-            <label for="zip-code">Zip code</label><input type="number" name="zip-code" id="zip-code" required placeholder="Zip Code">
-            <label for="city">City</label><input type="text" name="city" id="city" required placeholder="City">
-            <label for="country">Country</label><input type="text" name="county" id="country" required placeholder="Country">
+          <label for="name">Full name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Full name"
+          />
+          <label for="email">Email</label
+          ><input
+            type="email"
+            name="email"
+            id="email"
+            required
+            placeholder="me@example.com"
+          />
+          <label for="password">Password</label
+          ><input
+            type="password"
+            name="password"
+            id="password"
+            required
+            placeholder="*****"
+          />
+          <label for="phonenumber">Phone number</label
+          ><input
+            type="tel"
+            name="phonenumber"
+            id="phonenumber"
+            required
+            placeholder="+47 12 23 45 78"
+          />
+          <label for="streetname">Streetname</label
+          ><input
+            type="text"
+            name="streetname"
+            id="streetname"
+            required
+            placeholder="streetname"
+          />
+          <label for="zip-code">Zip code</label
+          ><input
+            type="number"
+            name="zip-code"
+            id="zip-code"
+            required
+            placeholder="Zip Code"
+          />
+          <label for="city">City</label
+          ><input
+            type="text"
+            name="city"
+            id="city"
+            required
+            placeholder="City"
+          />
+          <label for="country">Country</label
+          ><input
+            type="text"
+            name="county"
+            id="country"
+            required
+            placeholder="Country"
+          />
         </section>
         <div class="signup_btn">
-            <button type="submit" class="cta">Sign up</button>
-            <a href="loggedin/loggedin.html" class="cta">Log in</a>
+          <button type="submit" class="cta">Sign up</button>
+          <a href="loggedin/loggedin.html" class="cta">Log in</a>
         </div>
-       </form>
+      </form>
     </main>
-        <footer>
-            <div>
-                <a href="contact.html" class="contact">Contact Us</a>
-                <a href="#" class="faq">FAQ</a>
-             </div>
-            <p class="copyright"> 2021 Game hub - Copyright  &copy;</p>
-        </footer>
-</body>
+    <footer>
+      <div>
+        <a href="contact.html" class="contact">Contact Us</a>
+        <a href="#" class="faq">FAQ</a>
+      </div>
+      <p class="copyright">2021 Game hub - Copyright &copy;</p>
+    </footer>
+  </body>
 </html>
