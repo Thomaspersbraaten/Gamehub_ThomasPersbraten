@@ -73,76 +73,117 @@
       <h1>Sign up or log in</h1>
       <form action="success.html" method="GET" class="form">
         <section class="signup">
-          <label for="name">Full name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            placeholder="Full name"
-          />
-          <label for="email">Email</label
-          ><input
-            type="email"
-            name="email"
-            id="email"
-            required
-            placeholder="me@example.com"
-          />
-          <label for="password">Password</label
-          ><input
-            type="password"
-            name="password"
-            id="password"
-            required
-            placeholder="*****"
-          />
-          <label for="phonenumber">Phone number</label
-          ><input
-            type="tel"
-            name="phonenumber"
-            id="phonenumber"
-            required
-            placeholder="+47 12 23 45 78"
-          />
-          <label for="streetname">Streetname</label
-          ><input
-            type="text"
-            name="streetname"
-            id="streetname"
-            required
-            placeholder="streetname"
-          />
-          <label for="zip-code">Zip code</label
-          ><input
-            type="number"
-            name="zip-code"
-            id="zip-code"
-            required
-            placeholder="Zip Code"
-          />
-          <label for="city">City</label
-          ><input
-            type="text"
-            name="city"
-            id="city"
-            required
-            placeholder="City"
-          />
-          <label for="country">Country</label
-          ><input
-            type="text"
-            name="county"
-            id="country"
-            required
-            placeholder="Country"
-          />
+          <div class="signup-line">
+            <label for="name">Full name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Full name"
+            />
+            <div class="name-validation validation-field"></div>
+          </div>
+
+          <div class="name-info info">Please type in your full name</div>
+
+          <div class="signup-line">
+            <label for="email">Email</label
+            ><input
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="me@example.com"
+            />
+            <div class="email-validation validation-field"></div>
+          </div>
+
+          <div class="email-info info">
+            Please type in a valid email example: john@mail.com
+          </div>
+          <div class="signup-line">
+            <label for="password">Password</label
+            ><input
+              type="password"
+              name="password"
+              id="password"
+              required
+              placeholder="*****"
+            />
+            <div class="password-validation validation-field"></div>
+          </div>
+          <div class="password-info info">
+            password must have 1 lowercase letter, 1 uppercase letter, 1 number,
+            and be at least 8 characters long
+          </div>
+          <div class="signup-line">
+            <label for="re-password">Retype Password</label
+            ><input
+              type="password"
+              name="re-password"
+              id="re-password"
+              required
+              placeholder="Retype password"
+            />
+            <div class="re-password-validation validation-field"></div>
+          </div>
+          <div class="re-password-info info">Passwords must match</div>
+          <div class="signup-line">
+            <label for="phonenumber">Phone number</label
+            ><input
+              type="tel"
+              name="phonenumber"
+              id="phonenumber"
+              required
+              placeholder="12 23 45 78"
+            />
+            <div class="phone-validation validation-field"></div>
+          </div>
+          <div class="phone-info info">Please input 8 digit phone number</div>
+          <div class="signup-line">
+            <label for="streetname">Streetname</label
+            ><input
+              type="text"
+              name="streetname"
+              id="streetname"
+              required
+              placeholder="streetname"
+            />
+            <div class="street-validation validation-field"></div>
+          </div>
+          <div class="street-info info">Please input your home adress</div>
+          <div class="signup-line">
+            <label for="zip-code">Zip code</label
+            ><input
+              type="tel"
+              name="zip-code"
+              id="zip-code"
+              required
+              placeholder="Zip Code"
+            />
+            <div class="zip-validation validation-field"></div>
+          </div>
+          <div class="zip-info info">Please input your zip code, 4 digits</div>
+          <div class="signup-line">
+            <label for="city">City</label
+            ><input
+              type="text"
+              name="city"
+              id="city"
+              required
+              placeholder="City"
+            />
+            <div class="city-validation validation-field"></div>
+          </div>
+          <div class="city-info info">Please input your city</div>
         </section>
         <div class="signup_btn">
           <button type="submit" class="cta">Sign up</button>
           <a href="loggedin/loggedin.html" class="cta">Log in</a>
         </div>
       </form>
+      <script src="js/signin.js"></script>
     </main>
     <footer>
       <div>

@@ -11,6 +11,8 @@ html {
 .results {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  max-width: 1200px;
+  margin: auto;
 
   grid-template-rows: auto;
 }
@@ -21,12 +23,127 @@ html {
 }
 
 .game-card {
+  color: black;
   margin: 10px;
   /* padding: 5px; */
   background-color: aliceblue;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0.8;
+  transition: 0.5s;
 }
 
-.game-card p {
+.game-card > * {
+  padding: 5px;
+  margin: 5px;
+}
+
+.game-img {
+  background-size: cover;
+  height: 200px;
+}
+
+.game-button {
+  background-color: var(--color-nelson);
+  margin: 5px auto;
+  padding: 7px;
+  border-radius: 10px;
+  border: none;
+  box-sizing: border-box;
+  box-shadow: 2px 2px;
+}
+
+.game-card:hover {
+  opacity: 1;
+}
+.game-button:hover {
+  cursor: pointer;
+}
+
+.popup-basket {
+  display: none;
+  flex-direction: column;
+  z-index: 1;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  background-color: blanchedalmond;
+  padding: 5px;
+}
+
+.basket-img {
+  height: 150px;
+  width: 150px;
+  border-radius: 5px;
+}
+
+.add-to-basket {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* display: none; */
+  z-index: 2;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 5px;
+  position: fixed;
+  top: 30%;
+  right: 30%;
+  width: 400px;
+  background-color: white;
+  border: 2px solid green;
+  color: green;
+  align-items: center;
+}
+
+.message {
+  padding: 6px;
+}
+.x-button {
+  border: 1px solid black;
+  color: black;
+  padding: 5px;
+}
+
+.details > * {
+  margin: auto;
+  max-width: 1200px;
+}
+
+.details button:hover {
+  cursor: pointer;
+}
+
+.details button {
+  background-color: var(--color-nelson);
+  margin: 5px auto;
+  padding: 7px;
+  border-radius: 10px;
+  border: none;
+  box-sizing: border-box;
+  box-shadow: 2px 2px;
+}
+
+.details-img {
+  max-width: 1200px;
+  margin: 20px auto;
+  height: 500px;
 }
 
 body {
@@ -403,23 +520,64 @@ footer div {
 /* signup page */
 
 .signup {
-  text-align: left;
+  background-color: #b5b5b5;
+
+  border-radius: 10px;
   display: flex;
-  margin: 5px auto;
   flex-direction: column;
-  max-width: 75%;
-  padding: 10px;
+}
+
+.signup-line {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  gap: 5px;
+  justify-content: center;
+}
+
+.signup-line label {
+  text-align: left;
+  width: 150px;
+}
+
+.signup input {
+  margin-left: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 4px;
+}
+
+.validation-field {
+  width: 50px;
+  margin-left: 5px;
 }
 
 .signup > * {
-  padding: 6px;
-  border-radius: 10px;
-  margin: 5px;
+  padding: 16px 0px 16px 0px;
+  justify-content: center;
+}
+.info-container {
+  color: red;
+  font-size: 0.8em;
+  height: 15px;
+  padding: 8px;
+  margin: 0px auto 0px auto;
+}
+
+.info {
+  display: none;
+  color: red;
+  padding-top: 0px;
+}
+.form {
+  width: var(--page-width);
+  margin: 20px auto;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 .signup_btn {
   text-align: center;
-  margin: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -544,5 +702,24 @@ footer div {
     cursor: pointer;
     font-size: 1.2em;
     font-weight: bold;
+  }
+}
+
+/* small loader */
+.loader {
+  border: 10px solid #140000;
+  border-top: 10px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

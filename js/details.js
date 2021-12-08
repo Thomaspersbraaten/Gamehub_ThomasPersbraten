@@ -2,18 +2,21 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 const detailsContainer = document.querySelector(".details");
-const title = document.querySelector("title");
+const addToBasketMessage = document.querySelector(".add-to-basket");
+const popUpBasket = document.querySelector(".popup-basket");
+const message = document.querySelector(".message");
 
-const cors = "https://noroffcors.herokuapp.com/";
-const key = "key=e22366ffd2474d1dab07f27c78147445";
-const apiUrl = "https://api.rawg.io/api/games/";
-const searchApi = cors + apiUrl + id;
+const url =
+  "https://api.rawg.io/api/games/" +
+  id +
+  "?key=cdf875c74f4a4975a6fac3dd5dd7b70b";
 
 async function fetchUrl() {
   try {
-    const response = await fetch(searchApi);
-    const json = await response.json();
-    console.log(json);
+    const response = await fetch(url);
+    const gameDetails = await response.json();
+    console.log(gameDetails);
+    createHtml(gameDetails);
   } catch (error) {
     // const errorMessage = errorDuringApiCall(error);
     detailsContainer.innerHTML = error;
@@ -21,45 +24,39 @@ async function fetchUrl() {
 }
 fetchUrl();
 
-// function createHtml(drinks) {
-//   title.innerHTML = "Drink: " + drinks[0].strDrink;
-//   detailsContainer.innerHTML = "";
+function createHtml(game) {
+  document.title = "Gamehub | " + game.name;
+  detailsContainer.innerHTML = "";
+  const priceCalc = game.rating * 5;
+  const price = priceCalc.toFixed(1);
 
-// Create array of ingredients
-//   const ingredientsForDrink = [];
-//   for (let i = 1; i <= 15; i++) {
-//     if (drinks[0][`strIngredient${i}`]) {
-//       ingredientsForDrink.push(drinks[0][`strIngredient${i}`]);
-//     }
-//   }
+  detailsContainer.innerHTML += `
+           <div class="game-details">
+           <img src="${game.background_image}" class="details-img">
+            <h2>${game.name}</h2>
+             <p>  ${game.description_raw}</p>
+             <p class="price"> $${price} </p>
+             <button class="game-button"> Add to Basket </button>
+             </div>
+            `;
+  const addToBasketButton = document.querySelector(".game-button");
+  addToBasketButton.addEventListener("click", function () {
+    addToBasketMessage.style.display = "flex";
+    popUpBasket.style.display = "block";
+    addToBasketMessage.innerHTML = `
+    <div class="message">✅  Item has been added to your shopping basket</div>
+    <div style="color: black" class="content">
+    <img src="${game.background_image}" class="basket-img">
+    <h2>${game.name} </h2> 
+    <p> Price: $${price}</p>
+    </div>`;
+  });
 
-// Create array of Measurements
-//   const measureForIngredients = [];
-//   for (let i = 0; i <= 15; i++) {
-//     if (drinks[0][`strMeasure${i}`]) {
-//       measureForIngredients.push(drinks[0][`strMeasure${i}`]);
-//     }
-//   }
-
-//   detailsContainer.innerHTML += `
-//           <div class="drink-details">
-//           <img src=${drinks[0].strDrinkThumb}>
-//           <h2>${drinks[0].strDrink}</h2>
-//           <p> Glass Type: ${drinks[0].strGlass}</p>
-//           <p> Drink category: ${drinks[0].strCategory} </p>
-//           <p> ${drinks[0].strAlcoholic}</p>
-//           </div>
-//           <div class="ingredients">
-//           <p> ${drinks[0].strInstructions} </p>
-//           <p> Ingredients and Measurements</p>
-//           </div>
-//           `;
-// }
-//   for (let i = 0; i < ingredientsForDrink.length; i++) {
-//     const ingredientsContainer = document.querySelector(".ingredients");
-//     ingredientsContainer.innerHTML += `
-//       <p>
-//    ${i + 1}: ${ingredientsForDrink[i]} -
-//       ${measureForIngredients[i]} </p>
-//       `;
-//   }
+  // closeButton.addEventListener("click", function () {
+  //   addToBasketMessage.style.display = "none";
+  //   popUpBasket.style.display = "none";
+  // });
+  popUpBasket.onclick = function () {
+    popUpBasket.style.display = "none";
+  };
+}
