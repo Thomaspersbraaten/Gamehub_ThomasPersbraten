@@ -18,12 +18,12 @@ async function callApiRawg() {
       const priceCalc = game.rating * 5;
       const price = priceCalc.toFixed(1);
       console.log(price);
-      // <img src="${game.background_image}">
+
       resultsContainer.innerHTML += `<a href="details.html?id=${game.id}" class="game-card" style="text-decoration:none">
-    
+      <img src="${game.background_image}" class="game-img">
       <div style="background-image: url(${game.background_image})" class="game-img"> </div>
       <h2> ${game.name}</h2>
-      <p>Rating: ${game.rating}</p>
+      <p>Rating: ${game.rating} / 5</p>
       <p>Price: $${price} </p> 
       <button class="game-button">View product </button>
         </a>`;
@@ -48,3 +48,10 @@ async function callApiRawg() {
 }
 
 callApiRawg();
+
+// let count = 0;
+
+// setInterval(function () {
+//   count++;
+//   console.log(count);
+// }, 5000);

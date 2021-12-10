@@ -29,10 +29,10 @@ const form = document.querySelector(".form");
 function validateName() {
   nameValidator.innerHTML = "";
   if (checkLength(fullName.value, 1)) {
-    greenValidationStatus(nameValidator);
+    greenValidationStatus(nameValidator, fullName);
     removeInputInformation(nameInfo);
   } else {
-    redValidationStatus(nameValidator);
+    redValidationStatus(nameValidator, fullName);
     addInputInformation(nameInfo);
   }
 }
@@ -40,10 +40,10 @@ function validateName() {
 function validateEmail() {
   emailValidator.innerHTML = "";
   if (checkEmail(email.value)) {
-    greenValidationStatus(emailValidator);
+    greenValidationStatus(emailValidator, email);
     removeInputInformation(emailInfo);
   } else {
-    redValidationStatus(emailValidator);
+    redValidationStatus(emailValidator, email);
     addInputInformation(emailInfo);
   }
 }
@@ -51,10 +51,10 @@ function validateEmail() {
 function validatePassword() {
   passwordValidator.innerHTML = "";
   if (checkPassword(password.value)) {
-    greenValidationStatus(passwordValidator);
+    greenValidationStatus(passwordValidator, password);
     removeInputInformation(passwordInfo);
   } else {
-    redValidationStatus(passwordValidator);
+    redValidationStatus(passwordValidator, password);
     addInputInformation(passwordInfo);
   }
 }
@@ -62,10 +62,10 @@ function validatePassword() {
 function checkIfPasswordsMatches() {
   rePasswordValidationField.innerHTML = "";
   if (passwordField.value === rePasswordField.value) {
-    greenValidationStatus(rePasswordValidationField);
+    greenValidationStatus(rePasswordValidationField, rePasswordField);
     removeInputInformation(rePasswordInfo);
   } else {
-    redValidationStatus(rePasswordValidationField);
+    redValidationStatus(rePasswordValidationField, rePasswordField);
     addInputInformation(rePasswordInfo);
   }
 }
@@ -116,21 +116,21 @@ function validateCity() {
 
 // loader and green checkmark\red cross validation
 
-function greenValidationStatus(container) {
-  console.log(container);
+function greenValidationStatus(container, input) {
   container.classList.add("loader");
   setTimeout(function () {
     container.classList.remove("loader");
     container.innerHTML = `✔️`;
-    console.log(container);
+    input.style.border = "1px solid black";
   }, 400);
 }
 
-function redValidationStatus(container) {
+function redValidationStatus(container, input) {
   container.classList.add("loader");
   setTimeout(function () {
     container.classList.remove("loader");
     container.innerHTML = `❌`;
+    input.style.border = "1px solid red";
   }, 400);
 }
 

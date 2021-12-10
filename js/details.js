@@ -25,17 +25,23 @@ async function fetchUrl() {
 fetchUrl();
 
 function createHtml(game) {
-  document.title = "Gamehub | " + game.name;
+  const genres = game.genres;
+  // for (let i = 0; i < genres.length; i++) {
+  //   console.log(genres[i].name);
+  //   document.title = game.name + " | " + game.genres[0].name + " | Gamehub  ";
+  // }
+  // console.log(game.genres[0].name);
+  document.title = game.name + " | " + game.genres[0].name + " | Gamehub  ";
   detailsContainer.innerHTML = "";
-  const priceCalc = game.rating * 5;
-  const price = priceCalc.toFixed(1);
+  const priceCalc = game.rating * 40;
+  const price = priceCalc.toFixed(0) + ",-";
 
   detailsContainer.innerHTML += `
            <div class="game-details">
            <img src="${game.background_image}" class="details-img">
             <h2>${game.name}</h2>
-             <p>  ${game.description_raw}</p>
-             <p class="price"> $${price} </p>
+             <p> ${game.description_raw}</p>
+             <p class="price">Price: ${price} </p>
              <button class="game-button"> Add to Basket </button>
              </div>
             `;
