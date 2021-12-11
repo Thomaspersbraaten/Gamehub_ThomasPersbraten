@@ -50,7 +50,7 @@ function validateEmail() {
 
 function validatePassword() {
   passwordValidator.innerHTML = "";
-  if (checkPassword(password.value)) {
+  if (checkPassword(passwordField.value)) {
     greenValidationStatus(passwordValidator, password);
     removeInputInformation(passwordInfo);
   } else {
@@ -61,7 +61,10 @@ function validatePassword() {
 
 function checkIfPasswordsMatches() {
   rePasswordValidationField.innerHTML = "";
-  if (passwordField.value === rePasswordField.value) {
+  if (
+    passwordField.value === rePasswordField.value &&
+    checkPassword(rePasswordField.value)
+  ) {
     greenValidationStatus(rePasswordValidationField, rePasswordField);
     removeInputInformation(rePasswordInfo);
   } else {
@@ -122,7 +125,7 @@ function greenValidationStatus(container, input) {
     container.classList.remove("loader");
     container.innerHTML = `✔️`;
     input.style.border = "1px solid black";
-  }, 400);
+  }, 250);
 }
 
 function redValidationStatus(container, input) {
@@ -131,7 +134,7 @@ function redValidationStatus(container, input) {
     container.classList.remove("loader");
     container.innerHTML = `❌`;
     input.style.border = "1px solid red";
-  }, 400);
+  }, 250);
 }
 
 // red information text under inputs
