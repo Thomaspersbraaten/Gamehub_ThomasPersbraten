@@ -8,43 +8,72 @@ const rePasswordField = document.querySelector("#re-password");
 const rePasswordValidationField = document.querySelector(
   ".re-password-validation"
 );
-const phoneField = document.querySelector("#phonenumber");
-const phoneValidationField = document.querySelector(".phone-validation");
-const streetField = document.querySelector("#streetname");
-const streetValidationField = document.querySelector(".street-validation");
-const zipField = document.querySelector("#zip-code");
-const zipValidationField = document.querySelector(".zip-validation");
-const cityField = document.querySelector("#city");
-const cityValidationField = document.querySelector(".city-validation");
+
+// const phoneField = document.querySelector("#phonenumber");
+// const phoneValidationField = document.querySelector(".phone-validation");
+// const streetField = document.querySelector("#streetname");
+// const streetValidationField = document.querySelector(".street-validation");
+// const zipField = document.querySelector("#zip-code");
+// const zipValidationField = document.querySelector(".zip-validation");
+// const cityField = document.querySelector("#city");
+// const cityValidationField = document.querySelector(".city-validation");
 const nameInfo = document.querySelector(".name-info");
 const emailInfo = document.querySelector(".email-info");
 const passwordInfo = document.querySelector(".password-info");
 const rePasswordInfo = document.querySelector(".re-password-info");
-const phoneInfo = document.querySelector(".phone-info");
-const streetInfo = document.querySelector(".street-info");
-const zipInfo = document.querySelector(".zip-info");
-const cityInfo = document.querySelector(".city-info");
+// const phoneInfo = document.querySelector(".phone-info");
+// const streetInfo = document.querySelector(".street-info");
+// const zipInfo = document.querySelector(".zip-info");
+// const cityInfo = document.querySelector(".city-info");
 const form = document.querySelector(".form");
+const signupContainer = document.querySelector(".signup");
+
+var nameValid = false;
+var emailValid = false;
+var passwordValid = false;
+var rePasswordValid = false;
 
 function validateName() {
   nameValidator.innerHTML = "";
   if (checkLength(fullName.value, 1)) {
     greenValidationStatus(nameValidator, fullName);
     removeInputInformation(nameInfo);
+    nameValid = true;
+    return nameValid;
   } else {
     redValidationStatus(nameValidator, fullName);
     addInputInformation(nameInfo);
+    nameValid = false;
+    return nameValid;
   }
 }
+
+function myFunction(event) {
+  event.preventDefault();
+  console.log(nameValid);
+  console.log(emailValid);
+  console.log(rePasswordValid);
+  console.log(passwordValid);
+  if (nameValid && emailValid && passwordValid && rePasswordValid) {
+    form.reset();
+    signupContainer.innerHTML += `<div class="message"> Your message has been sent</div>`;
+  }
+}
+
+form.addEventListener("submit", myFunction);
 
 function validateEmail() {
   emailValidator.innerHTML = "";
   if (checkEmail(email.value)) {
     greenValidationStatus(emailValidator, email);
     removeInputInformation(emailInfo);
+    emailValid = true;
+    return emailValid;
   } else {
     redValidationStatus(emailValidator, email);
     addInputInformation(emailInfo);
+    emailValid = false;
+    return emailValid;
   }
 }
 
@@ -53,9 +82,13 @@ function validatePassword() {
   if (checkPassword(passwordField.value)) {
     greenValidationStatus(passwordValidator, password);
     removeInputInformation(passwordInfo);
+    passwordValid = true;
+    return passwordValid;
   } else {
     redValidationStatus(passwordValidator, password);
     addInputInformation(passwordInfo);
+    passwordValid = false;
+    return passwordValid;
   }
 }
 
@@ -67,55 +100,59 @@ function checkIfPasswordsMatches() {
   ) {
     greenValidationStatus(rePasswordValidationField, rePasswordField);
     removeInputInformation(rePasswordInfo);
+    rePasswordValid = true;
+    return rePasswordValid;
   } else {
     redValidationStatus(rePasswordValidationField, rePasswordField);
     addInputInformation(rePasswordInfo);
+    rePasswordValid = false;
+    return rePasswordValid;
   }
 }
 
-function validatePhoneNumber() {
-  phoneValidationField.innerHTML = "";
-  if (checkPhonenumber(phoneField.value)) {
-    greenValidationStatus(phoneValidationField);
-    removeInputInformation(phoneInfo);
-  } else {
-    redValidationStatus(phoneValidationField);
-    addInputInformation(phoneInfo);
-  }
-}
+// function validatePhoneNumber() {
+//   phoneValidationField.innerHTML = "";
+//   if (checkPhonenumber(phoneField.value)) {
+//     greenValidationStatus(phoneValidationField);
+//     removeInputInformation(phoneInfo);
+//   } else {
+//     redValidationStatus(phoneValidationField);
+//     addInputInformation(phoneInfo);
+//   }
+// }
 
-function validateStreetname() {
-  streetValidationField.innerHTML = "";
-  if (checkLength(streetField.value, 1)) {
-    greenValidationStatus(streetValidationField);
-    removeInputInformation(streetInfo);
-  } else {
-    redValidationStatus(streetValidationField);
-    addInputInformation(streetInfo);
-  }
-}
+// function validateStreetname() {
+//   streetValidationField.innerHTML = "";
+//   if (checkLength(streetField.value, 1)) {
+//     greenValidationStatus(streetValidationField);
+//     removeInputInformation(streetInfo);
+//   } else {
+//     redValidationStatus(streetValidationField);
+//     addInputInformation(streetInfo);
+//   }
+// }
 
-function validateZip() {
-  zipValidationField.innerHTML = "";
-  if (checkZip(zipField.value)) {
-    greenValidationStatus(zipValidationField);
-    removeInputInformation(zipInfo);
-  } else {
-    redValidationStatus(zipValidationField);
-    addInputInformation(zipInfo);
-  }
-}
+// function validateZip() {
+//   zipValidationField.innerHTML = "";
+//   if (checkZip(zipField.value)) {
+//     greenValidationStatus(zipValidationField);
+//     removeInputInformation(zipInfo);
+//   } else {
+//     redValidationStatus(zipValidationField);
+//     addInputInformation(zipInfo);
+//   }
+// }
 
-function validateCity() {
-  cityValidationField.innerHTML = "";
-  if (checkLength(cityField.value, 1)) {
-    greenValidationStatus(cityValidationField);
-    removeInputInformation(cityInfo);
-  } else {
-    redValidationStatus(cityValidationField);
-    addInputInformation(cityInfo);
-  }
-}
+// function validateCity() {
+//   cityValidationField.innerHTML = "";
+//   if (checkLength(cityField.value, 1)) {
+//     greenValidationStatus(cityValidationField);
+//     removeInputInformation(cityInfo);
+//   } else {
+//     redValidationStatus(cityValidationField);
+//     addInputInformation(cityInfo);
+//   }
+// }
 
 // loader and green checkmark\red cross validation
 
@@ -156,10 +193,10 @@ fullName.addEventListener("blur", validateName);
 emailField.addEventListener("blur", validateEmail);
 passwordField.addEventListener("blur", validatePassword);
 rePasswordField.addEventListener("blur", checkIfPasswordsMatches);
-phoneField.addEventListener("blur", validatePhoneNumber);
-streetField.addEventListener("blur", validateStreetname);
-zipField.addEventListener("blur", validateZip);
-cityField.addEventListener("blur", validateCity);
+// phoneField.addEventListener("blur", validatePhoneNumber);
+// streetField.addEventListener("blur", validateStreetname);
+// zipField.addEventListener("blur", validateZip);
+// cityField.addEventListener("blur", validateCity);
 // Checks
 
 function checkLength(value, length) {

@@ -15,7 +15,7 @@ async function fetchUrl() {
   try {
     const response = await fetch(url);
     const gameDetails = await response.json();
-    console.log(gameDetails);
+    // console.log(gameDetails);
     createHtml(gameDetails);
   } catch (error) {
     // const errorMessage = errorDuringApiCall(error);

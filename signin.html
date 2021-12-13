@@ -71,17 +71,11 @@
     </header>
     <main>
       <h1>Sign up or log in</h1>
-      <form action="success.html" method="GET" class="form">
+      <form class="form">
         <section class="signup">
           <div class="signup-line">
             <label for="name">Full name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              placeholder="Full name"
-            />
+            <input type="text" id="name" name="name" placeholder="Full name" />
             <div class="name-validation validation-field"></div>
           </div>
 
@@ -93,7 +87,6 @@
               type="email"
               name="email"
               id="email"
-              required
               placeholder="me@example.com"
             />
             <div class="email-validation validation-field"></div>
@@ -108,7 +101,6 @@
               type="password"
               name="password"
               id="password"
-              required
               placeholder="*****"
             />
             <div class="password-validation validation-field"></div>
@@ -123,7 +115,6 @@
               type="password"
               name="re-password"
               id="re-password"
-              required
               placeholder="Retype password"
             />
             <div class="re-password-validation validation-field"></div>
@@ -178,14 +169,16 @@
           </div>
           <div class="city-info info">Please input your city</div> -->
         </section>
+
         <div class="signup_btn">
-          <button type="submit" class="cta">Sign up</button>
+          <button class="cta">Sign up</button>
         </div>
         <div>
           <p>If you already have an account, Please log in</p>
-          <a href="loggedin/loggedin.html" class="cta">Log in</a>
+          <a class="cta">Log in</a>
         </div>
       </form>
+
       <script src="js/signin.js"></script>
     </main>
     <footer>

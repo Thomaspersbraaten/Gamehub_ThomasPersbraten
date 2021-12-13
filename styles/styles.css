@@ -19,7 +19,6 @@ html {
 
 .game-card img {
   width: 100%;
-  height: 20em;
 }
 
 .game-card {
@@ -32,18 +31,12 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  opacity: 0.8;
+  opacity: 0.9;
   transition: 0.5s;
 }
 
-.game-card > * {
-  padding: 5px;
-  margin: 5px;
-}
-
-.game-img {
-  background-size: cover;
-  height: 200px;
+.game-info {
+  padding: 0px 5px;
 }
 
 .game-button {
@@ -341,6 +334,95 @@ h3 {
 
 /* featured games */
 
+.recently-released {
+  height: 400px;
+  margin: 10px auto 0px auto;
+  width: var(--page-width);
+}
+
+.recently-released img {
+  height: 400px;
+}
+
+.game-index {
+  width: var(--page-width);
+  border: 2px solid grey;
+  border-radius: 20px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.item {
+  height: 15px;
+  width: 30px;
+}
+
+.active-item {
+  background-color: #3d1565;
+  border-radius: 10px;
+  border: none;
+}
+
+.released-game {
+  animation-delay: 0;
+  animation: show 5s;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.wrapper {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  display: flex;
+  gap: 15px;
+  background-color: #f5efef;
+  border: 1px solid #707070;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.wrapper > * {
+  margin: 5px 10px;
+}
+
+.price {
+  color: white;
+  background-color: var(--color-nelson);
+  padding: 5px 30px;
+  font-weight: bolder;
+  font-size: 1.1em;
+}
+
+.game-name {
+  color: black;
+  padding: 5px;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0.75;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}
+
 .featured-games {
   display: grid;
   grid-template-rows: auto;
@@ -519,6 +601,11 @@ footer div {
 
 /* signup page */
 
+.yes {
+  width: 200px;
+  height: 200px;
+}
+
 .signup {
   background-color: #b5b5b5;
 
@@ -633,6 +720,20 @@ footer div {
 }
 
 @media (min-width: 900px) {
+  .game-card {
+    color: black;
+    margin: 10px;
+    background-color: aliceblue;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .game-card > * {
+    height: 50%;
+  }
   .logo {
     display: none;
   }
@@ -663,10 +764,6 @@ footer div {
   }
   .header-right {
     gap: 20px;
-  }
-  .streamer,
-  .gh-article {
-    max-width: var(--page-width);
   }
 
   header label {
