@@ -13,12 +13,19 @@ html {
   grid-template-columns: 1fr 1fr 1fr;
   max-width: 1200px;
   margin: auto;
-
   grid-template-rows: auto;
 }
 
 .game-card img {
   width: 100%;
+}
+
+br {
+  height: 10px;
+  color: black;
+  background-color: black;
+  width: 100%;
+  margin: auto;
 }
 
 .game-card {
@@ -114,31 +121,6 @@ html {
   padding: 5px;
 }
 
-.details > * {
-  margin: auto;
-  max-width: 1200px;
-}
-
-.details button:hover {
-  cursor: pointer;
-}
-
-.details button {
-  background-color: var(--color-nelson);
-  margin: 5px auto;
-  padding: 7px;
-  border-radius: 10px;
-  border: none;
-  box-sizing: border-box;
-  box-shadow: 2px 2px;
-}
-
-.details-img {
-  max-width: 1200px;
-  margin: 20px auto;
-  height: 500px;
-}
-
 body {
   background-color: #e2e2e2;
   margin: 0;
@@ -147,12 +129,13 @@ body {
   min-height: 100vh;
 }
 
-main {
-  padding: 5px;
-}
-
 img {
   width: 100%;
+}
+
+.section-header {
+  font-size: 1.2em;
+  border-top: 3px solid black;
 }
 
 /* Header & Nav */
@@ -324,6 +307,7 @@ h2 {
   font-family: roboto, Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1em;
   margin: 30px auto 20px;
+  text-align: center;
 }
 
 h3 {
@@ -338,10 +322,6 @@ h3 {
   height: 400px;
   margin: 10px auto 0px auto;
   width: var(--page-width);
-}
-
-.recently-released img {
-  height: 400px;
 }
 
 .game-index {
@@ -363,43 +343,6 @@ h3 {
   background-color: #3d1565;
   border-radius: 10px;
   border: none;
-}
-
-.released-game {
-  animation-delay: 0;
-  animation: show 5s;
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
-.wrapper {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
-  display: flex;
-  gap: 15px;
-  background-color: #f5efef;
-  border: 1px solid #707070;
-  border-radius: 15px;
-  margin-bottom: 10px;
-}
-
-.wrapper > * {
-  margin: 5px 10px;
-}
-
-.price {
-  color: white;
-  background-color: var(--color-nelson);
-  padding: 5px 30px;
-  font-weight: bolder;
-  font-size: 1.1em;
-}
-
-.game-name {
-  color: black;
-  padding: 5px;
 }
 
 @keyframes show {
@@ -707,6 +650,10 @@ footer div {
     margin: 50px auto;
     max-width: var(--page-width);
   }
+  .released-game img {
+    width: 100%;
+    margin: auto;
+  }
 }
 
 @media (min-width: 750px) {
@@ -720,6 +667,79 @@ footer div {
 }
 
 @media (min-width: 900px) {
+  .details > * {
+    margin: auto;
+    max-width: 1200px;
+  }
+  .details {
+    margin: 20px;
+  }
+  .top-details {
+    display: flex;
+  }
+  .top-details > * {
+    flex: 1;
+  }
+
+  .details button:hover {
+    cursor: pointer;
+  }
+
+  .details button {
+    background-color: var(--color-nelson);
+    margin: 5px auto;
+    padding: 7px;
+    border-radius: 10px;
+    border: none;
+    box-sizing: border-box;
+    box-shadow: 2px 2px;
+  }
+
+  .details-img {
+    max-width: 1200px;
+    margin: 20px auto;
+    height: 300px;
+  }
+  .recently-released img {
+    height: 400px;
+  }
+  .released-game {
+    animation-delay: 0;
+    animation: show 5s;
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .wrapper {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    display: flex;
+    gap: 15px;
+    background-color: #f5efef;
+    border: 1px solid #707070;
+    border-radius: 15px;
+    margin-bottom: 10px;
+  }
+
+  .wrapper > * {
+    margin: 5px 10px;
+  }
+
+  .price {
+    color: white;
+    background-color: var(--color-nelson);
+    padding: 5px 30px;
+    font-weight: bolder;
+    font-size: 1.1em;
+  }
+
+  .game-name {
+    color: black;
+    padding: 5px;
+  }
+
   .game-card {
     color: black;
     margin: 10px;

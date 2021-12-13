@@ -15,7 +15,7 @@ async function fetchUrl() {
   try {
     const response = await fetch(url);
     const gameDetails = await response.json();
-    // console.log(gameDetails);
+    console.log(gameDetails);
     createHtml(gameDetails);
   } catch (error) {
     // const errorMessage = errorDuringApiCall(error);
@@ -33,18 +33,35 @@ function createHtml(game) {
   // console.log(game.genres[0].name);
   document.title = game.name + " | " + game.genres[0].name + " | Gamehub  ";
   detailsContainer.innerHTML = "";
-  const priceCalc = game.rating * 40;
-  const price = priceCalc.toFixed(0) + ",-";
+
+  if (game.rating === 0) {
+    var price = 80;
+    var usedCopyPrice = 40;
+  } else {
+    var price = game.rating.toFixed(0) * 40 + ",-";
+    var usedCopyPrice = game.rating.toFixed(0) * 20 + ",-";
+  }
 
   detailsContainer.innerHTML += `
-           <div class="game-details">
-           <img src="${game.background_image}" class="details-img">
-            <h2>${game.name}</h2>
-             <p> ${game.description_raw}</p>
-             <p class="price">Price: ${price} </p>
-             <button class="game-button"> Add to Basket </button>
-             </div>
-            `;
+    <div class="top-details">
+    <img src="${game.background_image}" class="details-img">
+    <div>
+    <div class="new">
+    <p class="details-price new-price">Price: ${price} </p>
+    <button class="game-button"> Add to Basket </button>
+
+    </div>
+    <div class="old">
+    <p class="details-price used-price">Used Product - Price: ${usedCopyPrice} </p>
+    <button class="game-button"> Add to Basket </button>
+    </div>
+ 
+     
+    </div>
+    </div>
+      <h2>${game.name}</h2>
+      <p> ${game.description_raw}</p>
+    `;
   const addToBasketButton = document.querySelector(".game-button");
   addToBasketButton.addEventListener("click", function () {
     addToBasketMessage.style.display = "flex";
@@ -57,12 +74,12 @@ function createHtml(game) {
     <p> Price: $${price}</p>
     </div>`;
   });
-
-  // closeButton.addEventListener("click", function () {
-  //   addToBasketMessage.style.display = "none";
-  //   popUpBasket.style.display = "none";
-  // });
-  popUpBasket.onclick = function () {
-    popUpBasket.style.display = "none";
-  };
 }
+
+// closeButton.addEventListener("click", function () {
+//   addToBasketMessage.style.display = "none";
+//   popUpBasket.style.display = "none";
+// });
+popUpBasket.onclick = function () {
+  popUpBasket.style.display = "none";
+};
