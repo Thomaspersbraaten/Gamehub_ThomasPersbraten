@@ -194,7 +194,8 @@ header {
 }
 
 .fa-shopping-basket,
-.fa-user {
+.fa-user,
+.fa-shopping-cart {
   background-color: var(--white);
   border-radius: 30%;
   border: 1px solid black;
@@ -286,6 +287,16 @@ nav a {
   height: 200px;
 }
 
+.released-game {
+  height: 200px;
+}
+
+.game-name,
+.price {
+  margin: 0px auto;
+  padding: 0px;
+}
+
 .active {
   text-decoration: underline;
   color: black;
@@ -307,12 +318,26 @@ header label {
 #hamburger-menu:checked ~ nav {
   display: inline-block;
 }
-
 .wrapper {
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
   display: flex;
+  flex-direction: row;
+  background-color: #f5efef;
+  border: 1px solid #707070;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.price {
+  color: white;
+  background-color: var(--color-nelson);
+  padding: 5px 10px;
+  /* margin: 5px; */
+  font-weight: bolder;
+  font-size: 1em;
+}
+
+.game-index {
+  display: none;
 }
 
 /* Main content */
@@ -326,8 +351,8 @@ h1 {
 
 h2 {
   font-family: roboto, Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1em;
-  margin: 30px auto 20px;
+  font-size: 1.1em;
+  margin: 10px auto 10px;
   text-align: center;
 }
 
@@ -439,33 +464,6 @@ h3 {
   font-family: roboto, Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.articles {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: 10px auto;
-  background-color: var(--white);
-}
-
-.articles img {
-  float: left;
-  margin: 15px 10px;
-  width: 250px;
-}
-
-.articles h2 {
-  margin: 12px auto;
-}
-
-.articles > * {
-  max-width: 300px;
-  margin: 20px auto;
-}
-
-.articles h1 {
-  margin-bottom: 0px;
-}
-
 /* Preorder section */
 
 .preorder {
@@ -480,10 +478,6 @@ h3 {
 .game-index {
   margin: auto;
   padding: 0px 5px;
-}
-
-.preorder__product {
-  margin: 0px auto;
 }
 
 .cta {
@@ -564,12 +558,25 @@ footer div {
   height: 200px;
 }
 
-.signup {
-  background-color: #b5b5b5;
-
-  border-radius: 10px;
+.signup-form,
+.login-form {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  margin: auto;
+  text-align: center;
+}
+
+.login-form {
+  border-top: 1px solid black;
+}
+
+.sign-in {
+  background-color: #b5b5b5c7;
+  padding: 20px;
+  border-radius: 30px;
+  margin: 30px;
+  border-radius: 10px;
 }
 
 .signup-line {
@@ -578,6 +585,23 @@ footer div {
   margin: auto;
   gap: 5px;
   justify-content: center;
+}
+.sign-in {
+  border-top: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-in label {
+  margin: 5px auto;
+}
+
+.sign-in input {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 4px;
+  width: 200px;
+  margin: auto;
 }
 
 .signup-line label {
@@ -610,6 +634,7 @@ footer div {
 }
 
 .info {
+  margin: auto;
   display: none;
   color: red;
   padding-top: 0px;
@@ -851,6 +876,12 @@ footer div {
     height: 400px;
     margin: 10px auto 0px auto;
     width: var(--page-width);
+  }
+  .message {
+    margin: 30px auto;
+    background-color: rgb(0, 255, 0);
+    border: 3px solid black;
+    padding: 10px 20px;
   }
 }
 

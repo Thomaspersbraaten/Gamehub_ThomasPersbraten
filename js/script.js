@@ -109,41 +109,44 @@ async function recentlyReleasedSection() {
   createHtml(releasedData);
 
   var itemChildren = document.querySelector(".game-index").childNodes;
-  if (releasedData[counter] === undefined) {
+
+  if (counter === 5) {
     counter = 0;
     counterMinus = -1;
-    itemChildren[19].classList.remove("active-item");
+    itemChildren[4].classList.remove("active-item");
   } else {
+    console.log(counter);
     if (counterMinus >= 0) {
       itemChildren[counterMinus].classList.remove("active-item");
     }
     itemChildren[counter].classList.add("active-item");
     let price = 99 + ",-";
     recentlyReleasedContainer.innerHTML = `
-    <a class="released-game" href="details.html?id=${releasedData[counter].id}">
-     <img src="${releasedData[counter].background_image}">
-     <div class="wrapper">
-     <h2 class="game-name"> ${releasedData[counter].name}</h2>
-     <h2 class="price"> ${price} </h2> 
-     </div>
-      </a>
-     `;
+      <a class="released-game" href="details.html?id=${releasedData[counter].id}" style="text-decoration:none;">
+       <img src="${releasedData[counter].background_image}">
+       <div class="wrapper">
+       <p class="game-name"> ${releasedData[counter].name}</p>
+       <p class="price"> ${price} </p> 
+       </div>
+        </a>
+       `;
     counter++;
     counterMinus++;
   }
 }
+
 recentlyReleasedSection();
 
 function createHtml(games) {
-  const gamesArray = [];
-  for (let i = 0; i <= 19; i++) {
-    if (games[i]) {
-      gamesArray.push(games[i]);
-    }
-  }
+  // const gamesArray = [];
+  // for (let i = 0; i <= 19; i++) {
+  //   if (games[i]) {
+  //     gamesArray.push(games[i]);
+  //   }
+  // }
   // console.log(gamesArray);
   for (let i = 0; i < games.length; i++) {
-    if (gameIndex.childElementCount === 20) {
+    if (gameIndex.childElementCount === 5) {
       return;
     } else {
       gameIndex.innerHTML += `<button class="item"></button>`;

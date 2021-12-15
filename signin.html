@@ -70,18 +70,20 @@
         </div>
       </nav>
     </header>
+    <!-- Space -->
+
     <main>
       <h1>Sign up or log in</h1>
-      <form class="form">
-        <section class="signup">
+      <section class="sign-in">
+ 
+      <form class="signup-form">
+        <h2>Create a Gamehub account</h2>
           <div class="signup-line">
             <label for="name">Full name</label>
             <input type="text" id="name" name="name" placeholder="Full name" />
             <div class="name-validation validation-field"></div>
           </div>
-
           <div class="name-info info">Please type in your full name</div>
-
           <div class="signup-line">
             <label for="email">Email</label
             ><input
@@ -92,7 +94,6 @@
             />
             <div class="email-validation validation-field"></div>
           </div>
-
           <div class="email-info info">
             Please type in a valid email example: john@mail.com
           </div>
@@ -121,64 +122,48 @@
             <div class="re-password-validation validation-field"></div>
           </div>
           <div class="re-password-info info">Passwords must match</div>
-          <!-- <div class="signup-line">
-            <label for="phonenumber">Phone number</label
-            ><input
-              type="tel"
-              name="phonenumber"
-              id="phonenumber"
-              required
-              placeholder="12 23 45 78"
-            />
-            <div class="phone-validation validation-field"></div>
+          <div class="signup_btn">
+          <div class="message" style="display:none" >
+             Thank you for registering for a Gamehub account! <br />
+            Please login below 
           </div>
-          <div class="phone-info info">Please input 8 digit phone number</div>
-          <div class="signup-line">
-            <label for="streetname">Streetname</label
-            ><input
-              type="text"
-              name="streetname"
-              id="streetname"
-              required
-              placeholder="streetname"
-            />
-            <div class="street-validation validation-field"></div>
-          </div>
-          <div class="street-info info">Please input your home adress</div>
-          <div class="signup-line">
-            <label for="zip-code">Zip code</label
-            ><input
-              type="tel"
-              name="zip-code"
-              id="zip-code"
-              required
-              placeholder="Zip Code"
-            />
-            <div class="zip-validation validation-field"></div>
-          </div>
-          <div class="zip-info info">Please input your zip code, 4 digits</div>
-          <div class="signup-line">
-            <label for="city">City</label
-            ><input
-              type="text"
-              name="city"
-              id="city"
-              required
-              placeholder="City"
-            />
-            <div class="city-validation validation-field"></div>
-          </div>
-          <div class="city-info info">Please input your city</div> -->
-        </section>
-
-        <div class="signup_btn">
           <button class="cta">Sign up</button>
         </div>
-        <div class="sign-in">
-          <p>If you already have an account, Please log in</p>
-          <a class="cta">Log in</a>
-        </div>
       </form>
+
+      <!-- login form -->
+
+      <form class="login-form">
+        <h2>If you already have a Gamehub account, Please log in below</h2>
+        <div class="signup-line">
+          <label for="email-login">Email</label>
+          <input
+            type="email"
+            name="email-login"
+            id="email-login"
+            placeholder="me@example.com"
+          />
+          <div class="validation-field"></div>
+        </div>
+    
+        <div class="signup-line">
+          <label for="password-login">Password</label>
+          <input
+            type="password"
+            name="password-login"
+            id="password-login"
+            placeholder="*****"
+          />
+          <div class="validation-field"></div>
+        </div>
+        <div class="login-info info">Password or email is not correct</div>
+          <button class="cta login-button">Log in</button>
+        </div>
+     
+      </form>
+    </section>
+  
+ 
 
       <script src="js/signin.js"></script>
     </main>

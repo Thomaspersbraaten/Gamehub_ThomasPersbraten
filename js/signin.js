@@ -8,30 +8,47 @@ const rePasswordField = document.querySelector("#re-password");
 const rePasswordValidationField = document.querySelector(
   ".re-password-validation"
 );
-
-// const phoneField = document.querySelector("#phonenumber");
-// const phoneValidationField = document.querySelector(".phone-validation");
-// const streetField = document.querySelector("#streetname");
-// const streetValidationField = document.querySelector(".street-validation");
-// const zipField = document.querySelector("#zip-code");
-// const zipValidationField = document.querySelector(".zip-validation");
-// const cityField = document.querySelector("#city");
-// const cityValidationField = document.querySelector(".city-validation");
 const nameInfo = document.querySelector(".name-info");
 const emailInfo = document.querySelector(".email-info");
 const passwordInfo = document.querySelector(".password-info");
 const rePasswordInfo = document.querySelector(".re-password-info");
-// const phoneInfo = document.querySelector(".phone-info");
-// const streetInfo = document.querySelector(".street-info");
-// const zipInfo = document.querySelector(".zip-info");
-// const cityInfo = document.querySelector(".city-info");
-const form = document.querySelector(".form");
+
+const signUpForm = document.querySelector(".signup-form");
 const signupContainer = document.querySelector(".signup");
+const messageContainer = document.querySelector(".message");
+
+// form event
 
 var nameValid = false;
 var emailValid = false;
 var passwordValid = false;
 var rePasswordValid = false;
+var signInArray = [];
+
+function formValidation(event) {
+  event.preventDefault();
+  if (nameValid && emailValid && passwordValid && rePasswordValid) {
+    signInArray.push(email.value);
+    signInArray.push(passwordField.value);
+    console.log(signInArray);
+    signUpForm.reset();
+    signUpForm.innerHTML = `    <div class="message">
+    Thank you for registering for a Gamehub account! <br />
+    Please login below
+  </div>
+  `;
+    messageContainer.style.display = "inline";
+    return signInArray;
+  } else {
+    validateName();
+    validatePassword();
+    validateEmail();
+    checkIfPasswordsMatches();
+  }
+}
+signUpForm.addEventListener("submit", formValidation);
+
+// validation functions
 
 function validateName() {
   nameValidator.innerHTML = "";
@@ -47,20 +64,6 @@ function validateName() {
     return nameValid;
   }
 }
-
-function myFunction(event) {
-  event.preventDefault();
-  console.log(nameValid);
-  console.log(emailValid);
-  console.log(rePasswordValid);
-  console.log(passwordValid);
-  if (nameValid && emailValid && passwordValid && rePasswordValid) {
-    form.reset();
-    signupContainer.innerHTML += `<div class="message"> Your message has been sent</div>`;
-  }
-}
-
-form.addEventListener("submit", myFunction);
 
 function validateEmail() {
   emailValidator.innerHTML = "";
@@ -110,51 +113,7 @@ function checkIfPasswordsMatches() {
   }
 }
 
-// function validatePhoneNumber() {
-//   phoneValidationField.innerHTML = "";
-//   if (checkPhonenumber(phoneField.value)) {
-//     greenValidationStatus(phoneValidationField);
-//     removeInputInformation(phoneInfo);
-//   } else {
-//     redValidationStatus(phoneValidationField);
-//     addInputInformation(phoneInfo);
-//   }
-// }
-
-// function validateStreetname() {
-//   streetValidationField.innerHTML = "";
-//   if (checkLength(streetField.value, 1)) {
-//     greenValidationStatus(streetValidationField);
-//     removeInputInformation(streetInfo);
-//   } else {
-//     redValidationStatus(streetValidationField);
-//     addInputInformation(streetInfo);
-//   }
-// }
-
-// function validateZip() {
-//   zipValidationField.innerHTML = "";
-//   if (checkZip(zipField.value)) {
-//     greenValidationStatus(zipValidationField);
-//     removeInputInformation(zipInfo);
-//   } else {
-//     redValidationStatus(zipValidationField);
-//     addInputInformation(zipInfo);
-//   }
-// }
-
-// function validateCity() {
-//   cityValidationField.innerHTML = "";
-//   if (checkLength(cityField.value, 1)) {
-//     greenValidationStatus(cityValidationField);
-//     removeInputInformation(cityInfo);
-//   } else {
-//     redValidationStatus(cityValidationField);
-//     addInputInformation(cityInfo);
-//   }
-// }
-
-// loader and green checkmark\red cross validation
+// loader and green checkmark/red cross validation + border
 
 function greenValidationStatus(container, input) {
   container.classList.add("loader");
@@ -193,10 +152,7 @@ fullName.addEventListener("blur", validateName);
 emailField.addEventListener("blur", validateEmail);
 passwordField.addEventListener("blur", validatePassword);
 rePasswordField.addEventListener("blur", checkIfPasswordsMatches);
-// phoneField.addEventListener("blur", validatePhoneNumber);
-// streetField.addEventListener("blur", validateStreetname);
-// zipField.addEventListener("blur", validateZip);
-// cityField.addEventListener("blur", validateCity);
+
 // Checks
 
 function checkLength(value, length) {
@@ -219,14 +175,50 @@ function checkPassword(password) {
   return passwordMatch;
 }
 
-function checkPhonenumber(phone) {
-  const regEx = /\b\d{8}\b/;
-  const phoneMatch = regEx.test(phone);
-  return phoneMatch;
+// login
+
+const loginPassword = document.querySelector("#password-login");
+const loginEmail = document.querySelector("#email-login");
+const loginButton = document.querySelector(".login-button");
+
+const loginValidationField = document.querySelector(".login-validation");
+const loginInfo = document.querySelector(".login-info");
+const loginForm = document.querySelector(".login-form");
+
+function loginCheckEmail() {
+  console.log(signInArray);
+  if (signInArray[0] === loginEmail.value) {
+    greenValidationStatus(loginEmailValidationField, loginEmail);
+    addInputInformation(loginEmailValidationField);
+  } else {
+    redValidationStatus(loginEmailValidationField, loginEmail);
+    removeInputInformation(loginEmailValidationField);
+  }
 }
 
-function checkZip(zip) {
-  const regEx = /\b\d{4}\b/;
-  const zipMatch = regEx.test(zip);
-  return zipMatch;
+function ValidateLogin(event) {
+  console.log("test");
+  console.log(loginPassword.value);
+  console.log(loginEmail.value);
+  event.preventDefault();
+  if (
+    signInArray[0] === loginEmail.value &&
+    signInArray[1] === loginPassword.value
+  ) {
+    loginForm.reset();
+    console.log("wohoo");
+    loginInfo.style.display = "flex";
+    loginInfo.innerHTML = `<div class="message" style="color:black">
+    You are logged in as ${signInArray[0]} <br />
+    Redirecting to homepage in 5seconds or <a href="index.html">click here</a>
+  </div>`;
+
+    setTimeout(function () {
+      window.location.href = "index.html";
+    }, 5000);
+  } else {
+    loginInfo.style.display = "flex";
+  }
 }
+
+loginForm.addEventListener("submit", ValidateLogin);
