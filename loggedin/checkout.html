@@ -35,43 +35,36 @@
   <body>
     <header>
       <div class="logo_left">
-        <a href="loggedin.html"
+        <a href="index.html"
           ><img
-            src="../images/gamehub_logo.png"
+            src="images/gamehub_logo.png"
             alt="Gamehub logo"
             class="logo_big"
         /></a>
       </div>
       <div class="header-top">
-        <a href="loggedin.html"
-          ><img
-            src="../images/gamehub_logo.png"
-            alt="Gamehub logo"
-            class="logo"
+        <a href="index.html"
+          ><img src="images/gamehub_logo.png" alt="Gamehub logo" class="logo"
         /></a>
         <div class="header-right">
-          <a href="basket.html"
-            ><i class="fas fa-shopping-basket account_basket"></i
+          <a href="loggedin/basket.html"
+            ><i class="fas fa-shopping-basket"></i
           ></a>
-          <a href="account.html"
-            ><img
-              src="../images/loginpic.png"
-              alt="your account picture"
-              class="account_img"
-          /></a>
+          <a href="signin.html"><i class="fas fa-user"></i></a>
         </div>
       </div>
       <input type="checkbox" id="hamburger-menu" />
       <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
       <nav class="navigation">
         <ul>
-          <li><a href="loggedin.html">Home</a></li>
-          <li><a href="store.html" class="active">Store</a></li>
-          <li><a href="account.html">My account</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="loggedin/store.html">Store</a></li>
+          <li><a href="signin.html">Sign in</a></li>
+          <li><a href="signin.html">Support</a></li>
         </ul>
         <div>
-          <form action="store.html">
-            <input type="text" placeholder="Search.." class="search-bar" />
+          <form class="search-form">
+            <input type="search" name="search" class="search-bar" />
             <button type="submit"><i class="fas fa-search"></i></button>
           </form>
         </div>

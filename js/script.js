@@ -28,8 +28,8 @@ async function callApiRawg() {
  
       <a href="details.html?id=${game.id}" class="game-card" style="text-decoration:none">
       <img src="${game.background_image}" class="game-img" alt="${game.name}">
-      <div class="game-info">
-      <h2> ${game.name}</h2>
+         <div class="game-info">
+      <h3 class="game-name"> ${game.name}</h3>
       <p>Rating: ${game.rating} / 5</p>
       <p>Price: ${price} </p>
       <button class="game-button">View product </button>
@@ -107,15 +107,8 @@ async function recentlyReleasedSection() {
   const results = await response.json();
   var releasedData = results.results;
   createHtml(releasedData);
-  // if (releasedData.length >= 20) {
-  //   for (let i = 0; i < releasedData.length; i++) {
-  //     gameIndex.innerHTML += `<button class="item"></button>`;
-  //   }
-  // }
-  var activeItem = document.querySelector(".item");
-  var itemChildren = document.querySelector(".game-index").childNodes;
-  // for (let i = 0; i < itemChildren.length; i++) {}
 
+  var itemChildren = document.querySelector(".game-index").childNodes;
   if (releasedData[counter] === undefined) {
     counter = 0;
     counterMinus = -1;
@@ -158,4 +151,4 @@ function createHtml(games) {
   }
 }
 
-const createInterval = setInterval(recentlyReleasedSection, 5000);
+// const createInterval = setInterval(recentlyReleasedSection, 5000);

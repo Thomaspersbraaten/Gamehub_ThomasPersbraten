@@ -57,13 +57,14 @@
       <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
       <nav class="navigation">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
           <li><a href="loggedin/store.html">Store</a></li>
-          <li><a href="signin.html" class="active">Sign in</a></li>
+          <li><a href="signin.html">Sign in</a></li>
+          <li><a href="signin.html">Support</a></li>
         </ul>
         <div>
-          <form action="loggedin/store.html">
-            <input type="text" placeholder="Search.." class="search-bar" />
+          <form class="search-form">
+            <input type="search" name="search" class="search-bar" />
             <button type="submit"><i class="fas fa-search"></i></button>
           </form>
         </div>
@@ -173,7 +174,7 @@
         <div class="signup_btn">
           <button class="cta">Sign up</button>
         </div>
-        <div>
+        <div class="sign-in">
           <p>If you already have an account, Please log in</p>
           <a class="cta">Log in</a>
         </div>
