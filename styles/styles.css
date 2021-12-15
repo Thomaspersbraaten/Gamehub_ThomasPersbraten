@@ -4,6 +4,11 @@
   --white: #fff;
 }
 
+.index {
+  display: flex;
+  flex-direction: column;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -366,6 +371,7 @@ h3 {
 
 .recently-released {
   width: 300px;
+  height: 300px;
   margin: auto;
 }
 
@@ -562,7 +568,7 @@ footer div {
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   margin: auto;
   text-align: center;
 }
@@ -575,7 +581,7 @@ footer div {
   background-color: #b5b5b5c7;
   padding: 20px;
   border-radius: 30px;
-  margin: 30px;
+  margin: 30px auto;
   border-radius: 10px;
 }
 
@@ -708,6 +714,9 @@ footer div {
 }
 
 @media (min-width: 900px) {
+  .item {
+    width: 90px;
+  }
   .game-index {
     width: var(--page-width);
     border: 2px solid grey;

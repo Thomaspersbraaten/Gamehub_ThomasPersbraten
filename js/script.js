@@ -20,22 +20,39 @@ async function callApiRawg() {
     // console.log(data);
     resultsContainer.innerHTML = "";
     // createHtml(data);
+    for (let i = 0; i < data.length; i++) {
+      if (i === 9) {
+        return;
+      } else {
+        const priceCalc = data[i].rating * 40;
+        const price = priceCalc.toFixed(0) + ",-";
+        resultsContainer.innerHTML += `<a href="details.html?id=${data[i].id}" class="game-card" style="text-decoration:none">
+        <img src="${data[i].background_image}" class="game-img" alt="${data[i].name}">
+        <div class="game-info">
+        <h2> ${data[i].name}</h2>
+        <p>Rating: ${data[i].rating} / 5</p>
+        <p>Price: ${price} </p>
+        <button class="game-button">View product </button>
+        </div>
+        </a>`;
+      }
+    }
 
-    data.forEach(function (game) {
-      const priceCalc = game.rating * 40;
-      const price = priceCalc.toFixed(0) + ",-";
-      resultsContainer.innerHTML += `
- 
-      <a href="details.html?id=${game.id}" class="game-card" style="text-decoration:none">
-      <img src="${game.background_image}" class="game-img" alt="${game.name}">
-         <div class="game-info">
-      <h3 class="game-name"> ${game.name}</h3>
-      <p>Rating: ${game.rating} / 5</p>
-      <p>Price: ${price} </p>
-      <button class="game-button">View product </button>
-      </div>
-      </a>`;
-    });
+    // data.forEach(function (game) {
+    //   const priceCalc = game.rating * 40;
+    //   const price = priceCalc.toFixed(0) + ",-";
+    //   resultsContainer.innerHTML += `
+
+    //   <a href="details.html?id=${game.id}" class="game-card" style="text-decoration:none">
+    //   <img src="${game.background_image}" class="game-img" alt="${game.name}">
+    //      <div class="game-info">
+    //   <h3 class="game-name"> ${game.name}</h3>
+    //   <p>Rating: ${game.rating} / 5</p>
+    //   <p>Price: ${price} </p>
+    //   <button class="game-button">View product </button>
+    //   </div>
+    //   </a>`;
+    // });
   } catch (error) {
     resultsContainer.innerHTML = `<div class="error"> This error occured: ${error} </div>`;
   }
