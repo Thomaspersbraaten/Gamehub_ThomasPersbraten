@@ -590,6 +590,7 @@ footer div {
   border-top: 1px solid black;
   display: flex;
   flex-direction: column;
+  max-width: var(--page-width);
 }
 
 .sign-in label {

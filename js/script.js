@@ -154,4 +154,4 @@ function createHtml(games) {
   }
 }
 
-// const createInterval = setInterval(recentlyReleasedSection, 5000);
+const createInterval = setInterval(recentlyReleasedSection, 5000);
