@@ -179,22 +179,8 @@ function checkPassword(password) {
 
 const loginPassword = document.querySelector("#password-login");
 const loginEmail = document.querySelector("#email-login");
-const loginButton = document.querySelector(".login-button");
-
-const loginValidationField = document.querySelector(".login-validation");
 const loginInfo = document.querySelector(".login-info");
 const loginForm = document.querySelector(".login-form");
-
-function loginCheckEmail() {
-  console.log(signInArray);
-  if (signInArray[0] === loginEmail.value) {
-    greenValidationStatus(loginEmailValidationField, loginEmail);
-    addInputInformation(loginEmailValidationField);
-  } else {
-    redValidationStatus(loginEmailValidationField, loginEmail);
-    removeInputInformation(loginEmailValidationField);
-  }
-}
 
 function ValidateLogin(event) {
   console.log("test");
