@@ -66,7 +66,7 @@
       <nav class="navigation">
         <ul>
           <li><a href="loggedin.html">Home</a></li>
-          <li><a href="store.html" class="active">Store</a></li>
+          <li><a href="store.html">Store</a></li>
           <li><a href="account.html">My account</a></li>
         </ul>
         <div>
@@ -80,32 +80,148 @@
     <main>
       <h1>Your shopping basket contains</h1>
       <section class="basket_contents">
-        <div>
-          <p>Qty: 1</p>
+        <img src="../images/Markoftheninja.jpg" alt="mark of the ninja" />
+        <div class="basket-info">
+          <p>Quantity: 1</p>
           <p>Product: Mark of the Ninja : Remastered - New copy</p>
           <p>Price: kr 129,99</p>
           <p>4 in stock</p>
         </div>
-        <div>
-          <img src="../images/Markoftheninja.jpg" alt="" />
-        </div>
+
         <div class="remove_item">
           <p>Remove</p>
           <i class="fas fa-trash-alt"></i>
         </div>
+        <button class="cta first-continue">Continue</button>
       </section>
-      <section class="basket_price">
-        <div>
-          <p>price: kr 129,99</p>
-          <p>VAT: kr 0</p>
-          <p>Shipping: kr 0</p>
-          <p class="sum">Sum to pay: kr 129,99</p>
+
+      <section class="checkout">
+        <div class="divs">
+          <h2 class="first-header">1. Shipping Information</h2>
+          <div class="shipping-information" style="display: none">
+            <form class="shipping-form">
+              <h3>Please enter your information below</h3>
+              <div class="signup-line">
+                <label for="phonenumber">Phonenumber</label>
+                <input type="text" id="phone" />
+                <div class="phone-validation validation-field"></div>
+              </div>
+              <div class="phone-info info">
+                Please enter your 8 digit phonenumber
+              </div>
+
+              <div class="signup-line">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" />
+                <div class="address-validation validation-field"></div>
+              </div>
+              <div class="address-info info">Please enter your address</div>
+
+              <div class="signup-line">
+                <label for="country">Country</label>
+                <input type="text" id="country" />
+                <div class="country-validation validation-field"></div>
+              </div>
+              <div class="country-info info">Please enter your country</div>
+
+              <div class="signup-line">
+                <label for="zipcode">Zip-code</label>
+                <input type="text" id="zipcode" />
+                <div class="zipcode-validation validation-field"></div>
+              </div>
+              <div class="zipcode-info info">
+                Please enter a four digit zipcode
+              </div>
+              <h3>Your shipment will be delivered in your mailbox</h3>
+
+              <!-- <input checked type="radio" id="pickup" name="shipment" />
+              <label for="pickup">Pick-up Point</label>
+              <input type="radio" id="mailbox" name="shipment" />
+              <label for="mailbox">Mailbox</label>
+              <input type="radio" id="post-office" name="shipment" />
+              <label for="post-office">Post</label>
+              <div class="pickup_p">
+                <p>
+                  You can pick up the package at our warehouse after 1 hour of
+                  order confirmation
+                </p>
+              </div>
+              <div class="mailbox_p">
+                <p>
+                  We will pack and send the products within 24hours. You will
+                  receive the products in your mailbox
+                </p>
+              </div>
+              <div class="post-office_p">
+                <p>
+                  We will pack and send the products within 24hours. The package
+                  will be sent to your local post-office
+                </p>
+              </div> -->
+              <button class="cta second-continue">Continue</button>
+            </form>
+          </div>
+        </div>
+        <div class="divs">
+          <h2 class="second-header">2. Payment Information</h2>
+          <div class="payment-information">
+            <input checked type="radio" id="credit" name="payment" /><label
+              for="credit"
+              >Credit Card</label
+            >
+            <input type="radio" id="vipps" name="payment" /><label for="vipps"
+              >Vipps</label
+            >
+            <div class="creditcard_fields">
+              <input
+                type="number"
+                name="creditcard"
+                id="creditcard"
+                placeholder="Credit card number"
+              />
+              <input
+                type="name"
+                name="creditcard"
+                id="cardholdername"
+                placeholder="Cardholders name"
+              />
+              <input
+                type="date"
+                name="creditcard"
+                id="expiredate"
+                placeholder="expire date"
+              />
+              <input
+                type="number"
+                name="creditcard"
+                id="cvc"
+                placeholder="Cvc"
+              />
+            </div>
+            <div class="vipps_fields">
+              <input
+                type="tel"
+                name="vipps"
+                id="vippsnr"
+                placeholder="Phonenumber"
+              />
+              <input
+                type="name"
+                name="vipps"
+                id="vippsname"
+                placeholder="Your name"
+              />
+            </div>
+            <button class="cta third-continue">Continue</button>
+          </div>
         </div>
       </section>
-      <div class="to_checkout">
-        <a href="checkout.html" class="cta">Proceed to checkout</a>
+      <div class="divs">
+        <h2 class="third-header">3. Review Order</h2>
       </div>
     </main>
+
+    <script src="../js/checkout.js"></script>
     <footer>
       <div>
         <a href="../contact.html" class="contact">Contact Us</a>

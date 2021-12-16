@@ -1,3 +1,4 @@
+// sign in consts
 const fullName = document.querySelector("#name");
 const nameValidator = document.querySelector(".name-validation");
 const emailField = document.querySelector("#email");
