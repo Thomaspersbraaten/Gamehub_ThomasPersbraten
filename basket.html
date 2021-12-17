@@ -35,43 +35,36 @@
   <body>
     <header>
       <div class="logo_left">
-        <a href="loggedin.html"
+        <a href="index.html"
           ><img
-            src="../images/gamehub_logo.png"
+            src="images/gamehub_logo.png"
             alt="Gamehub logo"
             class="logo_big"
         /></a>
       </div>
       <div class="header-top">
-        <a href="loggedin.html"
-          ><img
-            src="../images/gamehub_logo.png"
-            alt="Gamehub logo"
-            class="logo"
+        <a href="index.html"
+          ><img src="images/gamehub_logo.png" alt="Gamehub logo" class="logo"
         /></a>
         <div class="header-right">
-          <a href="basket.html"
-            ><i class="fas fa-shopping-basket account_basket"></i
+          <a href="loggedin/basket.html"
+            ><i class="fas fa-shopping-cart"></i
           ></a>
-          <a href="account.html"
-            ><img
-              src="../images/loginpic.png"
-              alt="your account picture"
-              class="account_img"
-          /></a>
+          <a href="signin.html"><i class="fas fa-user"></i></a>
         </div>
       </div>
       <input type="checkbox" id="hamburger-menu" />
       <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
       <nav class="navigation">
         <ul>
-          <li><a href="loggedin.html">Home</a></li>
-          <li><a href="store.html">Store</a></li>
-          <li><a href="account.html">My account</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="loggedin/store.html">Store</a></li>
+          <li><a href="signin.html">Sign in</a></li>
+          <li><a href="signin.html">Support</a></li>
         </ul>
         <div>
-          <form action="store.html">
-            <input type="text" placeholder="Search.." class="search-bar" />
+          <form class="search-form">
+            <input type="search" name="search" class="search-bar" />
             <button type="submit"><i class="fas fa-search"></i></button>
           </form>
         </div>
@@ -80,19 +73,18 @@
     <main>
       <h1>Your shopping basket contains</h1>
       <section class="basket_contents">
-        <img src="../images/Markoftheninja.jpg" alt="mark of the ninja" />
+        <img src="images/Markoftheninja.jpg" alt="mark of the ninja" />
         <div class="basket-info">
           <p>Quantity: 1</p>
           <p>Product: Mark of the Ninja : Remastered - New copy</p>
           <p>Price: kr 129,99</p>
-          <p>4 in stock</p>
         </div>
 
         <div class="remove_item">
           <p>Remove</p>
           <i class="fas fa-trash-alt"></i>
         </div>
-        <button class="cta first-continue">Continue</button>
+        <button class="cta first-continue">To checkout</button>
       </section>
 
       <section class="checkout">
@@ -118,11 +110,11 @@
               <div class="address-info info">Please enter your address</div>
 
               <div class="signup-line">
-                <label for="country">Country</label>
-                <input type="text" id="country" />
-                <div class="country-validation validation-field"></div>
+                <label for="city">City</label>
+                <input type="text" id="city" />
+                <div class="city-validation validation-field"></div>
               </div>
-              <div class="country-info info">Please enter your country</div>
+              <div class="city-info info">Please enter your city</div>
 
               <div class="signup-line">
                 <label for="zipcode">Zip-code</label>
@@ -133,98 +125,84 @@
                 Please enter a four digit zipcode
               </div>
               <h3>Your shipment will be delivered in your mailbox</h3>
-
-              <!-- <input checked type="radio" id="pickup" name="shipment" />
-              <label for="pickup">Pick-up Point</label>
-              <input type="radio" id="mailbox" name="shipment" />
-              <label for="mailbox">Mailbox</label>
-              <input type="radio" id="post-office" name="shipment" />
-              <label for="post-office">Post</label>
-              <div class="pickup_p">
-                <p>
-                  You can pick up the package at our warehouse after 1 hour of
-                  order confirmation
-                </p>
-              </div>
-              <div class="mailbox_p">
-                <p>
-                  We will pack and send the products within 24hours. You will
-                  receive the products in your mailbox
-                </p>
-              </div>
-              <div class="post-office_p">
-                <p>
-                  We will pack and send the products within 24hours. The package
-                  will be sent to your local post-office
-                </p>
-              </div> -->
-              <button class="cta second-continue">Continue</button>
+              <button class="cta shipment-button">Continue</button>
             </form>
           </div>
         </div>
+
+        <!-- divider  -->
         <div class="divs">
           <h2 class="second-header">2. Payment Information</h2>
-          <div class="payment-information">
-            <input checked type="radio" id="credit" name="payment" /><label
-              for="credit"
-              >Credit Card</label
-            >
-            <input type="radio" id="vipps" name="payment" /><label for="vipps"
-              >Vipps</label
-            >
-            <div class="creditcard_fields">
-              <input
-                type="number"
-                name="creditcard"
-                id="creditcard"
-                placeholder="Credit card number"
-              />
-              <input
-                type="name"
-                name="creditcard"
-                id="cardholdername"
-                placeholder="Cardholders name"
-              />
-              <input
-                type="date"
-                name="creditcard"
-                id="expiredate"
-                placeholder="expire date"
-              />
-              <input
-                type="number"
-                name="creditcard"
-                id="cvc"
-                placeholder="Cvc"
-              />
-            </div>
-            <div class="vipps_fields">
-              <input
-                type="tel"
-                name="vipps"
-                id="vippsnr"
-                placeholder="Phonenumber"
-              />
-              <input
-                type="name"
-                name="vipps"
-                id="vippsname"
-                placeholder="Your name"
-              />
-            </div>
-            <button class="cta third-continue">Continue</button>
+          <div class="payment-information" style="display: none">
+            <form class="payment-form">
+              <div class="signup-line">
+                <label for="card-nr">Card number</label>
+                <input
+                  type="text"
+                  id="card-nr"
+                  placeholder="1234567814258574"
+                />
+                <div class="card-nr-validation validation-field"></div>
+              </div>
+              <div class="card-nr-info info">
+                Please enter your credit card number, 16 digits
+              </div>
+
+              <div class="signup-line">
+                <label for="card-name">Cardholder name</label>
+                <input
+                  type="text"
+                  id="card-name"
+                  placeholder="Firstname Lastname"
+                />
+                <div class="card-name-validation validation-field"></div>
+              </div>
+              <div class="card-name-info info">
+                Please enter the card holders name
+              </div>
+
+              <div class="signup-line">
+                <label for="expire">Expire date</label>
+                <div class="expire-container">
+                  <input type="text" id="expire" placeholder="1221" />
+                </div>
+
+                <div class="expire-validation validation-field"></div>
+              </div>
+              <div class="expire-info info">
+                Please enter the expire date MM/YY
+              </div>
+              <div class="signup-line">
+                <label for="cvc">Cvc</label>
+                <div class="cvc-container">
+                  <input type="text" id="cvc" placeholder="123" />
+                </div>
+
+                <div class="cvc-validation validation-field"></div>
+              </div>
+              <div class="cvc-info info">
+                Please enter the card verification code
+              </div>
+
+              <button class="cta payment-button">Continue</button>
+            </form>
           </div>
         </div>
       </section>
-      <div class="divs">
+      <div class="divs review-div">
         <h2 class="third-header">3. Review Order</h2>
+        <div class="review-order" style="display: none">
+          <div class="review-info"></div>
+
+          <button class="cta confirm-button">Place order</button>
+        </div>
       </div>
     </main>
 
-    <script src="../js/checkout.js"></script>
+    <script src="js/checkout.js"></script>
     <footer>
       <div>
-        <a href="../contact.html" class="contact">Contact Us</a>
+        <a href="contact.html" class="contact">Contact Us</a>
         <a href="#" class="faq">FAQ</a>
       </div>
       <p class="copyright">2021 Game hub - Copyright &copy;</p>
