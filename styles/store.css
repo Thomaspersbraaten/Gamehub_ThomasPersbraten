@@ -28,6 +28,11 @@
     flex: 1;
     margin: 20px auto;
     border: 1px solid #9b9b9b;
+    display: flex;
+    flex-direction: column;
+  }
+  .genres-container > * {
+    margin: 10px;
   }
 
   .store {

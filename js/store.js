@@ -8,6 +8,7 @@ const genresapi =
   "https://api.rawg.io/api/genres?key=cdf875c74f4a4975a6fac3dd5dd7b70b";
 const genresContainer = document.querySelector(".genres-container");
 const storeContainer = document.querySelector(".store-container");
+const genreForm = document.querySelector(".genre-form");
 
 async function myFunction() {
   const response = await fetch(genresapi);
@@ -19,8 +20,12 @@ async function myFunction() {
     console.log(data[i].name);
   }
   for (let i = 0; i < data.length; i++) {
-    genresContainer.innerHTML += `
-      <
+    genreForm.innerHTML += `
+ 
+      <input type="radio" id="${data[i].name}" name="${data[i].name}"> 
+      <label for="${data[i].name}">${data[i].name}</label>
+  
+      
       `;
   }
 }
@@ -36,12 +41,10 @@ async function searchFunction(event) {
     event.preventDefault();
     const searchValue = searchContainer.value;
     const response = await fetch(searchQuery + searchValue + "&" + apiKey);
-
     const result = await response.json();
     const game = result.results;
     console.log(game);
     storeHeader.innerHTML = `showing search results for "${searchValue}"`;
-
     storeContainer.innerHTML = "";
 
     if (!game) {
