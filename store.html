@@ -1,225 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Gamehub | Store</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="Visit out store to browse for your next purchase, or even check out upcoming games in the preorder section">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="stylesheet" href="../styles/store.css">
-    <script src="https://kit.fontawesome.com/ba0e3e950c.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Visit out store to browse for your next purchase, or even check out upcoming games in the preorder section"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/store.css" />
+    <script
+      src="https://kit.fontawesome.com/ba0e3e950c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play&family=Merriweather+Sans&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
     <!-- Hotjar Tracking Code for My site -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:2721320,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 2721320, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
         a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
-</head>
-<body>
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
+  </head>
+  <body>
     <header>
-        <div class="logo_left">
-          <a href="index.html"
-            ><img
-              src="images/gamehub_logo.png"
-              alt="Gamehub logo"
-              class="logo_big"
-          /></a>
+      <a href="index.html" class="logo_left"
+        ><img src="images/gamehub_logo.png" alt="Gamehub logo" class="logo_big"
+      /></a>
+      <div class="header-top">
+        <a href="index.html"
+          ><img src="images/gamehub_logo.png" alt="Gamehub logo" class="logo"
+        /></a>
+        <div class="header-right">
+          <a href="basket.html"><i class="fas fa-shopping-cart"></i></a>
+          <a href="signin.html"><i class="fas fa-user"></i></a>
         </div>
-        <div class="header-top">
-          <a href="index.html"
-            ><img src="images/gamehub_logo.png" alt="Gamehub logo" class="logo"
-          /></a>
-          <div class="header-right">
-            <a href="basket.html"><i class="fas fa-shopping-cart"></i></a>
-            <a href="signin.html"><i class="fas fa-user"></i></a>
-          </div>
+      </div>
+      <input type="checkbox" id="hamburger-menu" />
+      <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
+      <nav class="navigation">
+        <div class="nav-list">
+          <a href="index.html">Home</a>
+          <a href="store.html" class="active">Store</a>
+          <a href="signin.html">Sign in</a>
+          <a href="signin.html">Support</a>
+          <form class="search-form">
+            <input type="search" name="search" class="search-bar" />
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </form>
         </div>
-        <input type="checkbox" id="hamburger-menu" />
-        <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
-        <nav class="navigation">
-          <ul>
-            <li><a href="index.html" >Home</a></li>
-            <li><a href="store.html" class="active">Store</a></li>
-            <li><a href="signin.html">Sign in</a></li>
-            <li><a href="signin.html">Support</a></li>
-          </ul>
-          <div>
-            <form class="search-form">
-              <input type="search" name="search" class="search-bar" />
-              <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
-          </div>
-        </nav>
-      </header>
-    <main class="store">
-        <section class="featured-games">
-            <h1>Store</h1>
-            <div class="featured__product">
-                <img src="..images/Markoftheninja.jpg" class="product__mark" alt="Product - Mark of the Ninja remastered">
-                <div class="product__info">
-                    <h2>Mark of the ninja</h2> 
-                    <p>Tactical | Platformer</p>
-                    <p>Kr 199,50</p> 
-                    <a href="product.html" class="view">View product</a> 
-                </div>    
-            </div>
-            <div class="featured__product">
-                <img src="../images/chrono.jpg" class="product__mark" alt="Product - Mark of the Ninja Remastered">
-                <div class="product__info">
-                    <h2>Chrono Trigger</h2> 
-                    <p>RPG | Turn based</p>
-                    <p>Kr 199,50</p> 
-                    <a href="product.html" class="view">View product</a> 
-                </div>
-            </div>
-            <div class="featured__product">
-                <img src="../images/farcry.jpg" class="product__mark" alt="Product - Mark of the Ninja Remastered">
-                <div class="product__info">
-                    <h2>Far Cry 3</h2> 
-                    <p>FPS | Adventure</p>
-                    <p>Kr 199,50</p> 
-                    <a href="product.html" class="view">View product</a>
-                </div> 
-            </div>
-            <div class="featured__product">
-                <img src="../images/Markoftheninja.jpg" class="product__mark" alt="Product - Mark of the Ninja remastered">
-                <div class="product__info">
-                    <h2>Mark of the ninja</h2> 
-                    <p>Tactical | Platformer</p>
-                    <p>Kr 199,50</p> 
-                    <a href="product.html" class="view">View product</a> 
-                </div>    
-            </div>
-            <div class="featured__product">
-                <img src="../images/chrono.jpg" class="product__mark" alt="Product - Mark of the Ninja Remastered">
-                <div class="product__info">
-                    <h2>Chrono Trigger</h2> 
-                    <p>RPG | Turn based</p>
-                    <p>Kr 199,50</p> 
-                    <a href="product.html" class="view">View product</a> 
-                </div>
-            </div>
-            <div class="featured__product">
-                <img src="../images/farcry.jpg" class="product__mark" alt="Product - Mark of the Ninja Remastered">
-                <div class="product__info">
-                    <h2>Far Cry 3</h2> 
-                    <p>FPS | Adventure</p>
-                    <p>Kr 199,50</p> 
-                    <a href="product.html" class="view">View product</a>
-                </div> 
-            </div>
-            <div class="featured__product">
-                <img src="../images/Markoftheninja.jpg" class="product__mark" alt="Product - Mark of the Ninja remastered">
-                <div class="product__info">
-                    <h2>Mark of the ninja</h2> 
-                    <p>Tactical | Platformer</p>
-                    <p>Kr 199,50</p> 
-                    <a href="product.html" class="view">View product</a> 
-                </div>    
-            </div>
-            <div class="featured__product">
-                <img src="../images/chrono.jpg" class="product__mark" alt="Product - Mark of the Ninja Remastered">
-                <div class="product__info">
-                    <h2>Chrono Trigger</h2> 
-                    <p>RPG | Turn based</p>
-                    <p>Kr 199,50</p> 
-                    <a href="product.html" class="view">View product</a> 
-                </div>
-            </div>
-            <div class="featured__product">
-                <img src="../images/farcry.jpg" class="product__mark" alt="Product - Mark of the Ninja Remastered">
-                <div class="product__info">
-                    <h2>Far Cry 3</h2> 
-                    <p>FPS | Adventure</p>
-                    <p>Kr 199,50</p> 
-                    <a href="product.html" class="view">View product</a>
-                </div> 
-            </div>
-        </section>
-        <section class="page__nav">
-            <div class="left">
-                <i class="fas fa-chevron-circle-left"></i>
-            </div>
-            <div class="page__nav_number">
-                <p class="active__page">1</p>
-                <p class="inactive__page">2</p>
-                <p class="inactive__page">3</p>
-                <p class="inactive__page">4</p>
-                <p class="inactive__page">5</p>
-            </div>
-            <div class="right">
-                <i class="fas fa-chevron-circle-right"></i>
-            </div>
-        </section>
-        <section class="preorder">
-            <h1>Pre-Order games</h1>
-            <div class="preorder__product">
-                <img src="../images/Markoftheninja.jpg" class="preorder_img"   alt="Product - Mark of the Ninja Remastered">
-                <div class="product__info">
-                    <h2>Mark of the ninja</h2> 
-                    <p>Kr 199,50</p> 
-                    <p>Release date: 19.05.22</p>
-                    <a href="product.html" class="view">View product</a> 
-                </div>
-            </div>
-            <div class="preorder__product">
-                <img src="../images/Markoftheninja.jpg" class="preorder_img"   alt="Product - Mark of the Ninja Remastered">
-                <div class="product__info">
-                    <h2>Mark of the ninja</h2> 
-                    <p>Kr 199,50</p> 
-                    <p>Release date: 19.05.22</p>
-                    <a href="product.html" class="view">View product</a> 
-                </div>
-            </div>
-            <div class="preorder__product">
-                <img src="../images/Markoftheninja.jpg" class="preorder_img"   alt="Product - Mark of the Ninja Remastered">
-                <div class="product__info">
-                    <h2>Mark of the ninja</h2> 
-                    <p>Kr 199,50</p> 
-                    <p>Release date: 19.05.22</p>
-                    <a href="product.html" class="view">View product</a> 
-                </div>
-            </div>
-            <div class="preorder__product">
-                <img src="../images/Markoftheninja.jpg" class="preorder_img"   alt="Product - Mark of the Ninja Remastered">
-                <div class="product__info">
-                    <h2>Mark of the ninja</h2> 
-                    <p>Kr 199,50</p> 
-                    <p>Release date: 19.05.22</p>
-                    <a href="product.html" class="view">View product</a> 
-                </div>
-            </div class="product__info">
-            <div class="preorder__product">
-                <img src="../images/Markoftheninja.jpg" class="preorder_img"   alt="Product - Mark of the Ninja Remastered">
-                <div class="product__info">
-                    <h2>Mark of the ninja</h2> 
-                    <p>Kr 199,50</p> 
-                    <p>Release date: 19.05.22</p>
-                    <a href="product.html" class="view">View product</a> 
-                </div>
-            </div>
-            <div class="preorder__product">
-                <img src="../images/Markoftheninja.jpg" class="preorder_img"   alt="Product - Mark of the Ninja Remastered">
-                <div class="product__info">
-                    <h2>Mark of the ninja</h2> 
-                    <p>Kr 199,50</p> 
-                    <p>Release date: 19.05.22</p>
-                    <a href="product.html" class="view">View product</a> 
-                </div>
-            </div>
-        </section>
-</main>
+      </nav>
+    </header>
+    <main>
+      <h1 class="store-header">Store</h1>
+      <div class="store">
+        <div class="genres-container"></div>
+        <div class="store-container"></div>
+      </div>
+
+      <script src="js/store.js"></script>
+    </main>
     <footer>
-        <div>
-            <a href="../contact.html" class="contact">Contact Us</a>
-            <a href="#" class="faq">FAQ</a>
-        </div>
-        <p class="copyright"> 2021 Game hub - Copyright  &copy;</p>
+      <div>
+        <a href="../contact.html" class="contact">Contact Us</a>
+        <a href="#" class="faq">FAQ</a>
+      </div>
+      <p class="copyright">2021 Game hub - Copyright &copy;</p>
     </footer>
-</body>
+  </body>
 </html>

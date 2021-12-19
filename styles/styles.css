@@ -2,6 +2,8 @@
   --color-nelson: #fa801a;
   --page-width: 950px;
   --white: #fff;
+  --color-background: #f5efef;
+  --border: 1px solid #9b9b9b;
 }
 
 .index {
@@ -17,7 +19,7 @@ html {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   max-width: 1200px;
-  margin: auto;
+  margin: 20px auto;
   grid-template-rows: auto;
 }
 
@@ -43,8 +45,6 @@ br {
     sans-serif;
   display: flex;
   flex-direction: column;
-  opacity: 0.9;
-  transition: 0.5s;
 }
 
 .game-info {
@@ -77,55 +77,6 @@ br {
   margin: 0px auto;
 }
 
-.popup-basket {
-  display: none;
-  flex-direction: column;
-  z-index: 1;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-}
-
-.content {
-  position: relative;
-  display: flex;
-  margin: auto;
-  flex-direction: column;
-  align-items: center;
-  border: 2px solid black;
-  background-color: blanchedalmond;
-  padding: 5px;
-}
-
-.basket-img {
-  height: 150px;
-  width: 150px;
-  border-radius: 5px;
-}
-
-.add-to-basket {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  /* display: none; */
-  z-index: 2;
-  justify-content: space-between;
-  flex-direction: column;
-  padding: 5px;
-  position: fixed;
-  top: 30%;
-  right: 30%;
-  width: 400px;
-  background-color: white;
-  border: 2px solid green;
-  color: green;
-  align-items: center;
-}
-
 .message {
   padding: 6px;
 }
@@ -136,7 +87,7 @@ br {
 }
 
 body {
-  background-color: #e2e2e2;
+  background-color: white;
   margin: 0;
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -174,7 +125,6 @@ header {
     "header-top header-top bars"
     "header-bottom header-bottom header-bottom";
   background-color: var(--color-nelson);
-  border-radius: 30px;
   text-align: center;
 }
 
@@ -234,9 +184,10 @@ nav a:hover {
   text-decoration-thickness: 0.2em;
 }
 
-nav ul {
+.nav-list {
   padding: 0px 10px;
   margin: 10px auto;
+  display: flex;
 }
 
 .fa-bars {
@@ -274,7 +225,7 @@ header button {
   width: 70.833px;
 }
 
-nav li {
+.nav-list a {
   display: inline-block;
   padding: 5px 17px;
 }
@@ -283,8 +234,12 @@ nav a {
   text-decoration: none;
   color: black;
   font-size: 1em;
-  font-family: snicker, Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Merriweather Sans, snicker, Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
+}
+
+:focus {
+  outline: 1px solid black;
 }
 
 .recently-released {
@@ -328,7 +283,7 @@ header label {
   flex-direction: row;
   background-color: #f5efef;
   border: 1px solid #707070;
-  border-radius: 15px;
+
   margin-bottom: 10px;
 }
 
@@ -348,7 +303,7 @@ header label {
 /* Main content */
 
 h1 {
-  font-family: nelson, roboto, Verdana, Geneva, Tahoma, sans-serif;
+  font-family: play, roboto, Verdana, Geneva, Tahoma, sans-serif;
   font-size: 2rem;
   margin: 10px 0px 0px 0px;
   text-align: center;
@@ -378,11 +333,12 @@ h3 {
 .item {
   height: 15px;
   width: 30px;
+  border: none;
+  background-color: #bcbcbb;
 }
 
 .active-item {
-  background-color: #3d1565;
-
+  background-color: #1b203d;
   border: none;
 }
 
@@ -578,11 +534,13 @@ footer div {
 }
 
 .sign-in {
-  background-color: #b5b5b5c7;
+  background-color: var(--color-background);
   padding: 20px;
-  border-radius: 30px;
   margin: 30px auto;
-  border-radius: 10px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  max-width: var(--page-width);
 }
 
 .signup-line {
@@ -591,12 +549,6 @@ footer div {
   margin: auto;
   gap: 5px;
   justify-content: center;
-}
-.sign-in {
-  border-top: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  max-width: var(--page-width);
 }
 
 .sign-in label {
@@ -714,12 +666,16 @@ footer div {
 }
 
 @media (min-width: 900px) {
+  .breadcrumbs {
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+  }
   .item {
     width: 90px;
   }
   .game-index {
     width: var(--page-width);
-    border: 2px solid grey;
+    border: 1px solid grey;
     margin: 10px auto;
     display: flex;
     justify-content: space-between;
@@ -741,11 +697,6 @@ footer div {
     cursor: pointer;
   }
 
-  .details-img {
-    max-width: 1200px;
-    margin: 20px auto;
-    height: 300px;
-  }
   .recently-released img {
     height: 400px;
   }
@@ -765,7 +716,7 @@ footer div {
     gap: 15px;
     background-color: #f5efef;
     border: 1px solid #707070;
-    border-radius: 15px;
+
     margin-bottom: 10px;
   }
 
@@ -776,24 +727,26 @@ footer div {
   .price {
     color: white;
     background-color: var(--color-nelson);
+    font-family: roboto, Verdana, Geneva, Tahoma, sans-serif;
     padding: 5px 30px;
     font-weight: bolder;
-    font-size: 1.1em;
+    font-size: 1.3em;
   }
 
   .game-name {
     color: black;
     padding: 5px;
+    font-size: 1.4em;
   }
 
   .game-button {
-    padding: 10px 20px;
+    padding: 10px 25px;
   }
 
   .game-card {
     color: black;
     margin: 10px;
-    background-color: aliceblue;
+    background-color: var(--color-background);
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
       "Helvetica Neue", sans-serif;
     display: flex;
@@ -850,13 +803,11 @@ footer div {
 
   header {
     grid-template-areas: "Header-left header-bottom header-top";
-    gap: 20px;
-    justify-content: space-evenly;
+    gap: 180px;
+    justify-content: center;
     align-items: center;
-    min-width: 900px;
-    max-width: 1300px;
+    width: 100%;
     margin: 0px auto;
-    border-radius: 60px;
   }
 
   .navigation {
@@ -879,12 +830,7 @@ footer div {
     margin: 10px auto 0px auto;
     width: var(--page-width);
   }
-  .message {
-    margin: 30px auto;
-    background-color: rgb(0, 255, 0);
-    border: 3px solid black;
-    padding: 10px 20px;
-  }
+
   .game-card-header {
     font-size: 1.4em;
   }

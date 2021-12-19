@@ -11,7 +11,7 @@ const homeHeader = document.querySelector(".homepage-header");
 
 const searchForm = document.querySelector(".search-form");
 const sectionHeader = document.querySelector(".section-header");
-const topParagraph = document.querySelector(".top-paragraph");
+// const topParagraph = document.querySelector(".top-paragraph");
 
 async function callApiRawg() {
   try {
@@ -93,7 +93,7 @@ async function searchFunction(event) {
     gameIndex.style.display = "none";
     resultsContainer.innerHTML = "";
     sectionHeader.innerHTML = "";
-    topParagraph.innerHTML = "";
+    // topParagraph.innerHTML = "";
 
     if (!game) {
       resultsContainer.innerHTML = `<div class="no-results"> No results where found during your search....</div>`;
@@ -147,7 +147,7 @@ async function recentlyReleasedSection() {
       <a class="released-game" href="details.html?id=${releasedData[counter].id}" style="text-decoration:none;">
        <img src="${releasedData[counter].background_image}">
        <div class="wrapper">
-       <p class="game-name"> ${releasedData[counter].name}</p>
+       <h2 class="game-name"> ${releasedData[counter].name}</h2>
        <p class="price"> ${price} </p> 
        </div>
         </a>

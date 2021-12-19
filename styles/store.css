@@ -1,59 +1,49 @@
-.store h1 {
-    margin-bottom: 10px;
+:root {
+  --color-nelson: #fa801a;
+  --page-width: 950px;
+  --white: #fff;
+  --color-background: #f5efef;
+  --border: 1px solid #9b9b9b;
 }
- .page__nav {
-    display: flex;
-    flex-direction: row;
-    max-width: 950px;
+
+@media (min-width: 600px) {
+  .fa-chevron-circle-left,
+  .fa-chevron-circle-right {
+    font-size: 2em;
+    color: #2f3c8a;
+    display: inline-block;
+  }
+  .left {
+    text-align: right;
+    margin-right: 0px;
+    display: inline-block;
+  }
+  .right {
+    text-align: left;
+    margin-left: 0px;
+    display: inline-block;
+  }
+  .genres-container {
+    background-color: #f5efef;
+    flex: 1;
+    margin: 20px auto;
+    border: 1px solid #9b9b9b;
+  }
+
+  .store {
+    width: var(--page-width);
     margin: 0px auto;
-    gap: 30px;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.left, .right {
-    display: none;
-}
-
-.page__nav_number {
-    display:flex;
-    flex-direction: row;
-    gap: 20px;
-    justify-content: center;
-} 
-
-.page__nav_number p {
-    font-size: 1.5em;
-    margin:0px auto;
-    padding: 0px 10px;
-    border-radius: 50%;
-}
-
-.inactive__page {
-    background-color:#2F3C8A ;
-    color: var(--white);
-}
-
-.active__page {
-    background-color: var(--white);
-    color: #2F3C8A;
-    text-decoration: underline;
-}
-
-@media (min-width:600px) {
-    .fa-chevron-circle-left, .fa-chevron-circle-right {
-        font-size: 2em;
-        color: #2F3C8A;
-        display: inline-block; 
-    }
-    .left {
-        text-align: right;
-        margin-right: 0px;
-        display: inline-block; 
-    }
-    .right {
-        text-align: left;
-        margin-left: 0px;
-        display: inline-block; 
-    } 
+    display: flex;
+    gap: 10px;
+  }
+  .store-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1200px;
+    margin: 20px auto;
+    grid-template-rows: auto;
+    background-color: #f5efef;
+    border: 1px solid #9b9b9b;
+    flex: 5;
+  }
 }

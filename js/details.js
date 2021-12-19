@@ -45,13 +45,17 @@ function createHtml(game) {
     <div class="top-details">
       <img src="${game.background_image}" class="details-img">
       <div class="right-container">
+      <div>
+      <h2> Prices </h2>
+      </div>
         <div class="new">
-          <p class="details-price new-price">Price: ${price} </p>
-          <button class="game-button new-button"> Add to Basket </button>
+      
+          <p class="details-price new-price">New product - Price: ${price} </p>
+          <button class="game-button new-button"> Add to cart </button>
         </div>
         <div class="old">
           <p class="details-price used-price">Used Product - Price: ${usedCopyPrice} </p>
-          <button class="game-button old-button"> Add to Basket </button>
+          <button class="game-button old-button"> Add to cart </button>
         </div>
       </div>
     </div>
@@ -81,7 +85,8 @@ function createHtml(game) {
     <div class="message">✅  Item has been added to your shopping basket</div>
     <div style="color: black" class="content">
     <img src="${game.background_image}" class="basket-img">
-    <h2>${game.name} </h2> 
+    <h2>1 x ${game.name} </h2> 
+    <p>  New product </p>
     <p> Price: ${price}</p>
     </div>`;
   });
@@ -93,7 +98,8 @@ function createHtml(game) {
     <div class="message">✅  Item has been added to your shopping basket</div>
     <div style="color: black" class="content">
     <img src="${game.background_image}" class="basket-img">
-    <h2>${game.name} </h2> 
+    <h2>1 x ${game.name} </h2> 
+    <p> Used product </p>
     <p> Price: ${usedCopyPrice}</p>
     </div>`;
   });

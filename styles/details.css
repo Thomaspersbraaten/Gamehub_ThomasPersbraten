@@ -1,39 +1,111 @@
 .description h2,
-.right-info h2 {
-  background-color: #a8c8c8;
-  margin: auto;
+.right-info h2,
+.right-container h2 {
+  background-color: #1b203de8;
+  padding: 5px 0px;
+  margin: 0px auto;
+  text-align: center;
+  color: white;
+  width: 100%;
 }
 
 .description,
 .right-info {
-  border: 1px solid black;
+  border: 1px solid #9b9b9b;
   width: 500px;
   text-align: left;
+  background-color: #f5efef;
+}
+
+.popup-basket {
+  display: none;
+  flex-direction: column;
+  z-index: 1;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #9b9b9b;
+  background-color: #f5efef;
+  padding: 5px;
+}
+
+.basket-img {
+  padding: 15px;
+  height: 150px;
+  width: 150px;
+  border-radius: 5px;
+}
+.message {
+  margin: 30px auto;
+  background-color: rgb(0, 255, 0);
+  border: 1px solid #9b9b9b;
+  padding: 10px 20px;
+}
+
+.add-to-basket {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* display: none; */
+  z-index: 2;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 25px;
+  position: fixed;
+  top: 30%;
+  right: 40%;
+  width: 400px;
+  background-color: white;
+  border: 2px solid green;
+  color: green;
+  align-items: center;
 }
 
 .description p,
 .right-info p {
   padding: 10px;
+  background-color: #f5efef;
+  margin: 0px auto;
+}
+
+.details-img {
+  max-width: 1200px;
+  margin: 20px auto;
+  height: 330px;
 }
 
 main {
   width: 1000px;
-  margin: auto;
+  margin: 5px auto;
 }
 
 .right-container {
   display: flex;
   flex-direction: column;
+  border: 1px solid #9b9b9b;
+  background-color: #f5efef;
+  margin: 20px auto;
+  height: 328px;
 }
 
 .new,
 .old {
   margin: auto;
-  background-color: white;
-  width: 100%;
-  border: 2px solid grey;
-  display: flex;
-  flex-direction: column;
+}
+.new {
+  border-bottom: 1px solid;
 }
 
 .top-details {
@@ -42,8 +114,9 @@ main {
 
 .new > *,
 .old > * {
+  font-family: roboto, sans-serif, Arial, Helvetica;
   text-align: center;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
 .details button {
@@ -51,13 +124,15 @@ main {
   margin: 20px auto;
   width: 200px;
   border: none;
-  font-family: sans-serif, Arial, Helvetica;
+  font-family: roboto, sans-serif, Arial, Helvetica;
   font-size: 1.1em;
 }
 
 .bottom-info {
   display: flex;
   gap: 20px;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
 }
 
 .breadcrumbs a {

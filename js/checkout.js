@@ -345,12 +345,12 @@ cvcField.addEventListener("blur", cvcValidation);
 
 const confirmButton = document.querySelector(".confirm-button");
 const checkoutContainer = document.querySelector(".checkout");
-const basketContainer = document.querySelector(".basket_contents");
+const cartContainer = document.querySelector(".cart_contents");
 
 function createConfirmationInfo() {
   checkoutContainer.style.display = "none";
   reviewDiv.style.display = "none";
-  basketContainer.innerHTML = `
+  cartContainer.innerHTML = `
   <h1>Order received!</h1>
   <div class="order__info">
     <p>Your order has been received.</p>
