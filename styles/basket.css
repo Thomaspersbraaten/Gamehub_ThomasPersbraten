@@ -44,6 +44,15 @@ h3 {
 .review-price {
   margin-bottom: 15px;
 }
+
+.in-stock::before {
+  content: "O";
+  color: #10fd61;
+  background-color: #10fd61;
+  margin-right: 10px;
+  padding: 0px 5px;
+  border: 1px solid black;
+
 .basket-img {
   padding: 10px;
   width: 150px;
