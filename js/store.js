@@ -8,32 +8,63 @@ const genresapi =
   "https://api.rawg.io/api/genres?key=cdf875c74f4a4975a6fac3dd5dd7b70b";
 const genresContainer = document.querySelector(".genres-container");
 const storeContainer = document.querySelector(".store-container");
-const genreForm = document.querySelector(".genre-form");
 
-async function myFunction() {
+async function genreSelection() {
   const response = await fetch(genresapi);
   const results = await response.json();
   const data = results.results;
   console.log(results);
+  const queryArray = [];
 
   for (let i = 0; i < data.length; i++) {
     console.log(data[i].name);
   }
   for (let i = 0; i < data.length; i++) {
-    genreForm.innerHTML += `
- 
-      <input type="radio" id="${data[i].name}" name="${data[i].name}"> 
-      <label for="${data[i].name}">${data[i].name}</label>
-  
-      
-      `;
+    genresContainer.innerHTML += `
+      <button class="genre-${data[i].name}"> ${data[i].name} </button>    `;
   }
 }
 
-myFunction();
+genreSelection();
+
+const apiUrl = "https://api.rawg.io/api/games?";
+const apiKey = "key=cdf875c74f4a4975a6fac3dd5dd7b70b";
+
+async function callApiRawg() {
+  try {
+    const response = await fetch(apiUrl + apiKey);
+    const results = await response.json();
+    const data = results.results;
+    console.log(data);
+
+    storeContainer.innerHTML = "";
+    // createHtml(data);
+    for (let i = 0; i < data.length; i++) {
+      if (i === 9) {
+        return;
+      } else {
+        const priceCalc = data[i].rating * 40;
+        const price = priceCalc.toFixed(0) + ",-";
+        storeContainer.innerHTML += `<a href="details.html?id=${data[i].id}" class="game-card" style="text-decoration:none">
+        <img src="${data[i].background_image}" class="game-img" alt="${data[i].name}">
+        <div class="game-info">
+        <h2 class="game-card-header"> ${data[i].name}</h2>
+        <p>Rating: ${data[i].rating} / 5</p>
+        <p>Price: ${price} </p>
+        <button class="game-button">View product </button>
+        </div>
+        </a>`;
+      }
+    }
+  } catch (error) {
+    storeContainer.innerHTML = `<div class="error"> This error occured: ${error} </div>`;
+  }
+}
+
+callApiRawg();
 
 const searchQuery = "https://api.rawg.io/api/games?search=";
-const apiKey = "key=cdf875c74f4a4975a6fac3dd5dd7b70b";
+
 const searchForm = document.querySelector(".search-form");
 const searchContainer = document.querySelector(".search-bar");
 async function searchFunction(event) {

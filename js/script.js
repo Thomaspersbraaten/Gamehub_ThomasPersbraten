@@ -160,13 +160,6 @@ async function recentlyReleasedSection() {
 recentlyReleasedSection();
 
 function createHtml(games) {
-  // const gamesArray = [];
-  // for (let i = 0; i <= 19; i++) {
-  //   if (games[i]) {
-  //     gamesArray.push(games[i]);
-  //   }
-  // }
-  // console.log(gamesArray);
   for (let i = 0; i < games.length; i++) {
     if (gameIndex.childElementCount === 5) {
       return;
@@ -176,4 +169,4 @@ function createHtml(games) {
   }
 }
 
-// const createInterval = setInterval(recentlyReleasedSection, 5000);
+const createInterval = setInterval(recentlyReleasedSection, 5000);

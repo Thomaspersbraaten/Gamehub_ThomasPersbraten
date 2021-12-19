@@ -5,6 +5,12 @@ const detailsContainer = document.querySelector(".details");
 const addToBasketMessage = document.querySelector(".add-to-basket");
 const popUpBasket = document.querySelector(".popup-basket");
 const message = document.querySelector(".message");
+const reviewHeaderOne = document.querySelector(".review-header-one");
+const reviewHeaderTwo = document.querySelector(".review-header-two");
+const reviewHeaderThree = document.querySelector(".review-header-three");
+const ratingOne = document.querySelector(".rating-one");
+const ratingTwo = document.querySelector(".rating-two");
+const ratingThree = document.querySelector(".rating-three");
 
 const url =
   "https://api.rawg.io/api/games/" +
@@ -27,6 +33,12 @@ fetchUrl();
 function createHtml(game) {
   const genres = game.genres;
   console.log(genres);
+  reviewHeaderOne.innerHTML += `: ${game.name}`;
+  reviewHeaderTwo.innerHTML += `: ${game.name}`;
+  reviewHeaderThree.innerHTML += `: ${game.name}`;
+  ratingOne.innerHTML += ` ${game.rating}`;
+  ratingTwo.innerHTML += ` ${game.rating}`;
+  ratingThree.innerHTML += ` ${game.rating}`;
 
   document.title = game.name + " | " + game.genres[0].name + " | Gamehub  ";
   detailsContainer.innerHTML = "";
@@ -51,10 +63,12 @@ function createHtml(game) {
         <div class="new">
       
           <p class="details-price new-price">New product - Price: ${price} </p>
+          <p> 50+ Product's in stock 🟢 </p>
           <button class="game-button new-button"> Add to cart </button>
         </div>
         <div class="old">
           <p class="details-price used-price">Used Product - Price: ${usedCopyPrice} </p>
+          <p class="used-stock"> 11 Product's in stock 🟢 </p>
           <button class="game-button old-button"> Add to cart </button>
         </div>
       </div>
@@ -82,7 +96,7 @@ function createHtml(game) {
     addToBasketMessage.style.display = "flex";
     popUpBasket.style.display = "block";
     addToBasketMessage.innerHTML = `
-    <div class="message">✅  Item has been added to your shopping basket</div>
+    <div class="message">✅  Item has been added to your shopping cart</div>
     <div style="color: black" class="content">
     <img src="${game.background_image}" class="basket-img">
     <h2>1 x ${game.name} </h2> 
@@ -95,7 +109,7 @@ function createHtml(game) {
     addToBasketMessage.style.display = "flex";
     popUpBasket.style.display = "block";
     addToBasketMessage.innerHTML = `
-    <div class="message">✅  Item has been added to your shopping basket</div>
+    <div class="message">✅  Item has been added to your shopping cart</div>
     <div style="color: black" class="content">
     <img src="${game.background_image}" class="basket-img">
     <h2>1 x ${game.name} </h2> 

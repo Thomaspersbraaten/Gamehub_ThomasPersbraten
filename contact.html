@@ -14,6 +14,10 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="https://use.typekit.net/nyh8jpx.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play&family=Merriweather+Sans&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
     <!-- Hotjar Tracking Code for My site -->
     <script>
       (function (h, o, t, j, a, r) {
@@ -33,14 +37,9 @@
   </head>
   <body>
     <header>
-      <div class="logo_left">
-        <a href="index.html"
-          ><img
-            src="images/gamehub_logo.png"
-            alt="Gamehub logo"
-            class="logo_big"
-        /></a>
-      </div>
+      <a href="index.html" class="logo_left"
+        ><img src="images/gamehub_logo.png" alt="Gamehub logo" class="logo_big"
+      /></a>
       <div class="header-top">
         <a href="index.html"
           ><img src="images/gamehub_logo.png" alt="Gamehub logo" class="logo"
@@ -53,13 +52,11 @@
       <input type="checkbox" id="hamburger-menu" />
       <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
       <nav class="navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="store.html">Store</a></li>
-          <li><a href="signin.html">Sign in</a></li>
-          <li><a href="signin.html">Support</a></li>
-        </ul>
-        <div>
+        <div class="nav-list">
+          <a href="index.html" class="active">Home</a>
+          <a href="store.html">Store</a>
+          <a href="signin.html">Sign in</a>
+          <a href="signin.html">Support</a>
           <form class="search-form">
             <input type="search" name="search" class="search-bar" />
             <button type="submit"><i class="fas fa-search"></i></button>

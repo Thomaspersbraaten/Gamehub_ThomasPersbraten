@@ -2,6 +2,8 @@ const continueButton = document.querySelector(".first-continue");
 const shippingInformation = document.querySelector(".shipping-information");
 const shipmentButton = document.querySelector(".shipment-button");
 const paymentInformation = document.querySelector(".payment-information");
+const cartHeader = document.querySelector(".cart-header");
+
 const firstHeader = document.querySelector(".first-header");
 const paymentButton = document.querySelector(".payment-button");
 const secondHeader = document.querySelector(".second-header");
@@ -80,12 +82,6 @@ function shipmentFormValidation(event) {
     paymentInformation.style.display = "flex";
     shippingInformation.style.display = "none";
     firstHeader.innerHTML = `1. Shipping Information ✔️`;
-    //   shippingForm.innerHTML = `    <div class="message">
-    //   Thank you for registering for a Gamehub account! <br />
-    //   Please login below
-    // </div>
-    // `;
-
     return shippingArray;
   } else {
     phonevalidation();
@@ -107,7 +103,6 @@ function paymentFormValidation(event) {
     console.log(paymentArray);
     paymentForm.reset();
     paymentInformation.style.display = "none";
-    // reviewOrder.style.display = "none";
     secondHeader.innerHTML = `2. Payment Information ✔️`;
     createReviewOrder();
 
@@ -127,14 +122,23 @@ const reviewInfo = document.querySelector(".review-info");
 function createReviewOrder() {
   reviewOrderContainer.style.display = "flex";
   reviewInfo.innerHTML = `
+  <img
+  src="images/Markoftheninja.jpg"
+  alt="mark of the ninja"
+  class="basket-img"
+/>
+<div class="basket-info">
+<h2>Mark of the Ninja : Remastered - New copy</h2>
+  <p>Quantity: 1</p>
+  <p class="review-price" style="margin-bottom: 15px;">Price: kr 129,99</p>
+</div>
   <h2> Your shipment will be delivered to your address</h2> 
-  <h3> ${shippingArray[1]}</h3>
-  <h3> ${shippingArray[2]} ${shippingArray[3]}</h3>
-  <h3> Phone: ${shippingArray[0]}</h3>
+  <p>Address: ${shippingArray[1]}</p>
+  <p>City: ${shippingArray[3]} ${shippingArray[2]} </p>
+  <p>Phone number: ${shippingArray[0]}</p>
   <h2> Payed with credit card: </h2>
-    <h3> Card Owner: ${paymentArray[0]}</h3>
-    <h3> Card Number: ${paymentArray[1]}</h3>
-
+    <p> Card Owner: ${paymentArray[0]}</p>
+    <p> Card Number: ${paymentArray[1]}</p>
     `;
 }
 
@@ -143,17 +147,6 @@ function createReviewOrder() {
 function showShipmentInformation() {
   shippingInformation.style.display = "flex";
 }
-
-// function showPaymentInformation() {
-//   paymentInformation.style.display = "flex";
-//   shippingInformation.style.display = "none";
-//   firstHeader.innerHTML = `1. Shipping Information ✔️`;
-// }
-
-// function reviewOrder() {
-//   paymentInformation.style.display = "none";
-//   secondHeader.innerHTML = "2. Payment Information ✔️";
-// }
 
 continueButton.addEventListener("click", showShipmentInformation);
 
@@ -350,12 +343,19 @@ const cartContainer = document.querySelector(".cart_contents");
 function createConfirmationInfo() {
   checkoutContainer.style.display = "none";
   reviewDiv.style.display = "none";
+  cartHeader.innerHTML = "Order received!";
   cartContainer.innerHTML = `
-  <h1>Order received!</h1>
+  <h1>Thank you for your order! 👍</h1>
   <div class="order__info">
     <p>Your order has been received.</p>
     <p>Order nr: 1894</p>
     <p>You will receive an email confirmation shortly.</p>
+  </div>
+  <img src="images/Markoftheninja.jpg" alt="mark of the ninja" class="basket-img"/>
+  <div class="basket-info">
+    <p>Quantity: 1</p>
+    <p>Product: Mark of the Ninja : Remastered - New copy</p>
+    <p>Price: kr 129,99</p>
   </div>
   <div class="go__home">
     <h2>Click here to go back to the home page</h2>
