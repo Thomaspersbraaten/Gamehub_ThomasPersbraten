@@ -63,7 +63,7 @@ function createHtml(game) {
         <div class="new">
       
           <p class="details-price new-price">New product - Price: ${price} </p>
-          <p class="in-stock"> 50+ Product's in stock  </p>
+          <p> 50+ Product's in stock  🟢 </p>
           <button class="game-button new-button"> Add to cart </button>
         </div>
         <div class="old">
