@@ -63,12 +63,18 @@ function createHtml(game) {
         <div class="new">
       
           <p class="details-price new-price">New product - Price: ${price} </p>
-          <p> 50+ Product's in stock  🟢 </p>
+          <div>   
+            <p> 50+ Product's in stock   </p> 
+            <div class="stock"></div>
+          </div>
           <button class="game-button new-button"> Add to cart </button>
         </div>
         <div class="old">
           <p class="details-price used-price">Used Product - Price: ${usedCopyPrice} </p>
-          <p class="used-stock"> 11 Product's in stock 🟢 </p>
+          <div class="used-stock">   
+          <p> 50+ Product's in stock   </p> 
+          <div class="stock"></div>
+        </div>
           <button class="game-button old-button"> Add to cart </button>
         </div>
       </div>
@@ -99,7 +105,7 @@ function createHtml(game) {
     <div class="message">✅  Item has been added to your shopping cart</div>
     <div style="color: black" class="content">
     <img src="${game.background_image}" class="basket-img">
-    <h2>1 x ${game.name} </h2> 
+    <h2>1 x ${game.name} </h2>
     <p>  New product </p>
     <p> Price: ${price}</p>
     </div>`;

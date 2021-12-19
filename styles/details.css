@@ -126,7 +126,11 @@ main {
   border-bottom: 1px solid;
   padding: 5px 0px;
 }
-
+.new div,
+.old div {
+  display: flex;
+  margin: auto;
+}
 .old-button {
   background-color: #fa801acf;
   margin: 20px auto;
@@ -153,7 +157,15 @@ main {
 .old > * {
   font-family: roboto, sans-serif, Arial, Helvetica;
   text-align: center;
-  margin: 10px auto;
+  margin: 5px auto;
+}
+
+.stock {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: lime;
+  border: 1px solid black;
 }
 
 .bottom-info {
