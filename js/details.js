@@ -26,11 +26,8 @@ fetchUrl();
 
 function createHtml(game) {
   const genres = game.genres;
-  // for (let i = 0; i < genres.length; i++) {
-  //   console.log(genres[i].name);
-  //   document.title = game.name + " | " + game.genres[0].name + " | Gamehub  ";
-  // }
-  // console.log(game.genres[0].name);
+  console.log(genres);
+
   document.title = game.name + " | " + game.genres[0].name + " | Gamehub  ";
   detailsContainer.innerHTML = "";
 
@@ -43,27 +40,41 @@ function createHtml(game) {
   }
 
   detailsContainer.innerHTML += `
+  <div class="breadcrumbs" ><a href="store.html" style="text-decoration:none">Store</a> > <a>${game.genres[0].name}</a> > <a>${game.name}</a></div>
+  <h1>${game.name}</h1>
     <div class="top-details">
-    <img src="${game.background_image}" class="details-img">
-    <div>
-    <div class="new">
-    <p class="details-price new-price">Price: ${price} </p>
-    <button class="game-button"> Add to Basket </button>
-
+      <img src="${game.background_image}" class="details-img">
+      <div class="right-container">
+        <div class="new">
+          <p class="details-price new-price">Price: ${price} </p>
+          <button class="game-button new-button"> Add to Basket </button>
+        </div>
+        <div class="old">
+          <p class="details-price used-price">Used Product - Price: ${usedCopyPrice} </p>
+          <button class="game-button old-button"> Add to Basket </button>
+        </div>
+      </div>
     </div>
-    <div class="old">
-    <p class="details-price used-price">Used Product - Price: ${usedCopyPrice} </p>
-    <button class="game-button"> Add to Basket </button>
-    </div>
- 
-     
-    </div>
-    </div>
-      <h2>${game.name}</h2>
+    <section class="bottom-info"> 
+      <div class="description">
+      <h2> Game description</h2>
       <p> ${game.description_raw}</p>
+      </div>
+      <div class="right-info">
+        <h2>Genres</h2>
+        <div class="genres"></div>
+        
+    </section>
     `;
-  const addToBasketButton = document.querySelector(".game-button");
-  addToBasketButton.addEventListener("click", function () {
+  const genresContainer = document.querySelector(".genres");
+
+  for (let i = 0; i < genres.length; i++) {
+    genresContainer.innerHTML += `<p>${genres[i].name} </p>`;
+  }
+  const addToBasketButtonNew = document.querySelector(".new-button");
+  const addToBasketButtonOld = document.querySelector(".old-button");
+
+  addToBasketButtonNew.addEventListener("click", function () {
     addToBasketMessage.style.display = "flex";
     popUpBasket.style.display = "block";
     addToBasketMessage.innerHTML = `
@@ -71,10 +82,36 @@ function createHtml(game) {
     <div style="color: black" class="content">
     <img src="${game.background_image}" class="basket-img">
     <h2>${game.name} </h2> 
-    <p> Price: $${price}</p>
+    <p> Price: ${price}</p>
+    </div>`;
+  });
+
+  addToBasketButtonOld.addEventListener("click", function () {
+    addToBasketMessage.style.display = "flex";
+    popUpBasket.style.display = "block";
+    addToBasketMessage.innerHTML = `
+    <div class="message">✅  Item has been added to your shopping basket</div>
+    <div style="color: black" class="content">
+    <img src="${game.background_image}" class="basket-img">
+    <h2>${game.name} </h2> 
+    <p> Price: ${usedCopyPrice}</p>
     </div>`;
   });
 }
+
+// function addUsedProduct() {
+//   addToBasketMessage.style.display = "flex";
+//   popUpBasket.style.display = "block";
+//   addToBasketMessage.innerHTML = `
+//   <div class="message">✅  Item has been added to your shopping basket</div>
+//   <div style="color: black" class="content">
+//   <img src="${game.background_image}" class="basket-img">
+//   <h2>${game.name} </h2>
+//   <p> Price: $${price}</p>
+//   </div>`;
+// }
+
+// addToBasketButtonOld.addEventListener("click", addUsedProduct);
 
 // closeButton.addEventListener("click", function () {
 //   addToBasketMessage.style.display = "none";

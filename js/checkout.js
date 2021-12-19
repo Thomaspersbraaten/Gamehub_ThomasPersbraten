@@ -359,7 +359,7 @@ function createConfirmationInfo() {
   </div>
   <div class="go__home">
     <h2>Click here to go back to the home page</h2>
-    <a href="loggedin.html" class="cta home_button">Home</a>
+    <a href="index.html" class="cta home_button">Home</a>
   </div>
   `;
 }

@@ -10,6 +10,8 @@ const searchQuery = "https://api.rawg.io/api/games?search=";
 const homeHeader = document.querySelector(".homepage-header");
 
 const searchForm = document.querySelector(".search-form");
+const sectionHeader = document.querySelector(".section-header");
+const topParagraph = document.querySelector(".top-paragraph");
 
 async function callApiRawg() {
   try {
@@ -29,7 +31,7 @@ async function callApiRawg() {
         resultsContainer.innerHTML += `<a href="details.html?id=${data[i].id}" class="game-card" style="text-decoration:none">
         <img src="${data[i].background_image}" class="game-img" alt="${data[i].name}">
         <div class="game-info">
-        <h2> ${data[i].name}</h2>
+        <h2 class="game-card-header"> ${data[i].name}</h2>
         <p>Rating: ${data[i].rating} / 5</p>
         <p>Price: ${price} </p>
         <button class="game-button">View product </button>
@@ -90,6 +92,9 @@ async function searchFunction(event) {
     recentlyReleasedContainer.style.display = "none";
     gameIndex.style.display = "none";
     resultsContainer.innerHTML = "";
+    sectionHeader.innerHTML = "";
+    topParagraph.innerHTML = "";
+
     if (!game) {
       resultsContainer.innerHTML = `<div class="no-results"> No results where found during your search....</div>`;
     } else {
@@ -171,4 +176,4 @@ function createHtml(games) {
   }
 }
 
-const createInterval = setInterval(recentlyReleasedSection, 5000);
+// const createInterval = setInterval(recentlyReleasedSection, 5000);

@@ -51,6 +51,9 @@ br {
   padding: 0px 5px;
   flex: 1;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .game-name {
@@ -60,10 +63,7 @@ br {
   background-color: var(--color-nelson);
   margin: 5px auto;
   padding: 7px;
-  border-radius: 10px;
   border: none;
-  box-sizing: border-box;
-  box-shadow: 2px 2px;
 }
 
 .game-card:hover {
@@ -382,7 +382,7 @@ h3 {
 
 .active-item {
   background-color: #3d1565;
-  border-radius: 10px;
+
   border: none;
 }
 
@@ -720,18 +720,15 @@ footer div {
   .game-index {
     width: var(--page-width);
     border: 2px solid grey;
-    border-radius: 20px;
     margin: 10px auto;
     display: flex;
     justify-content: space-between;
     padding: 10px;
   }
-  .details > * {
-    margin: auto;
-    max-width: 1200px;
-  }
   .details {
     margin: 20px;
+    font-weight: bold;
+    font-family: Georgia, "Times New Roman", Times, serif;
   }
   .top-details {
     display: flex;
@@ -742,16 +739,6 @@ footer div {
 
   .details button:hover {
     cursor: pointer;
-  }
-
-  .details button {
-    background-color: var(--color-nelson);
-    margin: 5px auto;
-    padding: 7px;
-    border-radius: 10px;
-    border: none;
-    box-sizing: border-box;
-    box-shadow: 2px 2px;
   }
 
   .details-img {
@@ -799,6 +786,10 @@ footer div {
     padding: 5px;
   }
 
+  .game-button {
+    padding: 10px 20px;
+  }
+
   .game-card {
     color: black;
     margin: 10px;
@@ -808,6 +799,7 @@ footer div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-height: 400px;
   }
 
   .game-card > * {
@@ -892,6 +884,9 @@ footer div {
     background-color: rgb(0, 255, 0);
     border: 3px solid black;
     padding: 10px 20px;
+  }
+  .game-card-header {
+    font-size: 1.4em;
   }
 }
 

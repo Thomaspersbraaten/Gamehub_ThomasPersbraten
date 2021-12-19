@@ -1,0 +1,66 @@
+.description h2,
+.right-info h2 {
+  background-color: #a8c8c8;
+  margin: auto;
+}
+
+.description,
+.right-info {
+  border: 1px solid black;
+  width: 500px;
+  text-align: left;
+}
+
+.description p,
+.right-info p {
+  padding: 10px;
+}
+
+main {
+  width: 1000px;
+  margin: auto;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.new,
+.old {
+  margin: auto;
+  background-color: white;
+  width: 100%;
+  border: 2px solid grey;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-details {
+  gap: 20px;
+}
+
+.new > *,
+.old > * {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.details button {
+  background-color: var(--color-nelson);
+  margin: 20px auto;
+  width: 200px;
+  border: none;
+  font-family: sans-serif, Arial, Helvetica;
+  font-size: 1.1em;
+}
+
+.bottom-info {
+  display: flex;
+  gap: 20px;
+}
+
+.breadcrumbs a {
+  color: black;
+  font-size: 0.9em;
+}
