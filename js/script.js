@@ -12,12 +12,19 @@ const homeHeader = document.querySelector(".homepage-header");
 const searchForm = document.querySelector(".search-form");
 const sectionHeader = document.querySelector(".section-header");
 // const topParagraph = document.querySelector(".top-paragraph");
+let gameArray = [];
 
 async function callApiRawg() {
   try {
     const response = await fetch(apiUrl + apiKey);
     const results = await response.json();
     const data = results.results;
+
+    for (let i = 0; i < data.length; i++) {
+      gameArray.push(data[i]);
+    }
+
+    console.log(gameArray);
     console.log(data);
     // console.log(data);
     resultsContainer.innerHTML = "";

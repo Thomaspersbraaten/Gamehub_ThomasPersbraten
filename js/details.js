@@ -22,7 +22,9 @@ async function fetchUrl() {
     const response = await fetch(url);
     const gameDetails = await response.json();
     console.log(gameDetails);
-    createHtml(gameDetails);
+
+    const timedFunction = setInterval(createHtml(gameDetails), 5000);
+    // createHtml(gameDetails);
   } catch (error) {
     // const errorMessage = errorDuringApiCall(error);
     detailsContainer.innerHTML = error;
@@ -30,9 +32,19 @@ async function fetchUrl() {
 }
 fetchUrl();
 
+// try
+
+async function getDataFromAPI(data) {
+  try {
+    const response = await fetch(url);
+  } catch {
+    detailsContainer.innerHTML = error;
+  }
+}
+
 function createHtml(game) {
   const genres = game.genres;
-  console.log(genres);
+  // console.log(genres);
   reviewHeaderOne.innerHTML += `: ${game.name}`;
   reviewHeaderTwo.innerHTML += `: ${game.name}`;
   reviewHeaderThree.innerHTML += `: ${game.name}`;
@@ -118,7 +130,7 @@ function createHtml(game) {
     <div class="message">✅  Item has been added to your shopping cart</div>
     <div style="color: black" class="content">
     <img src="${game.background_image}" class="basket-img">
-    <h2>1 x ${game.name} </h2> 
+    <h2>1 x ${game.name} </h2>
     <p> Used product </p>
     <p> Price: ${usedCopyPrice}</p>
     </div>`;
