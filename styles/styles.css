@@ -103,7 +103,8 @@ img {
 
 .section-header {
   font-size: 1.2em;
-  border-top: 3px solid black;
+  /* border-bottom: 3px solid rgb(255, 255, 255); */
+  color: white;
 }
 
 /* Header & Nav */
@@ -227,6 +228,10 @@ header button {
   margin-top: 10px;
   width: 70.833px;
 }
+.background {
+  background-color: rgb(0, 0, 0);
+  border: 3px solid black;
+}
 
 .nav-list a {
   display: inline-block;
@@ -245,7 +250,8 @@ nav a {
   outline: 1px solid black;
 }
 
-.recently-released {
+.recently-released,
+.featured-games {
   width: 300px;
   height: 200px;
 }
@@ -315,7 +321,7 @@ h1 {
 h2 {
   font-family: roboto, Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1.1em;
-  margin: 10px auto 10px;
+  margin: 15px auto 10px;
   text-align: center;
 }
 
@@ -327,7 +333,8 @@ h3 {
 
 /* featured games */
 
-.recently-released {
+.recently-released,
+.featured-games {
   width: 300px;
   height: 300px;
   margin: auto;
@@ -687,7 +694,7 @@ footer div {
     width: var(--page-width);
     border: 1px solid grey;
     margin: 10px auto;
-    display: flex;
+    /* display: flex; */
     justify-content: space-evenly;
     padding: 10px 0px;
   }
@@ -709,7 +716,8 @@ footer div {
     cursor: pointer;
   }
 
-  .recently-released img {
+  .recently-released img,
+  .featured-games img {
     height: 400px;
   }
   .released-game {
@@ -837,7 +845,8 @@ footer div {
     font-size: 1.2em;
     font-weight: bold;
   }
-  .recently-released {
+  .recently-released,
+  .featured-games {
     height: 400px;
     margin: 10px auto 0px auto;
     width: var(--page-width);
