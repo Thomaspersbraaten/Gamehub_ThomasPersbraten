@@ -10,6 +10,7 @@ const searchContainer = document.querySelector(".search-bar");
 // const apiKey = "key=cdf875c74f4a4975a6fac3dd5dd7b70b";
 const searchQuery = "https://api.rawg.io/api/games?search=";
 const homeHeader = document.querySelector(".homepage-header");
+const featuredBackground = document.querySelector(".background");
 
 const searchForm = document.querySelector(".search-form");
 const sectionHeader = document.querySelector(".section-header");
@@ -21,11 +22,8 @@ async function callApiRawg(url) {
   try {
     const response = await fetch(url + "?per_page=10");
     const results = await response.json();
-    console.log(results);
-
     const feaResp = await fetch(url + "?featured=true");
     const feaRes = await feaResp.json();
-    console.log(feaRes);
     resultsContainer.innerHTML = "";
     feaRes.forEach(function (data) {
       const priceCalc = parseInt(data.prices.price) / 100;
@@ -46,7 +44,6 @@ async function callApiRawg(url) {
     const featuredCheck = url + "?featured=true";
     const nonFearesp = await fetch(url + "?featured=false");
     const nonFeaRes = await nonFearesp.json();
-    console.log(nonFeaRes);
 
     // for (let i = 0; i < results.length; i++) {
     //   const priceCalc = parseInt(results[i].prices.price) / 100;
@@ -94,21 +91,22 @@ async function callApiRawg(url) {
 callApiRawg(apiUrl);
 
 async function searchFunction(event) {
+  event.preventDefault();
   try {
-    event.preventDefault();
     const searchValue = searchContainer.value;
+    console.log(searchValue);
     const response = await fetch(apiUrl + `?search=${searchValue}`);
 
     const result = await response.json();
-    console.log(result);
 
-    homeHeader.innerHTML = `showing search results for "${searchValue}"`;
-    recentlyReleasedContainer.style.display = "none";
+    homeHeader.innerHTML = `showing search results for: ${searchValue}`;
+    featuredGames.style.display = "none";
+    featuredBackground.style.display = "none";
     gameIndex.style.display = "none";
     resultsContainer.innerHTML = "";
     sectionHeader.innerHTML = "";
 
-    if (result.length === 0) {
+    if (result.length === 0 || searchValue === "") {
       resultsContainer.innerHTML = `<div class="no-results"> No results where found during your search....</div>`;
     } else {
       result.forEach(function (results) {
@@ -120,8 +118,7 @@ async function searchFunction(event) {
         resultsContainer.innerHTML += `<a href="details.html?id=${results.id}" class="game-card" style="text-decoration:none">
       <img src="${imageSource}" class="game-img" alt="${results.name}">
       <div class="game-info">
-      <h2> ${results.name}</h2>
-      <p>Rating:  / 5</p>
+      <h2 class="game-card-header"> ${results.name}</h2>
       <p>Price: ${priceCalc} </p>
       <button class="game-button">View product </button>
       </div>
@@ -134,8 +131,3 @@ async function searchFunction(event) {
 }
 
 searchForm.addEventListener("submit", searchFunction);
-
-const recentlyReleasedApi =
-  "https://api.rawg.io/api/games?dates=2021-12-12,2021-12-13&key=cdf875c74f4a4975a6fac3dd5dd7b70b";
-let counter = 0;
-let counterMinus = -1;

@@ -94,10 +94,9 @@ function createHtml(game) {
   //   var usedCopyPrice = game.rating.toFixed(0) * 20 + ",-";
   // }
   const priceCalc = parseInt(game.prices.price) / 100;
-  console.log(priceCalc);
+
   const image = game.images;
   const imageSource = image[0].src;
-  console.log(imageSource);
 
   detailsContainer.innerHTML += `
   <div class="breadcrumbs" ><a href="store.html" style="text-decoration:none">Store</a> > <a>${game.categories[0].name}</a> > <a>${game.name}</a></div>

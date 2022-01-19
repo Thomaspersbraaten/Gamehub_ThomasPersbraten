@@ -20,7 +20,7 @@ async function genreSelection() {
     selector.onchange = function (event) {
       const selectedCategoryUrl = apiUrl + `?category=${event.target.value}`;
       storeContainer.innerHTML = "";
-      callApiRawg(selectedCategoryUrl);
+      createHTML(selectedCategoryUrl);
     };
   }
 }
@@ -71,7 +71,7 @@ async function searchFunction(event) {
 
 searchForm.addEventListener("submit", searchFunction);
 
-async function callApiRawg(url) {
+async function createHTML(url) {
   try {
     const response = await fetch(url);
     const results = await response.json();
@@ -129,4 +129,4 @@ async function callApiRawg(url) {
 //   callApiRawg(newUrl);
 // });
 
-callApiRawg(apiUrl);
+createHTML(apiUrl);
