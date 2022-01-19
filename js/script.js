@@ -35,7 +35,7 @@ async function callApiRawg(url) {
       featuredGames.innerHTML += `<a href="details.html?id=${data.id}" class="game-card" style="text-decoration:none">
       <img src="${imageSource}" class="game-img" alt="${data.name}">
       <div class="game-info">
-      <h2> ${data.name}</h2>
+      <h2 class="game-card-header"> ${data.name}</h2>
      
       <p>Price: ${priceCalc} </p>
       <button class="game-button">View product </button>
