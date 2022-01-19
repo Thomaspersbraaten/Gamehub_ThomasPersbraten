@@ -67,23 +67,23 @@ function createHtml(game) {
   reviewHeaderOne.innerHTML += `: ${game.name}`;
   reviewHeaderTwo.innerHTML += `: ${game.name}`;
   reviewHeaderThree.innerHTML += `: ${game.name}`;
-  ratingOne.innerHTML += `4 / 5  <span class="fa fa-star checked"></span>
+  ratingOne.innerHTML += ` 4 / 5  <span class="fa fa-star checked"></span>
   <span class="fa fa-star checked"></span>
   <span class="fa fa-star checked"></span>
   <span class="fa fa-star checked"></span>
   <span class="fa fa-star"></span>`;
-  ratingTwo.innerHTML += `4 / 5  <span class="fa fa-star checked"></span>
+  ratingTwo.innerHTML += ` 4 / 5  <span class="fa fa-star checked"></span>
   <span class="fa fa-star checked"></span>
   <span class="fa fa-star checked"></span>
   <span class="fa fa-star checked"></span>
   <span class="fa fa-star"></span>`;
-  ratingThree.innerHTML += `4 / 5  <span class="fa fa-star checked"></span>
+  ratingThree.innerHTML += ` 4 / 5  <span class="fa fa-star checked"></span>
   <span class="fa fa-star checked"></span>
   <span class="fa fa-star checked"></span>
   <span class="fa fa-star checked"></span>
   <span class="fa fa-star"></span>`;
 
-  document.title = game.name + " | " + game.categories[0].name + " | Gamehub  ";
+  document.title = game.name + " | " + "  Gamehub  ";
   detailsContainer.innerHTML = "";
 
   // if (game.rating === 0) {

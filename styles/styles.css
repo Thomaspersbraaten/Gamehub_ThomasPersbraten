@@ -152,15 +152,23 @@ header {
   font-size: 1.3em;
 }
 
-.fa-shopping-basket,
 .fa-user,
 .fa-shopping-cart {
   background-color: var(--white);
-  border-radius: 30%;
   border: 1px solid black;
-  padding: 5px 10px;
-  font-size: 1.7em;
+  border-radius: 10px;
+
   color: black;
+}
+
+.fa-user {
+  font-size: 2em;
+  padding: 7px 11px;
+}
+
+.fa-shopping-cart {
+  font-size: 2em;
+  padding: 7px;
 }
 
 .account_basket {
@@ -666,7 +674,7 @@ footer div {
 }
 
 .top-paragraph {
-  margin: 5px auto 10px auto;
+  margin: 5px auto 20px auto;
   text-align: center;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
@@ -805,10 +813,10 @@ footer div {
     max-width: 110px;
   }
 
-  .fa-shopping-basket,
+  /* .fa-shopping-basket,
   .fa-user {
     font-size: 2.1em;
-  }
+  } */
   .header-right {
     gap: 20px;
   }
@@ -853,7 +861,7 @@ footer div {
   }
 
   .game-card-header {
-    font-size: 1.4em;
+    font-size: 1.1em;
     background-color: #1b203de8;
     padding: 5px 0px;
     width: 100%;

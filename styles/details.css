@@ -101,7 +101,7 @@
 .details-img {
   max-width: 469px;
   margin: 20px auto;
-  height: 330px;
+  height: 350px;
 }
 
 main {
@@ -115,11 +115,11 @@ main {
   border: 1px solid #9b9b9b;
   background-color: #f5efef;
   margin: 20px auto;
-  height: 328px;
+  height: 348px;
 }
 .used-price,
 .used-stock {
-  color: #00000094;
+  color: #000000;
 }
 
 .new,
@@ -127,8 +127,8 @@ main {
   margin: auto;
 }
 .new {
-  border-bottom: 1px solid;
-  padding: 5px 0px;
+  border-bottom: 2px solid;
+  padding: 8px 0px;
 }
 .new div,
 .old div {
@@ -136,7 +136,7 @@ main {
   margin: auto;
 }
 .old-button {
-  background-color: #fa801acf;
+  background-color: #fa801a8c;
   margin: 20px auto;
   width: 200px;
   border: none;
@@ -160,7 +160,7 @@ main {
 .new > *,
 .old > * {
   font-family: roboto, sans-serif, Arial, Helvetica;
-  text-align: center;
+
   margin: 5px auto;
 }
 

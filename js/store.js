@@ -15,20 +15,12 @@ const categoryUrl =
 async function genreSelection() {
   const response = await fetch(categoryUrl);
   const results = await response.json();
-
-  // console.log(results);
-  const queryArray = [];
-
-  // for (let i = 0; i < results.length; i++) {
-  //   console.log(results[i].name);
-  // }
   for (let i = 0; i < results.length; i++) {
-    selector.innerHTML += `<option class="filter genre-${results[i].name}" value=${results[i].id}> ${results[i].name} </option>
-     `;
+    selector.innerHTML += `<option class="filter genre-${results[i].name}" value=${results[i].id}> ${results[i].name} </option>`;
     selector.onchange = function (event) {
-      const newestUrl = apiUrl + `?category=${event.target.value}`;
+      const selectedCategoryUrl = apiUrl + `?category=${event.target.value}`;
       storeContainer.innerHTML = "";
-      callApiRawg(newestUrl);
+      callApiRawg(selectedCategoryUrl);
     };
   }
 }
