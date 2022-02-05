@@ -41,9 +41,9 @@ async function callApiRawg(url) {
       </a>`;
     });
 
-    const featuredCheck = url + "?featured=true";
-    const nonFearesp = await fetch(url + "?featured=false");
-    const nonFeaRes = await nonFearesp.json();
+    const notFeaturedGame = await fetch(url + "?featured=false");
+    const notFeaturedGameResponse = await notFeaturedGame.json();
+    console.log(notFeaturedGameResponse);
 
     // for (let i = 0; i < results.length; i++) {
     //   const priceCalc = parseInt(results[i].prices.price) / 100;
@@ -59,14 +59,14 @@ async function callApiRawg(url) {
     //         </div>
     //         </a>`;
     // }
-    for (let i = 0; i < nonFeaRes.length; i++) {
-      const priceCalc = parseInt(nonFeaRes[i].prices.price) / 100;
-      const image = nonFeaRes[i].images;
+    for (let i = 0; i < notFeaturedGameResponse.length; i++) {
+      const priceCalc = parseInt(notFeaturedGameResponse[i].prices.price) / 100;
+      const image = notFeaturedGameResponse[i].images;
       const imageSource = image[0].src;
-      resultsContainer.innerHTML += `<a href="details.html?id=${nonFeaRes[i].id}" class="game-card" style="text-decoration:none">
-            <img src="${imageSource}" class="game-img" alt="${nonFeaRes[i].name}">
+      resultsContainer.innerHTML += `<a href="details.html?id=${notFeaturedGameResponse[i].id}" class="game-card" style="text-decoration:none">
+            <img src="${imageSource}" class="game-img" alt="${notFeaturedGameResponse[i].name}">
             <div class="game-info">
-            <h2 class="game-card-header"> ${nonFeaRes[i].name}</h2>
+            <h2 class="game-card-header"> ${notFeaturedGameResponse[i].name}</h2>
         
             <p>Price: ${priceCalc} $ </p>
             <button class="game-button">View product </button>
