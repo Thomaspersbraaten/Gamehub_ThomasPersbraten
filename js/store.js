@@ -12,17 +12,17 @@ const selector = document.querySelector("#selector-container");
 const categoryUrl =
   "https://tpbro.online/Gamehub-CMS/wp-json/wc/store/products/categories";
 
-async function genreSelection() {
-  const response = await fetch(categoryUrl);
-  const results = await response.json();
-  for (let i = 0; i < results.length; i++) {
-    selector.innerHTML += `<option class="filter genre-${results[i].name}" value=${results[i].id}> ${results[i].name} </option>`;
-    selector.onchange = function (event) {
-      const selectedCategoryUrl = apiUrl + `?category=${event.target.value}`;
-      storeContainer.innerHTML = "";
-      createHTML(selectedCategoryUrl);
-    };
-  }
+// async function genreSelection() {
+//   const response = await fetch(categoryUrl);
+//   const results = await response.json();
+for (let i = 0; i < results.length; i++) {
+  selector.innerHTML += `<option class="filter genre-${results[i].name}" value=${results[i].id}> ${results[i].name} </option>`;
+  selector.onchange = function (event) {
+    const selectedCategoryUrl = apiUrl + `?category=${event.target.value}`;
+    storeContainer.innerHTML = "";
+    createHTML(selectedCategoryUrl);
+  };
+  // }
 }
 
 genreSelection();
