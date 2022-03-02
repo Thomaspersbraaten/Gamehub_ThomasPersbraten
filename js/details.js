@@ -12,10 +12,10 @@ const ratingOne = document.querySelector(".rating-one");
 const ratingTwo = document.querySelector(".rating-two");
 const ratingThree = document.querySelector(".rating-three");
 
-// const url =
-//   "https://api.rawg.io/api/games/" +
-//   id +
-//   "?key=cdf875c74f4a4975a6fac3dd5dd7b70b";
+const url =
+  "https://api.rawg.io/api/games/" +
+  id +
+  "?key=cdf875c74f4a4975a6fac3dd5dd7b70b";
 
 // async function fetchUrl() {
 //   try {
@@ -33,10 +33,10 @@ const ratingThree = document.querySelector(".rating-three");
 // fetchUrl();
 //* above is Intercation design - Below is CMS
 
-const apiUrl =
-  "https://tpbro.online/Gamehub-CMS/wp-json/wc/store/products/" + id;
+// const apiUrl =
+//   "https://tpbro.online/Gamehub-CMS/wp-json/wc/store/products/" + id;
 
-async function fetchUrl() {
+async function fetchUrl(apiUrl) {
   try {
     const response = await fetch(apiUrl);
     const gameDetails = await response.json();
@@ -47,19 +47,12 @@ async function fetchUrl() {
   } catch (error) {
     // const errorMessage = errorDuringApiCall(error);
     detailsContainer.innerHTML = error;
+    console.log(error);
   }
 }
-fetchUrl();
+fetchUrl(url);
 
-// try
 
-// async function getDataFromAPI(data) {
-//   try {
-//     const response = await fetch(url);
-//   } catch {
-//     detailsContainer.innerHTML = error;
-//   }
-// }
 
 function createHtml(game) {
   // const genres = game.genres;
@@ -93,16 +86,16 @@ function createHtml(game) {
   //   var price = game.rating.toFixed(0) * 40 + ",-";
   //   var usedCopyPrice = game.rating.toFixed(0) * 20 + ",-";
   // }
-  const priceCalc = parseInt(game.prices.price) / 100;
+  const priceCalc = parseInt(game.rating * 5);
 
-  const image = game.images;
-  const imageSource = image[0].src;
+  const image = game.background_image;
+
 
   detailsContainer.innerHTML += `
-  <div class="breadcrumbs" ><a href="store.html" style="text-decoration:none">Store</a> > <a>${game.categories[0].name}</a> > <a>${game.name}</a></div>
+  <div class="breadcrumbs" ><a href="store.html" style="text-decoration:none">Store</a> > <a>${game.genres[0].name}</a> > <a>${game.name}</a></div>
   <h1>${game.name}</h1>
     <div class="top-details">
-      <img src="${imageSource}" class="details-img">
+      <img src="${image}" class="details-img">
       <div class="right-container">
       <div>
       <h2> Prices </h2>
@@ -139,8 +132,8 @@ function createHtml(game) {
     `;
   const genresContainer = document.querySelector(".genres");
 
-  for (let i = 0; i < game.categories.length; i++) {
-    genresContainer.innerHTML += `<p>${game.categories[i].name} </p>`;
+  for (let i = 0; i < game.genres.length; i++) {
+    genresContainer.innerHTML += `<p>${game.genres[i].name} </p>`;
   }
   const addToBasketButtonNew = document.querySelector(".new-button");
   const addToBasketButtonOld = document.querySelector(".old-button");
@@ -151,7 +144,7 @@ function createHtml(game) {
     addToBasketMessage.innerHTML = `
     <div class="message">✅  Item has been added to your shopping cart</div>
     <div style="color: black" class="content">
-    <img src="${imageSource}" class="basket-img">
+    <img src="${image}" class="basket-img">
     <h2>1 x ${game.name} </h2>
     <p>  New product </p>
     <p> Price: ${priceCalc}</p>

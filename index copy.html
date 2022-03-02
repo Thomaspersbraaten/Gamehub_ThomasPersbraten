@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Gamehub | Store</title>
+    <title>Gamehub | Homepage</title>
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Visit out store to browse for your next purchase, or even check out upcoming games in the preorder section"
+      content="Find the game you are looking for here on Gamehub"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="stylesheet" href="styles/store.css" />
+    <link rel="stylesheet" href="styles/newstyles.css" />
     <script
       src="https://kit.fontawesome.com/ba0e3e950c.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="https://use.typekit.net/nyh8jpx.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Play&family=Merriweather+Sans&family=Bebas+Neue&display=swap"
       rel="stylesheet"
@@ -42,10 +44,10 @@
         <img src="images/gamehub.png" alt="Gamehub logo" class="logo__img"/>
       </a>  
       <nav style="display: none;">
-          <a href="index.html" >Home</a>
-          <a href="store.html" class="active">Store</a>
+          <a href="index.html" class="active">Home</a>
+          <a href="store.html">Store</a>
           <a href="signin.html">Sign in</a>
-          <a href="contact.html">Contact</a>
+          <a href="support.html">Support</a>
           <div class="search-container">
             <form action="submit" class="search-form" autocomplete="off">
               <label for="search">Search for posts</label>
@@ -66,22 +68,33 @@
       </div>
     </div>
     </header>
-    <main>
-      <h1 class="store-header">Store</h1>
-   
-      <div class="store">
-        <div class="genres-container">
-          <label for="">Select game Genre</label>
-          <select name="selector-container" id="selector-container"></select>
-        </div>
-        <div class="store-container"></div>
+    <main class="index">
+      <div>
+        <h1 class="homepage-header">Welcome to Gamehub</h1>
+        <p class="top-paragraph">
+          We sell games, and buy your old games for resale. Good for your
+          wallet, good for the environment!
+        </p>
       </div>
 
-      <script src="js/store.js"></script>
+      <!-- <div class="recently-released"></div> -->
+      <!-- <div class="background">
+        <h2 class="section-header">Recently released games</h2>
+        <div class="featured-games"></div>
+      </div> -->
+      <ul class="game-index"></ul>
+      <div class="results"></div>
+      <div class="add-to-basket" style="display: none">
+        Item added to basket
+        <button class="x-button">X</button>
+      </div>
+      <script src="js/functions.js"></script>
+
+      <script src="js/script.js"></script>
     </main>
     <footer>
       <div>
-        <a href="../contact.html" class="contact">Contact Us</a>
+        <a href="contact.html" class="contact">Contact Us</a>
         <a href="#" class="faq">FAQ</a>
       </div>
       <p class="copyright">2021 Game hub - Copyright &copy;</p>

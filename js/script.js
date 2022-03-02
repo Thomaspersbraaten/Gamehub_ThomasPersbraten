@@ -53,7 +53,7 @@ async function callApiRawg(url) {
     for (let i = 0; i < data.length; i++) {
       const priceCalc = parseInt(data[i].rating * 5);
       const image = data[i].background_image;
-      console.log(image);
+    
       // const imageSource = image[0].src;
       resultsContainer.innerHTML += `<a href="details.html?id=${data[i].id}" class="game-card" style="text-decoration:none">
             <div class="img-container"> 

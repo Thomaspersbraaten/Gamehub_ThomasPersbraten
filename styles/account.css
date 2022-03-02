@@ -21,7 +21,10 @@
     text-align: center;
     margin: 50px;
 }
-
+.account_basket {
+    padding: 10px;
+  }
+  
 .account_info button {
     margin: 10px;
 }
