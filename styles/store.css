@@ -5,6 +5,40 @@
   --color-background: #f5efef;
   --border: 1px solid #9b9b9b;
 }
+.search-form {
+  max-width: 180px;
+  margin: 30px auto 0px auto;
+}
+
+.search-dropdown {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 10px 10px 10px;
+  margin: 2px auto 10px auto;
+  height: 100px;
+  overflow: hidden;
+}
+.search-dropdown > * {
+  padding: 5px;
+  border: 1px solid black;
+  width: 175px;
+  margin: auto;
+  height: 30px;
+  display: flex;
+}
+.search-dropdown-name {
+  width: 100px;
+  overflow: hidden;
+}
+.search-dropdown > *:hover {
+  background-color: black;
+  color: white;
+}
+.search-dropdown-image {
+  display: none;
+}
 
 @media (min-width: 600px) {
   .fa-chevron-circle-left,

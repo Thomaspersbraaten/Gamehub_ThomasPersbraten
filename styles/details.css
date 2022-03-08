@@ -136,7 +136,8 @@ main {
   margin: auto;
 }
 .old-button {
-  background-color: #fa801a8c;
+  background-color: #2e324c;
+  color: white;
   margin: 20px auto;
   width: 200px;
   border: none;

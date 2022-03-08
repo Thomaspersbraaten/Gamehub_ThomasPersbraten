@@ -40,7 +40,12 @@ br {
   width: 100%;
   margin: auto;
 }
-
+.game-card-header {
+  background-color: #1b203de8;
+  width: 100%;
+  color: white;
+  padding: 5px 0px;
+}
 .game-card {
   border: var(--border);
   color: black;
@@ -52,7 +57,9 @@ br {
   display: flex;
   flex-direction: column;
 }
-
+.game-card p {
+  font-family: "sansita swashed";
+}
 .game-info {
   height: 50%;
   /* padding: 0px 5px; */
@@ -70,10 +77,14 @@ br {
   margin: 0px;
 }
 .game-button {
+  font-family: "bebas neue";
+  border-radius: 10px;
   background-color: var(--color-nelson);
   margin: 5px auto;
-  padding: 5px;
+  padding: 5px 10px;
   border: none;
+  box-shadow: 3px 3px #beaece;
+  transition: all 0.3s;
 }
 
 .game-card:hover {
@@ -81,6 +92,9 @@ br {
 }
 .game-button:hover {
   cursor: pointer;
+  padding: 5px 15px;
+  color: var(--color-nelson);
+  background-color: black;
 }
 .game-info > * {
   /* padding: 4px; */
@@ -104,8 +118,8 @@ br {
 body {
   background-color: white;
   margin: 0;
-  display:flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -146,14 +160,16 @@ header {
   margin: 10px 0px 10px 10px;
 }
 
-.fa-times-circle, .fa-bars {
+.fa-times-circle,
+.fa-bars {
   font-size: 2em;
   padding: 3px;
   margin: auto 10px auto auto;
   cursor: pointer;
 }
 
-.fa-user, .fa-shopping-cart {
+.fa-user,
+.fa-shopping-cart {
   font-size: 1.3em;
 
   background-color: #fff;
@@ -172,9 +188,9 @@ header {
 .header__icons {
   display: flex;
   gap: 20px;
-
 }
-.hamburger, .header__icons{
+.hamburger,
+.header__icons {
   margin: 10px;
 }
 nav a:hover {
@@ -191,15 +207,16 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;    
+  gap: 10px;
 }
 nav a {
   cursor: pointer;
   text-decoration: none;
   color: black;
   font-family: Merriweather Sans, snicker, Verdana, Geneva, Tahoma, sans-serif;
-}   
-nav a, .search-form {
+}
+nav a,
+.search-form {
   margin: 10px auto;
 }
 .search-container {
@@ -221,45 +238,41 @@ input:focus {
   flex-direction: row;
 }
 .search-form {
-margin: auto;
-text-align: center;
+  margin: auto;
+  text-align: center;
 }
 #search {
-
-width: 150px;
-border: 1px solid black;
-border-radius: 50px 0px 0px 50px;
-margin: auto;
-padding: 5px 15px;
-box-shadow: 2px 2px 2px grey;
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 50px 0px 0px 50px;
+  margin: auto;
+  padding: 5px 15px;
+  box-shadow: 2px 2px 2px grey;
 }
 .search-button {
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 1.2em;
-width: 40px;
-border-radius: 0px 20px 20px 0px;
-padding: 0px 12px 0px 10px;
-background-color: #f9f8f8;
-box-shadow: 2px 2px 2px grey;
-border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  width: 40px;
+  border-radius: 0px 20px 20px 0px;
+  padding: 0px 12px 0px 10px;
+  background-color: #f9f8f8;
+  box-shadow: 2px 2px 2px grey;
+  border: 1px solid black;
 
-border-left: 0px;
-transition: 0.4s;
+  border-left: 0px;
+  transition: 0.4s;
 }
 .search-button:hover {
-cursor: pointer;
-background-color: #cecece;
+  cursor: pointer;
+  background-color: #cecece;
 }
 .fa-times-circle {
   display: none;
 }
 
-
-
-
-/* */ 
+/* */
 
 :focus {
   outline: 1px solid black;
@@ -280,7 +293,6 @@ background-color: #cecece;
   margin: 0px auto;
   padding: 0px;
 }
-
 
 .wrapper {
   display: flex;
@@ -314,7 +326,8 @@ h1 {
 }
 
 h2 {
-  font-family: roboto, Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "source sans pro", roboto, Verdana, Geneva, Tahoma, sans-serif;
+  /* letter-spacing: 0.04em; */
   font-size: 0.8em;
   margin: 15px auto 10px;
   text-align: center;
@@ -470,7 +483,7 @@ footer {
   justify-content: space-evenly;
   flex-direction: column;
   height: 60px;
-  
+
   margin: 0;
   margin-top: auto;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -621,7 +634,6 @@ footer div {
 /* Media queries  */
 
 @media (min-width: 600px) {
- 
   .articles h3 {
     font-size: 0.8em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -667,37 +679,36 @@ footer div {
     sans-serif;
 }
 
-@media (min-width:700px) {
+@media (min-width: 700px) {
   /* Header */
   .header-container {
-      gap: 5em;
-      max-width: var(--page-width);
+    gap: 5em;
+    max-width: var(--page-width);
   }
   .logo {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  .fa-bars, .fa-times-circle {
+  .fa-bars,
+  .fa-times-circle {
     font-size: 3em;
     margin-right: auto 20px;
   }
 
-
-  .logo__img {
-      max-width: 100%;
-      max-height: none;
-      margin: 10px;
-  }
+  /* .logo__img {
+    max-width: 100%;
+    max-height: none;
+    margin: 10px;
+  } */
   nav {
-      top: 14%;
+    top: 14%;
   }
-  .fa-shopping-cart, .fa-user {
-      font-size: 2em;
+  .fa-shopping-cart,
+  .fa-user {
+    font-size: 2em;
   }
-
 }
 @media (min-width: 750px) {
   .featured-games {
@@ -705,14 +716,16 @@ footer div {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
     margin-bottom: 50px;
-  
   }
 }
 
 @media (min-width: 1000px) {
-  /* Header*/ 
+  .logo__img {
+    height: 56, 7px;
+    width: 90px;
+  }
+  /* Header*/
   .header-container {
-
     margin: auto;
   }
   header {
@@ -723,15 +736,15 @@ footer div {
     display: flex !important;
     position: static;
     flex-direction: row;
-}
+  }
 
-.hamburger {
+  .hamburger {
     display: none;
-}
-.header__icons {
+  }
+  .header__icons {
     margin: auto 20px;
-}
-/* */ 
+  }
+  /* */
   .breadcrumbs {
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
       "Helvetica Neue", sans-serif;
@@ -815,9 +828,7 @@ footer div {
   .game-card {
     color: black;
     margin: 10px;
-    background-color: var(--color-background);
-    font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-      "Helvetica Neue", sans-serif;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -827,16 +838,13 @@ footer div {
   /* .game-card > * {
     height: 50%;
   } */
- 
+
   .signup {
     max-width: var(--page-width);
   }
   .sign-in {
     text-align: center;
   }
-  
-
-
 
   .cta:hover {
     background-color: #1b203de8;
@@ -855,7 +863,7 @@ footer div {
 
   .game-card-header {
     font-size: 1.1em;
-    background-color: #1b203de8;
+
     padding: 5px 0px;
     width: 100%;
     color: white;

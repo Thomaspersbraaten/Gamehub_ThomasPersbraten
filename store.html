@@ -38,37 +38,50 @@
   <body>
     <header>
       <div class="header-container">
-      <a href="index.html" class="logo">
-        <img src="images/gamehub.png" alt="Gamehub logo" class="logo__img"/>
-      </a>  
-      <nav style="display: none;">
-          <a href="index.html" >Home</a>
+        <a href="index.html" class="logo">
+          <img src="images/gamehub.png" alt="Gamehub logo" class="logo__img" />
+        </a>
+        <nav style="display: none">
+          <a href="index.html">Home</a>
           <a href="store.html" class="active">Store</a>
           <a href="signin.html">Sign in</a>
           <a href="contact.html">Contact</a>
           <div class="search-container">
-            <form action="submit" class="search-form" autocomplete="off">
+            <!-- <form action="submit" class="search-form" autocomplete="off">
               <label for="search">Search for posts</label>
               <div class="search-input-container">
                 <input type="search" name="search" id="search" placeholder="Search..."/>
                 <button class="search-button"><i class="fas fa-search"></i></button>
               </div>
-            </form>
+            </form> -->
           </div>
-      </nav>    
-      <div class="header__icons">
-        <a href="basket.html"><i class="fas fa-shopping-cart"></i></a>
-        <a href="signin.html"><i class="fas fa-user"></i></a>
-      </div>
+        </nav>
+        <div class="header__icons">
+          <a href="basket.html"><i class="fas fa-shopping-cart"></i></a>
+          <a href="signin.html"><i class="fas fa-user"></i></a>
+        </div>
         <div class="hamburger">
-        <i class="fa-solid fa-bars"></i>
-        <i class="far fa-times-circle"></i>
+          <i class="fa-solid fa-bars"></i>
+          <i class="far fa-times-circle"></i>
+        </div>
       </div>
-    </div>
     </header>
     <main>
       <h1 class="store-header">Store</h1>
-   
+      <form action="submit" class="search-form" autocomplete="off">
+        <label for="search">Search for posts</label>
+        <div class="search-input-container">
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Search..."
+          />
+          <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+      </form>
+      <div class="search-dropdown"></div>
+
       <div class="store">
         <div class="genres-container">
           <label for="">Select game Genre</label>
