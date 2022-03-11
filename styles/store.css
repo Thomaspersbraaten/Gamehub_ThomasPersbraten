@@ -5,9 +5,32 @@
   --color-background: #f5efef;
   --border: 1px solid #9b9b9b;
 }
+
+.opacity-container {
+  visibility: hidden;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.25s ease, visibility 0.25s linear;
+}
+.is-visible {
+  visibility: inherit;
+  opacity: 1;
+  transition: opacity 1s ease 0.1s, visibility 1s linear 0.1s;
+}
+
 .search-form {
   max-width: 180px;
   margin: 30px auto 0px auto;
+  position: relative;
+  z-index: 3;
 }
 
 .search-dropdown {
@@ -15,22 +38,48 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0px 10px 10px 10px;
+  /* padding: 0px 10px 10px 10px; */
   margin: 2px auto 10px auto;
-  height: 100px;
+  /* height: 135px; */
   overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  gap: 1px;
+  width: 220px;
 }
 .search-dropdown > * {
   padding: 5px;
   border: 1px solid black;
   width: 175px;
-  margin: auto;
-  height: 30px;
+  margin: 1px auto auto auto;
+  height: 45px;
   display: flex;
+  justify-content: space-between;
+  color: black;
+  background-color: aliceblue;
+}
+.search-header {
+  font-size: 1.5rem;
+  margin: 20px 10px;
 }
 .search-dropdown-name {
   width: 100px;
+  font-size: 0.8em;
+  margin: auto;
+
   overflow: hidden;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-family: "source sans pro", roboto, Verdana, Geneva, Tahoma, sans-serif;
+}
+.search-dropdown-price {
+  width: 45px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  margin: auto;
 }
 .search-dropdown > *:hover {
   background-color: black;
@@ -40,7 +89,79 @@
   display: none;
 }
 
+.genres-container {
+  display: flex;
+  margin: 20px auto;
+  flex-direction: column;
+}
+#selector-container {
+  margin: auto;
+  width: 150px;
+}
+.radio-selector {
+  display: none;
+}
+.selector-div {
+  margin: auto;
+}
+/* /* .game-card {
+  max-width: 350px;
+  margin: 30px auto;
+} */
+
+/* .game-card {
+  height: 250px;
+  max-width: 300px;
+  margin: 30px auto;
+} */
+
 @media (min-width: 600px) {
+  .genres-container {
+    margin: 20px;
+  }
+  .radio-genre {
+    margin: auto;
+  }
+
+  .radio-selector {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .radio-selector > * {
+    margin: 10px auto;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    width: 80%;
+  }
+  .selector-div {
+    display: none;
+  }
+  .search-dropdown {
+    width: 500px;
+    /* height: 210px; */
+  }
+  .search-dropdown-price {
+    margin: auto;
+    padding: 5px;
+  }
+  .search-dropdown > * {
+    width: 480px;
+    height: 60px;
+  }
+  .search-dropdown-image {
+    display: block;
+    height: 50px;
+    width: 50px;
+    margin: auto;
+  }
+  .search-dropdown-name {
+    font-size: 1.5rem;
+    width: 80%;
+    margin: auto;
+  }
   .fa-chevron-circle-left,
   .fa-chevron-circle-right {
     font-size: 2em;
@@ -70,7 +191,7 @@
   }
 
   .store {
-    width: 1100px;
+    /* width: 1100px; */
     margin: 0px auto;
     display: flex;
     gap: 10px;
@@ -78,7 +199,7 @@
   .store-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 20px auto;
     grid-template-rows: auto;
     background-color: #f5efef;

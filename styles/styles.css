@@ -21,7 +21,7 @@ html {
 
 .results {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   max-width: 1200px;
   margin: 20px auto;
   grid-template-rows: auto;
@@ -31,6 +31,12 @@ html {
   width: 100%;
   height: 100%;
   flex: 1;
+}
+
+.game-card {
+  height: 250px;
+  max-width: 300px;
+  margin: 30px auto;
 }
 
 br {
@@ -61,7 +67,7 @@ br {
   font-family: "sansita swashed";
 }
 .game-info {
-  height: 50%;
+  height: 40%;
   /* padding: 0px 5px; */
   flex: 1;
   text-align: center;
@@ -70,7 +76,7 @@ br {
   /* gap: 10px; */
 }
 .img-container {
-  height: 50%;
+  height: 60%;
 }
 
 .game-name {
@@ -79,12 +85,13 @@ br {
 .game-button {
   font-family: "bebas neue";
   border-radius: 10px;
-  background-color: var(--color-nelson);
+  /* background-color: var(--color-nelson); */
+  background-color: #77fb6b;
   margin: 5px auto;
   padding: 5px 10px;
   border: none;
   box-shadow: 3px 3px #beaece;
-  transition: all 0.3s;
+  transition: all 0.4s;
 }
 
 .game-card:hover {
@@ -93,15 +100,15 @@ br {
 .game-button:hover {
   cursor: pointer;
   padding: 5px 15px;
-  color: var(--color-nelson);
-  background-color: black;
+  color: black;
+  background-color: #3a6bff;
 }
 .game-info > * {
   /* padding: 4px; */
   margin: 0px auto;
 }
-.game-info p {
-  font-size: 0.8em;
+.game-info_price {
+  font-size: 1em;
 }
 
 .message {
@@ -192,6 +199,7 @@ header {
 .hamburger,
 .header__icons {
   margin: 10px;
+  /* width: 48px; */
 }
 nav a:hover {
   text-decoration: underline;
@@ -208,6 +216,7 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  z-index: 1;
 }
 nav a {
   cursor: pointer;
@@ -459,6 +468,10 @@ h3 {
   margin: auto;
   padding: 0px;
 }
+.game-card_price,
+.game-button {
+  margin: auto;
+}
 
 .cta {
   text-decoration: none;
@@ -634,6 +647,9 @@ footer div {
 /* Media queries  */
 
 @media (min-width: 600px) {
+  .results {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
   .articles h3 {
     font-size: 0.8em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -824,6 +840,12 @@ footer div {
   .game-button {
     padding: 10px 25px;
   }
+  .game-button:hover {
+    padding: 10px 45px;
+  }
+  .game-card_price {
+    font-size: 1.6em;
+  }
 
   .game-card {
     color: black;
@@ -832,7 +854,7 @@ footer div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-height: 400px;
+    height: 360px;
   }
 
   /* .game-card > * {
