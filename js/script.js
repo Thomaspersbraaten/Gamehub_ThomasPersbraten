@@ -44,7 +44,7 @@ async function callApiRawg(url) {
       </a>`;
     }
   } catch (error) {
-    resultsContainer.innerHTML = `<div class="error"> This error occured: ${error} </div>`;
+    resultsContainer.innerHTML = `<div class="error"> This error ocurred: ${error} </div>`;
   }
 }
 

@@ -2,10 +2,13 @@
 // const params = new URLSearchParams(queryString);
 // const genres = params.get("genres");
 //
-
+var pageCount = 1;
 const cors = "https://noroffcors.herokuapp.com/";
-const apiUrl = "https://api.rawg.io/api/games?";
-const apiKey = "key=cdf875c74f4a4975a6fac3dd5dd7b70b";
+// const apiUrl =
+//   "https://api.rawg.io/api/games?" + "page_size=15" + "&page=" + pageCount;
+const apiUrl =
+  "https://api.rawg.io/api/games?" + "page=" + pageCount + "&page_size=15";
+const apiKey = "&key=cdf875c74f4a4975a6fac3dd5dd7b70b";
 const searchQuery = "https://api.rawg.io/api/games?search=";
 
 const fullUrl = cors + apiUrl + apiKey;
@@ -20,10 +23,24 @@ const genresContainer = document.querySelector(".genres-container");
 const storeContainer = document.querySelector(".store-container");
 const selector = document.querySelector("#selector-container");
 const radioSelector = document.querySelector(".radio-selector");
+const storeNavigation = document.querySelector(".store-navigation");
+
+// store nav
+const navLeft = document.querySelector(".nav-left");
+const navRight = document.querySelector(".nav-right");
+const navIndex = document.querySelector(".store-index");
 
 async function createHTML(url) {
   try {
-    const response = await fetch(url);
+    // const response = await fetch(cors + apiUrl + apiKey);
+    const response = await fetch(
+      cors +
+        "https://api.rawg.io/api/games?" +
+        "page=" +
+        pageCount +
+        "&page_size=15" +
+        apiKey
+    );
     const results = await response.json();
     // console.log(results.results);
     const data = results.results;
@@ -35,21 +52,14 @@ async function createHTML(url) {
     storeContainer.innerHTML = "";
     // createHtml(data);
     for (let i = 0; i < data.length; i++) {
-      if (i === 9) {
-        return;
+      if (data[i].rating > 1) {
+        var priceCalc = parseInt(data[i].rating * 5);
       } else {
-        const priceCalc = parseInt(data[i].rating * 5);
-        const image = data[i].background_image;
+        var priceCalc = Math.floor(Math.random() * 50);
+      }
 
-        // storeContainer.innerHTML += `<a href="details.html?id=${data[i].id}" class="game-card" style="text-decoration:none">
-        // <img src="${image}" class="game-img" alt="${data[i].name}">
-        // <div class="game-info">
-        // <h2 class="game-card-header"> ${data[i].name}</h2>
-        // <p>Price: ${priceCalc} $ </p>
-        // <button class="game-button">View product</button>
-        // </div>
-        // </a>`;
-        storeContainer.innerHTML += `
+      const image = data[i].background_image;
+      storeContainer.innerHTML += `
         <a href="details.html?id=${data[i].id}" class="game-card" style="text-decoration:none">
           <div class="img-container"> 
             <img src="${image}" class="game-img" alt="${data[i].name}">
@@ -60,40 +70,55 @@ async function createHTML(url) {
             <button class="game-button">View product </button>
           </div>
         </a>`;
-        // storeContainer.innerHTML += `<a href="details.html?id=${data[i].id}" class="game-card" style="text-decoration:none">
-        // <div class="img-container">
-        // <img src="${image}" class="game-img" alt="${data[i].name}">
-        // </div>
-
-        // <div class="game-info">
-        // <h2 class="game-card-header"> ${data[i].name}</h2>
-
-        // <p>Price: ${priceCalc} $ </p>
-        // <button class="game-button">View product </button>
-        // </div>
-        // </a>`;
-      }
     }
-
-    // data.forEach(function (game) {
-    //   const priceCalc = game.rating * 40;
-    //   const price = priceCalc.toFixed(0) + ",-";
-    //   resultsContainer.innerHTML += `
-
-    //   <a href="details.html?id=${game.id}" class="game-card" style="text-decoration:none">
-    //   <img src="${game.background_image}" class="game-img" alt="${game.name}">
-    //      <div class="game-info">
-    //   <h3 class="game-name"> ${game.name}</h3>
-    //   <p>Rating: ${game.rating} / 5</p>
-    //   <p>Price: ${price} </p>
-    //   <button class="game-button">View product </button>
-    //   </div>
-    //   </a>`;
-    // });
+    createStoreNav();
   } catch (error) {
-    storeContainer.innerHTML = `<div class="error"> This error occured: ${error} </div>`;
+    storeContainer.innerHTML = `<div class="error"> This error occurred: ${error} </div>`;
   }
 }
+
+function createStoreNav() {
+  navIndex.innerHTML = "";
+  console.log(pageCount);
+  if (pageCount === 1) {
+    navIndex.innerHTML = `
+    <div class="active-nav">${pageCount}</div>
+    <div value="${pageCount + 1}">${pageCount + 1} </div>
+    <div value="${pageCount + 2}">${pageCount + 2} </div>
+    </div>...</div>
+    `;
+  }
+  if (pageCount === 2) {
+    navIndex.innerHTML = `
+    <div>${pageCount - 1}</div>    
+    <div class="active-nav">${pageCount}</div>
+    <div>${pageCount + 1} </div>
+    <div>${pageCount + 2} </div>
+    `;
+  }
+  if (pageCount > 2) {
+    navIndex.innerHTML = `
+    <div>${pageCount - 2}</div> 
+    <div>${pageCount - 1}</div>    
+    <div class="active-nav">${pageCount}</div>
+    <div>${pageCount + 1} </div>
+    <div>${pageCount + 2} </div>
+    `;
+  }
+}
+
+navLeft.addEventListener("click", function () {
+  console.log("no");
+  pageCount--;
+  console.log(pageCount);
+  createHTML();
+});
+navRight.addEventListener("click", function () {
+  console.log("yes");
+  pageCount++;
+  console.log(pageCount);
+  createHTML();
+});
 
 // searchContainer.addEventListener("submit", function (event) {
 //   event.preventDefault();

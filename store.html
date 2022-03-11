@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     ></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Play&family=Merriweather+Sans&family=Bebas+Neue&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Akronim&family=Alegreya&family=Bebas+Neue&family=Charm&family=Merriweather+Sans&family=Merriweather:ital,wght@0,300;1,300&family=Play&family=Ribeye+Marrow&family=Sansita+Swashed:wght@300&family=Source+Sans+Pro:wght@300;400&family=Turret+Road&family=Yellowtail&display=swap"
       rel="stylesheet"
     />
     <!-- Hotjar Tracking Code for My site -->
@@ -46,7 +46,7 @@
           <a href="store.html" class="active">Store</a>
           <a href="signin.html">Sign in</a>
           <a href="contact.html">Contact</a>
-          <div class="search-container"></div>
+          <!-- <div class="search-container"></div> -->
         </nav>
         <div class="header__icons">
           <a href="basket.html"><i class="fas fa-shopping-cart"></i></a>
@@ -60,6 +60,13 @@
     </header>
     <main>
       <div class="opacity-container"></div>
+      <div class="store-navigation">
+        <div class="store-navigation_container">
+          <div class="nav-left"><i class="fa-solid fa-arrow-left"></i></div>
+          <div class="store-index"></div>
+          <div class="nav-right"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
 
       <h1 class="store-header">Store</h1>
       <form action="submit" class="search-form" autocomplete="off">
@@ -76,17 +83,20 @@
       </form>
       <div class="search-dropdown"></div>
 
-      <div class="store">
-        <div class="genres-container">
-          <div class="selector-div">
-            <label for="">Select game Genre</label>
-            <select name="selector-container" id="selector-container"></select>
-          </div>
-          <form class="radio-selector"></form>
+      <aside class="genres-container">
+        <div class="selector-div">
+          <label for="">Select game Genre</label>
+          <select name="selector-container" id="selector-container"></select>
         </div>
+        <form class="radio-selector"></form>
+      </aside>
+
+      <div class="store">
         <h2 class="search-header"></h2>
         <div class="store-container"></div>
       </div>
+      <div class="main-store-container"></div>
+
       <script src="js/functions.js"></script>
       <script src="js/store.js"></script>
     </main>
