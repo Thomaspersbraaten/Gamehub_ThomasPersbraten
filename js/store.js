@@ -19,18 +19,27 @@ const fullGenreUrl = cors + genreUrl + apiKey;
 //
 const storeHeader = document.querySelector(".store-header");
 
+const loaderContainer = document.querySelector(".loader-container");
+
 const genresContainer = document.querySelector(".genres-container");
 const storeContainer = document.querySelector(".store-container");
 const selector = document.querySelector("#selector-container");
 const radioSelector = document.querySelector(".radio-selector");
 const storeNavigation = document.querySelector(".store-navigation");
 
-// store nav
+// store nav upper
 const navLeft = document.querySelector(".nav-left");
 const navRight = document.querySelector(".nav-right");
 const navIndex = document.querySelector(".store-index");
 
+// store nav lower
+const navIndexLower = document.querySelector(".store-index_lower");
+const navLeftLower = document.querySelector(".nav-left_lower");
+const navRightLower = document.querySelector(".nav-right_lower");
+
 async function createHTML(url) {
+  loaderContainer.style.display = "flex";
+
   try {
     // const response = await fetch(cors + apiUrl + apiKey);
     const response = await fetch(
@@ -72,6 +81,7 @@ async function createHTML(url) {
         </a>`;
     }
     createStoreNav();
+    loaderContainer.style.display = "none";
   } catch (error) {
     storeContainer.innerHTML = `<div class="error"> This error occurred: ${error} </div>`;
   }
@@ -79,25 +89,54 @@ async function createHTML(url) {
 
 function createStoreNav() {
   navIndex.innerHTML = "";
+  navIndexLower.innerHTML = "";
   console.log(pageCount);
   if (pageCount === 1) {
-    navIndex.innerHTML = `
+    navLeft.style.opacity = 0.5;
+    navLeftLower.style.opacity = 0.5;
+    const indexOne = `
     <div class="active-nav">${pageCount}</div>
-    <div value="${pageCount + 1}">${pageCount + 1} </div>
-    <div value="${pageCount + 2}">${pageCount + 2} </div>
+    <div>${pageCount + 1} </div>
+    <div>${pageCount + 2} </div>
     </div>...</div>
     `;
+    navIndex.innerHTML = indexOne;
+    navIndexLower.innerHTML = indexOne;
+    // navIndex.innerHTML = `
+    // <div class="active-nav">${pageCount}</div>
+    // <div>${pageCount + 1} </div>
+    // <div>${pageCount + 2} </div>
+    // </div>...</div>
+    // `;
+
+    // navIndexLower.innerHTML = `
+    // <div class="active-nav">${pageCount}</div>
+    // <div>${pageCount + 1} </div>
+    // <div>${pageCount + 2} </div>
+    // </div>...</div>
+    // `;
   }
   if (pageCount === 2) {
-    navIndex.innerHTML = `
+    navLeft.style.opacity = 1;
+    const indexTwo = `
     <div>${pageCount - 1}</div>    
     <div class="active-nav">${pageCount}</div>
     <div>${pageCount + 1} </div>
     <div>${pageCount + 2} </div>
     `;
+    navIndex.innerHTML = indexTwo;
+    navLeftLower.style.opacity = 1;
+    navIndexLower.innerHTML = indexTwo;
   }
   if (pageCount > 2) {
     navIndex.innerHTML = `
+    <div>${pageCount - 2}</div> 
+    <div>${pageCount - 1}</div>    
+    <div class="active-nav">${pageCount}</div>
+    <div>${pageCount + 1} </div>
+    <div>${pageCount + 2} </div>
+    `;
+    navIndexLower.innerHTML = `
     <div>${pageCount - 2}</div> 
     <div>${pageCount - 1}</div>    
     <div class="active-nav">${pageCount}</div>
@@ -108,12 +147,55 @@ function createStoreNav() {
 }
 
 navLeft.addEventListener("click", function () {
-  console.log("no");
-  pageCount--;
+  if (pageCount === 1) {
+    return;
+  } else {
+    console.log("no");
+    pageCount--;
+    console.log(pageCount);
+    createHTML();
+  }
+});
+navRight.addEventListener("click", function () {
+  console.log("yes");
+  pageCount++;
   console.log(pageCount);
   createHTML();
 });
-navRight.addEventListener("click", function () {
+
+navIndex.addEventListener("click", (e) => {
+  const target = e.target.closest("div");
+  // const numberedTarget = Number(target.value);
+  // console.log(target.attributes.value.nodeValue);
+  console.log(target);
+  const value = Number(target.innerText);
+  console.log(value);
+  pageCount = value;
+  createHTML();
+});
+
+navIndexLower.addEventListener("click", (e) => {
+  const target = e.target.closest("div");
+  // const numberedTarget = Number(target.value);
+  // console.log(target.attributes.value.nodeValue);
+  console.log(target);
+  const value = Number(target.innerText);
+  console.log(value);
+  pageCount = value;
+  createHTML();
+});
+
+navLeftLower.addEventListener("click", function () {
+  if (pageCount === 1) {
+    return;
+  } else {
+    console.log("no");
+    pageCount--;
+    console.log(pageCount);
+    createHTML();
+  }
+});
+navRightLower.addEventListener("click", function () {
   console.log("yes");
   pageCount++;
   console.log(pageCount);
@@ -171,26 +253,13 @@ async function genreFunction(url) {
 }
 genreFunction(fullGenreUrl);
 
-// async function genreSelection() {
-//   const response = await fetch(categoryUrl);
-//   const results = await response.json();
-// for (let i = 0; i < results.length; i++) {
-//   selector.innerHTML += `<option class="filter genre-${results[i].name}" value=${results[i].id}> ${results[i].name} </option>`;
-//   selector.onchange = function (event) {
-//     const selectedCategoryUrl = apiUrl + `?category=${event.target.value}`;
-//     storeContainer.innerHTML = "";
-//     createHTML(selectedCategoryUrl);
-//   };
-// }
-
-// genreSelection();
-
 const searchForm = document.querySelector(".search-form");
 const searchContainer = document.querySelector("#search");
 const searchDropdown = document.querySelector(".search-dropdown");
 const searchHeader = document.querySelector(".search-header");
 
 async function searchFunction(event, url) {
+  loaderContainer.style.display = "flex";
   try {
     event.preventDefault();
     const searchValue = searchContainer.value;
@@ -243,6 +312,7 @@ async function searchFunction(event, url) {
         </a>`;
       }
     }
+    loaderContainer.style.display = "none";
     console.log("yes");
   } catch (error) {
     console.log(error);
@@ -299,9 +369,15 @@ function inputFocus() {
   searchForm.style.zIndex = 3;
 }
 
-opacityContainer.addEventListener("click", function () {
+// opacityContainer.addEventListener("click", function () {
+//   opacityContainer.classList.remove("is-visible");
+//   searchDropdown.innerHTML = "";
+//   searchForm.style.zIndex = 0;
+// });
+searchContainer.addEventListener("focus", inputFocus);
+
+searchContainer.addEventListener("blur", function () {
   opacityContainer.classList.remove("is-visible");
   searchDropdown.innerHTML = "";
   searchForm.style.zIndex = 0;
 });
-searchContainer.addEventListener("focus", inputFocus);

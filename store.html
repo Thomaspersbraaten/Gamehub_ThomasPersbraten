@@ -60,13 +60,6 @@
     </header>
     <main>
       <div class="opacity-container"></div>
-      <div class="store-navigation">
-        <div class="store-navigation_container">
-          <div class="nav-left"><i class="fa-solid fa-arrow-left"></i></div>
-          <div class="store-index"></div>
-          <div class="nav-right"><i class="fa-solid fa-arrow-right"></i></div>
-        </div>
-      </div>
 
       <h1 class="store-header">Store</h1>
       <form action="submit" class="search-form" autocomplete="off">
@@ -92,8 +85,38 @@
       </aside>
 
       <div class="store">
+        <!-- Upper nav -->
+        <div class="store-navigation">
+          <div class="store-navigation_container">
+            <button class="nav-left">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <div class="store-index"></div>
+            <button class="nav-right">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- content  -->
         <h2 class="search-header"></h2>
-        <div class="store-container"></div>
+        <div class="loader-container"><div class="loader"></div></div>
+        <div class="store-container">
+          <!-- <div class="loader-container"><div class="loader"></div></div> -->
+        </div>
+
+        <!-- Lower NAv -->
+        <div class="store-navigation_lower">
+          <div class="store-navigation_container_lower">
+            <button class="nav-left_lower">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <div class="store-index_lower"></div>
+            <button class="nav-right_lower">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
       </div>
       <div class="main-store-container"></div>
 

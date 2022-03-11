@@ -78,23 +78,19 @@
 .search-header {
   font-size: 1.5rem;
   margin: 20px 10px;
+  display: none;
 }
-.store-index {
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-}
-.store-index > * {
-  padding: 3px 5px;
-  border: 1px solid black;
+
+.active-nav {
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-decoration-color: #2f3c8a;
 }
 .search-dropdown-name {
   width: 100px;
   font-size: 0.8em;
   margin: auto;
-
   overflow: hidden;
-
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -138,39 +134,68 @@
   max-width: 300px;
   margin: 30px auto;
 } */
-.store-navigation {
+/* STORE NAV*/
+.store-index,
+.store-index_lower {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.store-index > *,
+.store-index_lower > * {
+  padding: 5px;
+
+  /* border: 1px solid black; */
+  text-align: center;
+  margin: auto;
+}
+.store-index > *:hover,
+.store-index_lower > *:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+.store-navigation,
+.store-navigation_lower {
   margin: auto;
   display: flex;
   justify-content: center;
   flex-direction: row;
 }
-.store-navigation_container {
+.store-navigation button,
+.store-navigation_lower button {
+  background: none;
+  border: none;
+}
+.store-navigation_container,
+.store-navigation_container_lower {
   display: flex;
   flex-direction: row;
-  gap: 10px;
-  margin: 30px;
+  gap: 5px;
+  margin: 10px;
 }
-.store-navigation_container > * {
-  font-size: 1.6em;
+.store-navigation_container > *,
+.store-navigation_container_lower > * {
+  font-size: 1.3em;
   margin: 5px;
 }
 .fa-arrow-left,
 .fa-arrow-right {
-  padding: 5px;
+  padding: 7px;
   background-color: #1b203de8;
   color: white;
   /* border: 1px solid black; */
   border-radius: 50%;
   cursor: pointer;
 }
-.store-index {
+
+.store-index,
+.store-index_lower {
   font-family: "sansita swashed", "Courier New", Courier, monospace;
 }
 
 @media (min-width: 600px) {
-  .genres-container {
-    margin: 20px;
-  }
   .radio-genre {
     margin: auto;
   }
@@ -194,6 +219,9 @@
   .search-dropdown {
     width: 500px;
     /* height: 210px; */
+  }
+  .genres-container {
+    margin: 0px 20px;
   }
   .search-dropdown-price {
     margin: auto;
@@ -233,10 +261,11 @@
   .genres-container {
     background-color: #f5efef;
     flex: 1;
-    margin: 20px auto;
+    margin: 20px;
     border: 1px solid #9b9b9b;
     display: flex;
     flex-direction: column;
+    float: left;
   }
   .genres-container > * {
     margin: 10px;
@@ -244,13 +273,9 @@
 
   .store {
     /* width: 1100px; */
-    margin: 0px auto;
+    margin: 20px;
     display: flex;
     gap: 10px;
-  }
-
-  aside {
-    float: left;
   }
 }
 @media (min-width: 900px) {
@@ -259,5 +284,11 @@
   } */
   .store-container {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1000px) {
+  main {
+    max-width: 1050px;
+    margin: auto;
   }
 }

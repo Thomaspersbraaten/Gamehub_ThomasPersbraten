@@ -893,12 +893,18 @@ footer div {
 }
 
 /* small loader */
+
+.loader-container {
+  display: none;
+  height: 100vh;
+  margin: 20px auto;
+}
 .loader {
   border: 10px solid #140000;
   border-top: 10px solid rgb(255, 255, 255);
   border-radius: 50%;
-  width: 5px;
-  height: 5px;
+  width: 100px;
+  height: 100px;
   animation: spin 1.2s linear infinite;
 }
 
