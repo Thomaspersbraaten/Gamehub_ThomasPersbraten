@@ -12,6 +12,8 @@ const ratingOne = document.querySelector(".rating-one");
 const ratingTwo = document.querySelector(".rating-two");
 const ratingThree = document.querySelector(".rating-three");
 
+let cartArray = [];
+
 const url =
   "https://api.rawg.io/api/games/" +
   id +
@@ -52,8 +54,6 @@ async function fetchUrl(apiUrl) {
 }
 fetchUrl(url);
 
-
-
 function createHtml(game) {
   // const genres = game.genres;
   // console.log(genres);
@@ -90,7 +90,6 @@ function createHtml(game) {
 
   const image = game.background_image;
 
-
   detailsContainer.innerHTML += `
   <div class="breadcrumbs" ><a href="store.html" style="text-decoration:none">Store</a> > <a>${game.genres[0].name}</a> > <a>${game.name}</a></div>
   <h1>${game.name}</h1>
@@ -107,7 +106,7 @@ function createHtml(game) {
             <p> 50+ Product's in stock   </p> 
             <div class="stock"></div>
           </div>
-          <button class="game-button new-button"> Add to cart </button>
+          <button class="game-button new-button" data-product="${game.id}"> Add to cart </button>
         </div>
         <div class="old">
           <p class="details-price used-price">Used Product - Price: ${priceCalc} $</p>
@@ -115,7 +114,7 @@ function createHtml(game) {
           <p> 50+ Product's in stock   </p> 
           <div class="stock"></div>
         </div>
-          <button class="game-button old-button"> Add to cart </button>
+          <button class="game-button old-button" data-product="${game.id}"> Add to cart </button>
         </div>
       </div>
     </div>
@@ -138,7 +137,7 @@ function createHtml(game) {
   const addToBasketButtonNew = document.querySelector(".new-button");
   const addToBasketButtonOld = document.querySelector(".old-button");
 
-  addToBasketButtonNew.addEventListener("click", function () {
+  addToBasketButtonNew.addEventListener("click", function (e) {
     addToBasketMessage.style.display = "flex";
     popUpBasket.style.display = "block";
     addToBasketMessage.innerHTML = `
@@ -149,6 +148,7 @@ function createHtml(game) {
     <p>  New product </p>
     <p> Price: ${priceCalc}</p>
     </div>`;
+    console.log(e.target.dataset.product);
   });
 
   addToBasketButtonOld.addEventListener("click", function () {
