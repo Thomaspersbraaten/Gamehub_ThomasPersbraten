@@ -117,18 +117,18 @@ function checkIfPasswordsMatches() {
 // loader and green checkmark/red cross validation + border
 
 function greenValidationStatus(container, input) {
-  container.classList.add("loader");
+  container.classList.add("loader-input");
   setTimeout(function () {
-    container.classList.remove("loader");
+    container.classList.remove("loader-input");
     container.innerHTML = `✔️`;
     input.style.border = "1px solid black";
   }, 250);
 }
 
 function redValidationStatus(container, input) {
-  container.classList.add("loader");
+  container.classList.add("loader-input");
   setTimeout(function () {
-    container.classList.remove("loader");
+    container.classList.remove("loader-input");
     container.innerHTML = `❌`;
     input.style.border = "1px solid red";
   }, 250);

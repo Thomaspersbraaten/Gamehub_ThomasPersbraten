@@ -27,6 +27,14 @@ const selector = document.querySelector("#selector-container");
 const radioSelector = document.querySelector(".radio-selector");
 const storeNavigation = document.querySelector(".store-navigation");
 
+const storeNavigationContainerUpper = document.querySelector(
+  ".store-navigation_container"
+);
+
+const storeNavigationContainerLower = document.querySelector(
+  ".store-navigation_container_lower"
+);
+
 // store nav upper
 const navLeft = document.querySelector(".nav-left");
 const navRight = document.querySelector(".nav-right");
@@ -236,6 +244,8 @@ async function genreFunction(url) {
     `;
 
     selector.onchange = function (event) {
+      storeNavigationContainerUpper.style.display = "none";
+      storeNavigationContainerLower.style.display = "none";
       const selectedGenre =
         apiUrl + "genres=" + `${event.target.value}` + "&" + apiKey;
       console.log(selectedGenre);
@@ -243,6 +253,8 @@ async function genreFunction(url) {
       createHTML(selectedGenre);
     };
     radioSelector.onchange = function (event) {
+      storeNavigationContainerUpper.style.display = "none";
+      storeNavigationContainerLower.style.display = "none";
       const selectedGenre =
         apiUrl + "genres=" + `${event.target.value}` + "&" + apiKey;
       console.log(selectedGenre);
@@ -260,6 +272,8 @@ const searchHeader = document.querySelector(".search-header");
 
 async function searchFunction(event, url) {
   loaderContainer.style.display = "flex";
+  storeNavigationContainerUpper.style.display = "none";
+  storeNavigationContainerLower.style.display = "none";
   try {
     event.preventDefault();
     const searchValue = searchContainer.value;
@@ -377,7 +391,9 @@ function inputFocus() {
 searchContainer.addEventListener("focus", inputFocus);
 
 searchContainer.addEventListener("blur", function () {
-  opacityContainer.classList.remove("is-visible");
-  searchDropdown.innerHTML = "";
-  searchForm.style.zIndex = 0;
+  setTimeout(async function () {
+    opacityContainer.classList.remove("is-visible");
+    searchDropdown.innerHTML = "";
+    searchForm.style.zIndex = 0;
+  }, 500);
 });

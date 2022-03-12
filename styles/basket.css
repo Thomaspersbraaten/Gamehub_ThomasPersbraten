@@ -5,24 +5,71 @@
   --color-background: #f5efef;
 }
 
-.cart_contents {
+/* .cart_contents {
   width: 70%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   border: 1px solid black;
   background-color: #b5b5b5c7;
   background-color: var(--color-background);
   margin: 20px auto;
   align-items: center;
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
-
+  font-family: "sansita swashed", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
   gap: 5px;
+} */
+.shopping-cart-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid black;
+  background-color: #b5b5b5c7;
+  background-color: var(--color-background);
+  margin: 20px auto;
+  align-items: center;
+  font-family: "sansita swashed", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  gap: 5px;
+}
+.empty-cart {
+  font-size: 1.3em;
+  /* height: 150px;
+  width: 150px; */
+  margin: 20px auto;
+}
+.checkout-item img {
+  width: 50px;
+  height: 50px;
+}
+/* .checkout-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  justify-content: center;
+  margin: 20px auto;
+} */
+.checkout-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.checkout-sum {
+  margin: 30px auto;
+  font-weight: bold;
 }
 .sum {
   font-weight: bold;
 }
-
+.remove-item {
+  background-color: white;
+}
 h3 {
   font-size: 0.9em;
   padding: 10px;
@@ -129,8 +176,39 @@ h3 {
   margin: auto;
 }
 
+/*
+test
+*/
+
 .review-order {
   flex-direction: column;
+}
+
+.back-button {
+  background-color: #1b203de8;
+  color: white;
+  border-radius: 10px;
+  padding: 5px 30px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: solid 1px #000;
+  box-shadow: 5px 3px 5px #5a69bfe8;
+  transition: all 0.2s;
+}
+.back-button:hover {
+  cursor: pointer;
+  background-color: #5a69bfe8;
+}
+
+.divs {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  /* width: 70%; */
+
+  background-color: var(--color-background);
+  margin: 20px;
+  text-align: center;
 }
 
 @media (min-width: 600px) {

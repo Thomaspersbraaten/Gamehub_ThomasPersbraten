@@ -10,6 +10,13 @@
   display: flex;
   flex-direction: column;
 }
+.breadcrumbs {
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  color: black;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
 
 html {
   scroll-behavior: smooth;
@@ -209,14 +216,14 @@ nav a:hover {
 
 nav {
   position: absolute;
-  top: 9%;
+  top: 80px;
   background-color: #fa801a;
   width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  z-index: 1;
+  z-index: 4;
 }
 nav a {
   cursor: pointer;
@@ -485,6 +492,7 @@ h3 {
   font-size: 1.2em;
   font-weight: bold;
   margin: 30px auto;
+  transition: all 0.2s;
 }
 
 /* Footer */
@@ -534,17 +542,12 @@ footer div {
   align-items: center;
 }
 
-.fa-facebook,
+/* .fa-facebook,
 .fa-twitter-square,
 .fa-instagram-square {
   font-size: 2em;
   margin: 0px 10px;
-}
-
-.contact_page img {
-  max-width: 400px;
-  margin: 0px auto;
-}
+} */
 
 /* signup page */
 
@@ -661,16 +664,11 @@ footer div {
   .contact_page {
     display: flex;
     max-width: 700px;
-    margin: 50px auto;
+    margin: 30px auto;
     align-items: center;
     gap: 30px;
   }
 
-  .fa-facebook,
-  .fa-twitter-square,
-  .fa-instagram-square {
-    font-size: 3em;
-  }
   .streamer,
   .gh-article {
     max-width: 600px;
@@ -719,7 +717,7 @@ footer div {
     margin: 10px;
   } */
   nav {
-    top: 14%;
+    top: 77px;
   }
   .fa-shopping-cart,
   .fa-user {
@@ -761,10 +759,7 @@ footer div {
     margin: auto 20px;
   }
   /* */
-  .breadcrumbs {
-    font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-      "Helvetica Neue", sans-serif;
-  }
+
   .item {
     width: 90px;
   }
@@ -885,7 +880,6 @@ footer div {
 
   .game-card-header {
     font-size: 1.1em;
-
     padding: 5px 0px;
     width: 100%;
     color: white;
@@ -905,6 +899,15 @@ footer div {
   border-radius: 50%;
   width: 100px;
   height: 100px;
+  animation: spin 1.2s linear infinite;
+}
+
+.loader-input {
+  border: 5px solid #140000;
+  border-top: 5px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
   animation: spin 1.2s linear infinite;
 }
 

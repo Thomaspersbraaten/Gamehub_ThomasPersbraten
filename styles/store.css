@@ -180,6 +180,9 @@
   font-size: 1.3em;
   margin: 5px;
 }
+nav {
+  z-index: 1;
+}
 .fa-arrow-left,
 .fa-arrow-right {
   padding: 7px;

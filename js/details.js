@@ -11,6 +11,7 @@ const reviewHeaderThree = document.querySelector(".review-header-three");
 const ratingOne = document.querySelector(".rating-one");
 const ratingTwo = document.querySelector(".rating-two");
 const ratingThree = document.querySelector(".rating-three");
+const shoppingCart = document.querySelector(".fa-shopping-cart");
 
 let cartArray = [];
 
@@ -18,25 +19,6 @@ const url =
   "https://api.rawg.io/api/games/" +
   id +
   "?key=cdf875c74f4a4975a6fac3dd5dd7b70b";
-
-// async function fetchUrl() {
-//   try {
-//     const response = await fetch(url);
-//     const gameDetails = await response.json();
-//     console.log(gameDetails);
-
-//     const timedFunction = setInterval(createHtml(gameDetails), 5000);
-//     // createHtml(gameDetails);
-//   } catch (error) {
-//     // const errorMessage = errorDuringApiCall(error);
-//     detailsContainer.innerHTML = error;
-//   }
-// }
-// fetchUrl();
-//* above is Intercation design - Below is CMS
-
-// const apiUrl =
-//   "https://tpbro.online/Gamehub-CMS/wp-json/wc/store/products/" + id;
 
 async function fetchUrl(apiUrl) {
   try {
@@ -79,13 +61,6 @@ function createHtml(game) {
   document.title = game.name + " | " + "  Gamehub  ";
   detailsContainer.innerHTML = "";
 
-  // if (game.rating === 0) {
-  //   var price = 80;
-  //   var usedCopyPrice = 40;
-  // } else {
-  //   var price = game.rating.toFixed(0) * 40 + ",-";
-  //   var usedCopyPrice = game.rating.toFixed(0) * 20 + ",-";
-  // }
   const priceCalc = parseInt(game.rating * 5);
 
   const image = game.background_image;
@@ -141,6 +116,7 @@ function createHtml(game) {
     addToBasketMessage.style.display = "flex";
     popUpBasket.style.display = "block";
     addToBasketMessage.innerHTML = `
+    <button class="added-button">X</button>
     <div class="message">✅  Item has been added to your shopping cart</div>
     <div style="color: black" class="content">
     <img src="${image}" class="basket-img">
@@ -149,21 +125,80 @@ function createHtml(game) {
     <p> Price: ${priceCalc}</p>
     </div>`;
     console.log(e.target.dataset.product);
+    cartArray.push({
+      name: game.name,
+      price: priceCalc,
+      image: image,
+      condition: "New Product",
+    });
+    console.log(cartArray);
+    showCart(cartArray);
   });
 
   addToBasketButtonOld.addEventListener("click", function () {
     addToBasketMessage.style.display = "flex";
     popUpBasket.style.display = "block";
     addToBasketMessage.innerHTML = `
+    <button class="added-button">X</button>
     <div class="message">✅  Item has been added to your shopping cart</div>
     <div style="color: black" class="content">
-    <img src="${imageSource}" class="basket-img">
+    <img src="${image}" class="basket-img">
     <h2>1 x ${game.name} </h2>
     <p> Used product </p>
     <p> Price: ${priceCalc}</p>
     </div>`;
+    cartArray.push({
+      name: game.name,
+      price: priceCalc,
+      image: image,
+      condition: "Old Product",
+    });
+    console.log(cartArray);
+    showCart(cartArray);
   });
 }
+
+const cartInfo = document.querySelector(".cart-info");
+const cartInfoCount = document.querySelector(".cart-info_item-count");
+const cartInfoSum = document.querySelector(".cart-info_sum");
+
+function showCart(cartItems) {
+  // cartInfo.style.right = 0;
+  // cartInfo.style.left = 0;
+
+  // cartInfo.style.display = "block";
+  let total = 0;
+  console.log(cartItems);
+  cartInfoCount.innerHTML = `
+  Quantity: ${cartItems.length}.`;
+  cartItems.forEach((element) => {
+    total += element.price;
+    // cartInfo.innerHTML += `
+    // <div class="cart-game-name">${element.name}</div>
+    // <div class="cart-game-price"> ${total}</div>
+    // `;
+
+    cartInfoSum.innerHTML = `Sum: $${total}`;
+  });
+  localStorage.setItem("cartList", JSON.stringify(cartArray));
+}
+
+shoppingCart.addEventListener("mouseover", function () {
+  if (cartArray.length > 0) {
+    if (window.innerWidth >= 1000) {
+      cartInfo.style.display = "flex";
+      cartInfo.style.right = 25 + "%";
+      cartInfo.style.left = "auto";
+    }
+    cartInfo.style.display = "flex";
+  }
+});
+shoppingCart.addEventListener("mouseout", function () {
+  // setTimeout(function () {
+  //   cartInfo.style.display = "none";
+  // }, 800);
+  cartInfo.style.display = "none";
+});
 
 // function addUsedProduct() {
 //   addToBasketMessage.style.display = "flex";

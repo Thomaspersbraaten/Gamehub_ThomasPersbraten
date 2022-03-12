@@ -1,3 +1,11 @@
+// Create cart items
+
+const cartItems = JSON.parse(localStorage.getItem("cartList"));
+console.log(cartItems);
+const cartContents = document.querySelector(".cart_contents");
+
+const reviewOrderContainer = document.querySelector(".review-order");
+const reviewDiv = document.querySelector(".review-div");
 const continueButton = document.querySelector(".first-continue");
 const shippingInformation = document.querySelector(".shipping-information");
 const shipmentButton = document.querySelector(".shipment-button");
@@ -8,6 +16,51 @@ const firstHeader = document.querySelector(".first-header");
 const paymentButton = document.querySelector(".payment-button");
 const secondHeader = document.querySelector(".second-header");
 const removeItem = document.querySelector(".remove");
+const checkOutSum = document.querySelector(".checkout-sum");
+const reviewInfo = document.querySelector(".review-info");
+const checkoutContainer = document.querySelector(".checkout");
+
+function createHTML() {
+  let total = 0;
+  console.log(cartItems.length);
+  if (cartItems.length === 0) {
+    cartContents.innerHTML = `<div class="empty-cart"> Your Shopping cart is Empty</div>`;
+    shippingInformation.style.display = "none";
+    continueButton.style.display = "none";
+    checkOutSum.style.display = "none";
+    checkoutContainer.style.display = "none";
+    reviewDiv.style.display = "none";
+  } else {
+    for (let i = 0; i < cartItems.length; i++) {
+      const element = cartItems[i];
+      total += element.price;
+      cartContents.innerHTML += `
+      <div class="checkout-item">
+        <img src="${element.image}">
+        <div class="checkout-price"> $${element.price}</div>
+        <div class="checkout-name"> ${element.name} </div>
+        <div class="checkout-condition"> ${element.condition}</div>
+      </div>
+      `;
+    }
+  }
+  checkOutSum.innerHTML = `Sum total: $${total}`;
+  // cartContents.innerHTML += `<button class="cta first-continue">To checkout</button>`;
+}
+
+createHTML();
+// const removeButton = document.querySelectorAll(".remove-item");
+
+// removeButton.foreach((butn) => {
+//   butn.addEventListener("click", myFunction);
+// });
+// function myFunction() {
+//   console.log("yes");
+// }
+// removeButton.addEventListener("click", function (btn) {
+//   console.log("yes");
+// });
+// Checkout process
 
 const phoneField = document.querySelector("#phone");
 const phoneValidationField = document.querySelector(".phone-validation");
@@ -48,9 +101,6 @@ const cvcInfo = document.querySelector(".cvc-info");
 const paymentForm = document.querySelector(".payment-form");
 
 // review ordre consts
-
-const reviewOrderContainer = document.querySelector(".review-order");
-const reviewDiv = document.querySelector(".review-div");
 
 //
 
@@ -115,23 +165,40 @@ function paymentFormValidation(event) {
   }
 }
 paymentForm.addEventListener("submit", paymentFormValidation);
-const reviewInfo = document.querySelector(".review-info");
+const paymentBack = document.querySelector(".first-back-button");
+
+paymentBack.addEventListener("click", function () {
+  paymentForm.reset();
+  paymentInformation.style.display = "none";
+  shippingInformation.style.display = "flex";
+});
+
+const reviewBack = document.querySelector(".second-back-button");
+
+reviewBack.addEventListener("click", function () {
+  paymentInformation.style.display = "flex";
+  reviewOrderContainer.style.display = "none";
+});
 
 // review order HTML
 
 function createReviewOrder() {
+  var total = 0;
   reviewOrderContainer.style.display = "flex";
-  reviewInfo.innerHTML = `
-  <img
-  src="images/Markoftheninja.jpg"
-  alt="mark of the ninja"
-  class="basket-img"
-/>
-<div class="basket-info">
-<h2>Mark of the Ninja : Remastered - New copy</h2>
-  <p>Quantity: 1</p>
-  <p class="review-price" style="margin-bottom: 15px;">Price: kr 129,99</p>
-</div>
+  for (let i = 0; i < cartItems.length; i++) {
+    const element = cartItems[i];
+    total += element.price;
+    reviewInfo.innerHTML += `
+    <div class="checkout-item">
+      <img src="${element.image}">
+      <div class="checkout-price"> $${element.price}</div>
+      <div class="checkout-name"> ${element.name} </div>
+      <div class="checkout-condition"> ${element.condition}</div>
+   
+    </div>
+    `;
+  }
+  reviewInfo.innerHTML += `
   <h2> Your shipment will be delivered to your address</h2> 
   <p>Address: ${shippingArray[1]}</p>
   <p>City: ${shippingArray[3]} ${shippingArray[2]} </p>
@@ -145,6 +212,7 @@ function createReviewOrder() {
 // step by step confirmations
 
 function showShipmentInformation() {
+  continueButton.style.display = "none";
   shippingInformation.style.display = "flex";
 }
 
@@ -290,18 +358,18 @@ function checkCardNumber(cardnumber) {
 // loader and green checkmark/red cross validation + border
 
 function greenValidationStatus(container, input) {
-  container.classList.add("loader");
+  container.classList.add("loader-input");
   setTimeout(function () {
-    container.classList.remove("loader");
+    container.classList.remove("loader-input");
     container.innerHTML = `✔️`;
     input.style.border = "1px solid black";
   }, 250);
 }
 
 function redValidationStatus(container, input) {
-  container.classList.add("loader");
+  container.classList.add("loader-input");
   setTimeout(function () {
-    container.classList.remove("loader");
+    container.classList.remove("loader-input");
     container.innerHTML = `❌`;
     input.style.border = "1px solid red";
   }, 250);
@@ -337,31 +405,45 @@ cvcField.addEventListener("blur", cvcValidation);
 // confirm
 
 const confirmButton = document.querySelector(".confirm-button");
-const checkoutContainer = document.querySelector(".checkout");
+
 const cartContainer = document.querySelector(".cart_contents");
 
 function createConfirmationInfo() {
+  let total = 0;
   checkoutContainer.style.display = "none";
   reviewDiv.style.display = "none";
   cartHeader.innerHTML = "Order received!";
+
   cartContainer.innerHTML = `
   <h1>Thank you for your order! 👍</h1>
   <div class="order__info">
     <p>Your order has been received.</p>
     <p>Order nr: 1894</p>
     <p>You will receive an email confirmation shortly.</p>
-  </div>
-  <img src="images/Markoftheninja.jpg" alt="mark of the ninja" class="basket-img"/>
-  <div class="basket-info">
-    <p>Quantity: 1</p>
-    <p>Product: Mark of the Ninja : Remastered - New copy</p>
-    <p>Price: kr 129,99</p>
-  </div>
-  <div class="go__home">
-    <h2>Click here to go back to the home page</h2>
-    <a href="index.html" class="cta home_button">Home</a>
-  </div>
+  </div> 
+
   `;
+  for (let i = 0; i < cartItems.length; i++) {
+    const element = cartItems[i];
+    total += element.price;
+    cartContainer.innerHTML += `
+    <div class="checkout-item">
+      <img src="${element.image}">
+      <div class="checkout-price"> $${element.price}</div>
+      <div class="checkout-name"> ${element.name} </div>
+      <div class="checkout-condition"> ${element.condition}</div>
+   
+    </div>
+
+    `;
+  }
+  cartContainer.innerHTML += `<div class="checkout-sum">Sum total: $${total}</div>`;
+  cartContainer.innerHTML += `  <div class="go__home">
+  <h2>Click here to go back to the home page</h2>
+  <a href="index.html" class="cta home_button">Home</a>
+</div>`;
+
+  localStorage.setItem("cartList", JSON.stringify(""));
 }
 
 confirmButton.addEventListener("click", createConfirmationInfo);

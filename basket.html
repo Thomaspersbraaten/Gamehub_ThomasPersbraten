@@ -16,7 +16,7 @@
     ></script>
     <link rel="stylesheet" href="https://use.typekit.net/nyh8jpx.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Play&family=Merriweather+Sans&family=Bebas+Neue&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Akronim&family=Alegreya&family=Bebas+Neue&family=Charm&family=Merriweather+Sans&family=Merriweather:ital,wght@0,300;1,300&family=Play&family=Ribeye+Marrow&family=Sansita+Swashed:wght@300&family=Source+Sans+Pro:wght@300;400&family=Turret+Road&family=Yellowtail&display=swap"
       rel="stylesheet"
     />
     <!-- Hotjar Tracking Code for My site -->
@@ -38,33 +38,36 @@
   </head>
   <body>
     <header>
-      <a href="index.html" class="logo_left"
-        ><img src="images/gamehub_logo.png" alt="Gamehub logo" class="logo_big"
-      /></a>
-      <div class="header-top">
-        <a href="index.html"
-          ><img src="images/gamehub_logo.png" alt="Gamehub logo" class="logo"
-        /></a>
-        <div class="header-right">
-          <a href="basket.html"><i class="fas fa-shopping-cart"></i></a>
-          <a href="signin.html"><i class="fas fa-user"></i></a>
-        </div>
-      </div>
-      <input type="checkbox" id="hamburger-menu" />
-      <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
-      <nav class="navigation">
-        <div class="nav-list">
+      <div class="header-container">
+        <a href="index.html" class="logo">
+          <img src="images/gamehub.png" alt="Gamehub logo" class="logo__img" />
+        </a>
+        <nav style="display: none">
           <a href="index.html">Home</a>
           <a href="store.html" class="active">Store</a>
           <a href="signin.html">Sign in</a>
-          <a href="support.html">Support</a>
+          <a href="contact.html">Contact</a>
+          <!-- <div class="search-container"></div> -->
+        </nav>
+        <div class="header__icons">
+          <a href="basket.html">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+          <a href="signin.html"><i class="fas fa-user"></i></a>
         </div>
-      </nav>
+        <div class="hamburger">
+          <i class="fa-solid fa-bars"></i>
+          <i class="far fa-times-circle"></i>
+        </div>
+      </div>
     </header>
     <main>
       <h1 class="cart-header">Your shopping cart contains</h1>
-      <section class="cart_contents">
-        <img
+      <section class="shopping-cart-container">
+        <div class="cart_contents"></div>
+        <div class="checkout-sum"></div>
+        <button class="cta first-continue">To checkout</button>
+        <!-- <img
           src="images/Markoftheninja.jpg"
           alt="mark of the ninja"
           class="basket-img"
@@ -78,8 +81,7 @@
         <div class="remove_item">
           <p>Remove</p>
           <i class="fas fa-trash-alt"></i>
-        </div>
-        <button class="cta first-continue">To checkout</button>
+        </div> -->
       </section>
 
       <section class="checkout">
@@ -178,8 +180,11 @@
               <div class="cvc-info info">
                 Please enter the card verification code, 3 digits
               </div>
+              <div class="button-container">
+                <button class="back-button first-back-button">Back</button>
 
-              <button class="cta payment-button">Continue</button>
+                <button class="cta payment-button">Continue</button>
+              </div>
             </form>
           </div>
         </div>
@@ -188,12 +193,15 @@
         <h2 class="third-header">3. Review Order</h2>
         <div class="review-order" style="display: none">
           <div class="review-info"></div>
+          <div class="button-container">
+            <button class="back-button second-back-button">Back</button>
 
-          <button class="cta confirm-button">Place order</button>
+            <button class="cta confirm-button">Place order</button>
+          </div>
         </div>
       </div>
     </main>
-
+    <script src="js/functions.js"></script>
     <script src="js/checkout.js"></script>
     <footer>
       <div>
