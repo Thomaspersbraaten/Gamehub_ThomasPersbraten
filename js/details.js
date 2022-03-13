@@ -24,21 +24,21 @@ async function fetchUrl(apiUrl) {
   try {
     const response = await fetch(apiUrl);
     const gameDetails = await response.json();
-    console.log(gameDetails);
+
 
     // const timedFunction = setInterval(createHtml(gameDetails), 5000);
     createHtml(gameDetails);
   } catch (error) {
     // const errorMessage = errorDuringApiCall(error);
     detailsContainer.innerHTML = error;
-    console.log(error);
+  
   }
 }
 fetchUrl(url);
 
 function createHtml(game) {
   // const genres = game.genres;
-  // console.log(genres);
+  
   reviewHeaderOne.innerHTML += `: ${game.name}`;
   reviewHeaderTwo.innerHTML += `: ${game.name}`;
   reviewHeaderThree.innerHTML += `: ${game.name}`;
@@ -124,14 +124,14 @@ function createHtml(game) {
     <p>  New product </p>
     <p> Price: ${priceCalc}</p>
     </div>`;
-    console.log(e.target.dataset.product);
+  
     cartArray.push({
       name: game.name,
       price: priceCalc,
       image: image,
       condition: "New Product",
     });
-    console.log(cartArray);
+  
     showCart(cartArray);
   });
 
@@ -153,7 +153,7 @@ function createHtml(game) {
       image: image,
       condition: "Old Product",
     });
-    console.log(cartArray);
+   
     showCart(cartArray);
   });
 }
@@ -168,7 +168,7 @@ function showCart(cartItems) {
 
   // cartInfo.style.display = "block";
   let total = 0;
-  console.log(cartItems);
+
   cartInfoCount.innerHTML = `
   Quantity: ${cartItems.length}.`;
   cartItems.forEach((element) => {

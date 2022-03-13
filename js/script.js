@@ -22,7 +22,7 @@ async function callApiRawg(url) {
   try {
     const response = await fetch(url);
     const results = await response.json();
-    console.log(results.results);
+  
     const data = results.results;
     resultsContainer.innerHTML = "";
 

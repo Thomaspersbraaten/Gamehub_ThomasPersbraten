@@ -59,11 +59,9 @@ async function createHTML(url) {
         apiKey
     );
     const results = await response.json();
-    // console.log(results.results);
+  
     const data = results.results;
-    console.log(data);
-
-    // console.log(results);
+ 
     // let gameCategories = [];
 
     storeContainer.innerHTML = "";
@@ -98,7 +96,7 @@ async function createHTML(url) {
 function createStoreNav() {
   navIndex.innerHTML = "";
   navIndexLower.innerHTML = "";
-  console.log(pageCount);
+ 
   if (pageCount === 1) {
     navLeft.style.opacity = 0.5;
     navLeftLower.style.opacity = 0.5;
@@ -158,26 +156,25 @@ navLeft.addEventListener("click", function () {
   if (pageCount === 1) {
     return;
   } else {
-    console.log("no");
+   
     pageCount--;
-    console.log(pageCount);
+  
     createHTML();
   }
 });
 navRight.addEventListener("click", function () {
-  console.log("yes");
+
   pageCount++;
-  console.log(pageCount);
+
   createHTML();
 });
 
 navIndex.addEventListener("click", (e) => {
   const target = e.target.closest("div");
   // const numberedTarget = Number(target.value);
-  // console.log(target.attributes.value.nodeValue);
-  console.log(target);
+
   const value = Number(target.innerText);
-  console.log(value);
+ 
   pageCount = value;
   createHTML();
 });
@@ -185,10 +182,9 @@ navIndex.addEventListener("click", (e) => {
 navIndexLower.addEventListener("click", (e) => {
   const target = e.target.closest("div");
   // const numberedTarget = Number(target.value);
-  // console.log(target.attributes.value.nodeValue);
-  console.log(target);
+
   const value = Number(target.innerText);
-  console.log(value);
+
   pageCount = value;
   createHTML();
 });
@@ -197,28 +193,21 @@ navLeftLower.addEventListener("click", function () {
   if (pageCount === 1) {
     return;
   } else {
-    console.log("no");
+ 
     pageCount--;
-    console.log(pageCount);
+   
     createHTML();
   }
 });
 navRightLower.addEventListener("click", function () {
-  console.log("yes");
+
   pageCount++;
-  console.log(pageCount);
+ 
   createHTML();
 });
 
-// searchContainer.addEventListener("submit", function (event) {
-//   event.preventDefault();
 
-//   console.log(searchValue.value);
-//   const value = searchValue.value;
-//   const newUrl = apiUrl + `?search=${value}`;
-//   productContainer.innerHTML = "";
-//   callApiRawg(newUrl);
-// });
+
 
 createHTML(fullUrl);
 
@@ -227,7 +216,7 @@ async function genreFunction(url) {
   const results = await response.json();
 
   const data = results.results;
-  console.log(data);
+ 
   for (let i = 0; i < data.length; i++) {
     selector.innerHTML += `
       <option class="filter genre-${data[i].name}" value=${data[i].id}> ${data[i].name} </option>
@@ -248,7 +237,7 @@ async function genreFunction(url) {
       storeNavigationContainerLower.style.display = "none";
       const selectedGenre =
         apiUrl + "genres=" + `${event.target.value}` + "&" + apiKey;
-      console.log(selectedGenre);
+    
       storeContainer.innerHTML = "";
       createHTML(selectedGenre);
     };
@@ -257,7 +246,7 @@ async function genreFunction(url) {
       storeNavigationContainerLower.style.display = "none";
       const selectedGenre =
         apiUrl + "genres=" + `${event.target.value}` + "&" + apiKey;
-      console.log(selectedGenre);
+  
       storeContainer.innerHTML = "";
       createHTML(selectedGenre);
     };
@@ -327,7 +316,7 @@ async function searchFunction(event, url) {
       }
     }
     loaderContainer.style.display = "none";
-    console.log("yes");
+
   } catch (error) {
     console.log(error);
   }

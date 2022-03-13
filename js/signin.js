@@ -31,7 +31,7 @@ function formValidation(event) {
   if (nameValid && emailValid && passwordValid && rePasswordValid) {
     signInArray.push(email.value);
     signInArray.push(passwordField.value);
-    console.log(signInArray);
+    
     signUpForm.reset();
     signUpForm.innerHTML = `    <div class="message">
     Thank you for registering for a Gamehub account! <br />
@@ -184,16 +184,14 @@ const loginInfo = document.querySelector(".login-info");
 const loginForm = document.querySelector(".login-form");
 
 function ValidateLogin(event) {
-  console.log("test");
-  console.log(loginPassword.value);
-  console.log(loginEmail.value);
+
   event.preventDefault();
   if (
     signInArray[0] === loginEmail.value &&
     signInArray[1] === loginPassword.value
   ) {
     loginForm.reset();
-    console.log("wohoo");
+   
     loginInfo.style.display = "flex";
     loginInfo.innerHTML = `<div class="message" style="color:black">
     You are logged in as ${signInArray[0]} <br />

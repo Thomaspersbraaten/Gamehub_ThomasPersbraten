@@ -1,7 +1,7 @@
 // Create cart items
 
 const cartItems = JSON.parse(localStorage.getItem("cartList"));
-console.log(cartItems);
+
 const cartContents = document.querySelector(".cart_contents");
 
 const reviewOrderContainer = document.querySelector(".review-order");
@@ -22,7 +22,7 @@ const checkoutContainer = document.querySelector(".checkout");
 
 function createHTML() {
   let total = 0;
-  console.log(cartItems.length);
+  
   if (cartItems.length === 0) {
     cartContents.innerHTML = `<div class="empty-cart"> Your Shopping cart is Empty</div>`;
     shippingInformation.style.display = "none";
@@ -49,17 +49,7 @@ function createHTML() {
 }
 
 createHTML();
-// const removeButton = document.querySelectorAll(".remove-item");
 
-// removeButton.foreach((butn) => {
-//   butn.addEventListener("click", myFunction);
-// });
-// function myFunction() {
-//   console.log("yes");
-// }
-// removeButton.addEventListener("click", function (btn) {
-//   console.log("yes");
-// });
 // Checkout process
 
 const phoneField = document.querySelector("#phone");
@@ -127,7 +117,7 @@ function shipmentFormValidation(event) {
     shippingArray.push(addressField.value);
     shippingArray.push(cityField.value);
     shippingArray.push(zipField.value);
-    console.log(shippingArray);
+  
     shippingForm.reset();
     paymentInformation.style.display = "flex";
     shippingInformation.style.display = "none";
@@ -150,7 +140,7 @@ function paymentFormValidation(event) {
     paymentArray.push(cardNameField.value);
     paymentArray.push(cardNumberField.value);
 
-    console.log(paymentArray);
+  
     paymentForm.reset();
     paymentInformation.style.display = "none";
     secondHeader.innerHTML = `2. Payment Information ✔️`;
