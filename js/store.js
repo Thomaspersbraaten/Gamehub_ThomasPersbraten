@@ -2,12 +2,12 @@
 // const params = new URLSearchParams(queryString);
 // const genres = params.get("genres");
 //
-var pageCount = 1;
+import { createHTML, createStoreNav } from "../components/store/index.js";
+let pageCount = 1;
 const cors = "https://noroffcors.herokuapp.com/";
 // const apiUrl =
 //   "https://api.rawg.io/api/games?" + "page_size=15" + "&page=" + pageCount;
-const apiUrl =
-  "https://api.rawg.io/api/games?" + "page=" + pageCount + "&page_size=15";
+const apiUrl = "https://api.rawg.io/api/games?" + "page=" + pageCount + "&page_size=15";
 const apiKey = "&key=cdf875c74f4a4975a6fac3dd5dd7b70b";
 const searchQuery = "https://api.rawg.io/api/games?search=";
 
@@ -27,13 +27,9 @@ const selector = document.querySelector("#selector-container");
 const radioSelector = document.querySelector(".radio-selector");
 const storeNavigation = document.querySelector(".store-navigation");
 
-const storeNavigationContainerUpper = document.querySelector(
-  ".store-navigation_container"
-);
+const storeNavigationContainerUpper = document.querySelector(".store-navigation_container");
 
-const storeNavigationContainerLower = document.querySelector(
-  ".store-navigation_container_lower"
-);
+const storeNavigationContainerLower = document.querySelector(".store-navigation_container_lower");
 
 // store nav upper
 const navLeft = document.querySelector(".nav-left");
@@ -44,139 +40,36 @@ const navIndex = document.querySelector(".store-index");
 const navIndexLower = document.querySelector(".store-index_lower");
 const navLeftLower = document.querySelector(".nav-left_lower");
 const navRightLower = document.querySelector(".nav-right_lower");
+const realUrl = cors + "https://api.rawg.io/api/games?" + "page=" + pageCount + "&page_size=15" + apiKey;
+// createHTML(realUrl, pageCount);
 
-async function createHTML(url) {
-  loaderContainer.style.display = "flex";
-
-  try {
-    // const response = await fetch(cors + apiUrl + apiKey);
-    const response = await fetch(
-      cors +
-        "https://api.rawg.io/api/games?" +
-        "page=" +
-        pageCount +
-        "&page_size=15" +
-        apiKey
-    );
-    const results = await response.json();
-  
-    const data = results.results;
- 
-    // let gameCategories = [];
-
-    storeContainer.innerHTML = "";
-    // createHtml(data);
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].rating > 1) {
-        var priceCalc = parseInt(data[i].rating * 5);
-      } else {
-        var priceCalc = Math.floor(Math.random() * 50);
-      }
-
-      const image = data[i].background_image;
-      storeContainer.innerHTML += `
-        <a href="details.html?id=${data[i].id}" class="game-card" style="text-decoration:none">
-          <div class="img-container"> 
-            <img src="${image}" class="game-img" alt="${data[i].name}">
-          </div>
-          <div class="game-info">
-            <h2 class="game-card-header"> ${data[i].name}</h2>
-            <p class="game-card_price">Price: ${priceCalc} $ </p>
-            <button class="game-button">View product </button>
-          </div>
-        </a>`;
-    }
-    createStoreNav();
-    loaderContainer.style.display = "none";
-  } catch (error) {
-    storeContainer.innerHTML = `<div class="error"> This error occurred: ${error} </div>`;
-  }
-}
-
-function createStoreNav() {
-  navIndex.innerHTML = "";
-  navIndexLower.innerHTML = "";
- 
-  if (pageCount === 1) {
-    navLeft.style.opacity = 0.5;
-    navLeftLower.style.opacity = 0.5;
-    const indexOne = `
-    <div class="active-nav">${pageCount}</div>
-    <div>${pageCount + 1} </div>
-    <div>${pageCount + 2} </div>
-    </div>...</div>
-    `;
-    navIndex.innerHTML = indexOne;
-    navIndexLower.innerHTML = indexOne;
-    // navIndex.innerHTML = `
-    // <div class="active-nav">${pageCount}</div>
-    // <div>${pageCount + 1} </div>
-    // <div>${pageCount + 2} </div>
-    // </div>...</div>
-    // `;
-
-    // navIndexLower.innerHTML = `
-    // <div class="active-nav">${pageCount}</div>
-    // <div>${pageCount + 1} </div>
-    // <div>${pageCount + 2} </div>
-    // </div>...</div>
-    // `;
-  }
-  if (pageCount === 2) {
-    navLeft.style.opacity = 1;
-    const indexTwo = `
-    <div>${pageCount - 1}</div>    
-    <div class="active-nav">${pageCount}</div>
-    <div>${pageCount + 1} </div>
-    <div>${pageCount + 2} </div>
-    `;
-    navIndex.innerHTML = indexTwo;
-    navLeftLower.style.opacity = 1;
-    navIndexLower.innerHTML = indexTwo;
-  }
-  if (pageCount > 2) {
-    navIndex.innerHTML = `
-    <div>${pageCount - 2}</div> 
-    <div>${pageCount - 1}</div>    
-    <div class="active-nav">${pageCount}</div>
-    <div>${pageCount + 1} </div>
-    <div>${pageCount + 2} </div>
-    `;
-    navIndexLower.innerHTML = `
-    <div>${pageCount - 2}</div> 
-    <div>${pageCount - 1}</div>    
-    <div class="active-nav">${pageCount}</div>
-    <div>${pageCount + 1} </div>
-    <div>${pageCount + 2} </div>
-    `;
-  }
-}
+createStoreNav(pageCount);
 
 navLeft.addEventListener("click", function () {
   if (pageCount === 1) {
     return;
   } else {
-   
     pageCount--;
-  
-    createHTML();
+    createStoreNav(pageCount);
+    // createHTML(realUrl);
   }
 });
 navRight.addEventListener("click", function () {
-
   pageCount++;
-
-  createHTML();
+  createStoreNav(pageCount);
+  // createHTML(realUrl);
 });
 
 navIndex.addEventListener("click", (e) => {
   const target = e.target.closest("div");
+  console.log(target.dataset.value);
   // const numberedTarget = Number(target.value);
 
   const value = Number(target.innerText);
- 
   pageCount = value;
-  createHTML();
+  createStoreNav(pageCount);
+
+  // createHTML(realUrl);
 });
 
 navIndexLower.addEventListener("click", (e) => {
@@ -184,39 +77,35 @@ navIndexLower.addEventListener("click", (e) => {
   // const numberedTarget = Number(target.value);
 
   const value = Number(target.innerText);
-
   pageCount = value;
-  createHTML();
+  createStoreNav(pageCount);
+
+  // createHTML(realUrl);
 });
 
 navLeftLower.addEventListener("click", function () {
   if (pageCount === 1) {
     return;
   } else {
- 
     pageCount--;
-   
-    createHTML();
+    createStoreNav(pageCount);
+    // createHTML();
   }
 });
 navRightLower.addEventListener("click", function () {
-
   pageCount++;
- 
-  createHTML();
+  createStoreNav(pageCount);
+  // createHTML();
 });
 
-
-
-
-createHTML(fullUrl);
+// createHTML(fullUrl);
 
 async function genreFunction(url) {
   const response = await fetch(url);
   const results = await response.json();
 
   const data = results.results;
- 
+
   for (let i = 0; i < data.length; i++) {
     selector.innerHTML += `
       <option class="filter genre-${data[i].name}" value=${data[i].id}> ${data[i].name} </option>
@@ -235,18 +124,16 @@ async function genreFunction(url) {
     selector.onchange = function (event) {
       storeNavigationContainerUpper.style.display = "none";
       storeNavigationContainerLower.style.display = "none";
-      const selectedGenre =
-        apiUrl + "genres=" + `${event.target.value}` + "&" + apiKey;
-    
+      const selectedGenre = apiUrl + "genres=" + `${event.target.value}` + "&" + apiKey;
+
       storeContainer.innerHTML = "";
       createHTML(selectedGenre);
     };
     radioSelector.onchange = function (event) {
       storeNavigationContainerUpper.style.display = "none";
       storeNavigationContainerLower.style.display = "none";
-      const selectedGenre =
-        apiUrl + "genres=" + `${event.target.value}` + "&" + apiKey;
-  
+      const selectedGenre = apiUrl + "genres=" + `${event.target.value}` + "&" + apiKey;
+
       storeContainer.innerHTML = "";
       createHTML(selectedGenre);
     };
@@ -266,13 +153,7 @@ async function searchFunction(event, url) {
   try {
     event.preventDefault();
     const searchValue = searchContainer.value;
-    const response = await fetch(
-      url +
-        searchValue +
-        "&search_precise=true" +
-        "search_exact=true" +
-        `&${apiKey}`
-    );
+    const response = await fetch(url + searchValue + "&search_precise=true" + "search_exact=true" + `&${apiKey}`);
 
     const result = await response.json();
     const data = result.results;
@@ -316,7 +197,6 @@ async function searchFunction(event, url) {
       }
     }
     loaderContainer.style.display = "none";
-
   } catch (error) {
     console.log(error);
   }
@@ -332,13 +212,7 @@ async function onTypeSearchFunction(event, url) {
     searchDropdown.innerHTML = "";
 
     const searchValue = searchContainer.value;
-    const response = await fetch(
-      url +
-        searchValue +
-        "&search_precise=true" +
-        "search_exact=true" +
-        `&${apiKey}`
-    );
+    const response = await fetch(url + searchValue + "&search_precise=true" + "search_exact=true" + `&${apiKey}`);
     const result = await response.json();
     const data = result.results;
 
