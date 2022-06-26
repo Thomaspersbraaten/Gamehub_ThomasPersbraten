@@ -11,8 +11,68 @@ body {
   /* background: repeating-linear-gradient(#e66465, #e66465 20px, #9198e5 20px, #9198e5 25px); */
   /* background: repeating-linear-gradient(45deg, #3f87a6, #ebf8e1 15%, #f69d3c 20%); */
   /* background: repeating-linear-gradient(transparent, #4d9f0c 40px), repeating-linear-gradient(0.25turn, transparent, #3f87a6 35px); */
-  background: repeating-linear-gradient(-90deg, purple 20px, rgba(255, 255, 146, 0.5) 40px);
+  /*  
+  background: repeating-linear-gradient(-90deg, purple 20px, rgba(255, 255, 146, 0.5) 40px); */
 }
+.desktop-nav {
+  display: none;
+}
+.mobile-nav {
+  display: none;
+}
+
+/* hamburger */
+.ham-container {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 50%;
+  background-color: black;
+  /* padding: 25px; */
+  margin-right: 2rem;
+}
+.ham-container:hover {
+  cursor: pointer;
+}
+
+.ham-line {
+  opacity: 1;
+  transition: all 0.3s;
+  height: 5px;
+  width: 35px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.ham-line-one {
+  position: absolute;
+  top: 20%;
+}
+.ham-line-two,
+.ham-line-three {
+  position: absolute;
+  top: 46%;
+}
+.ham-line-four {
+  position: absolute;
+  top: 72%;
+}
+
+.rotate-two {
+  transform: rotate(-45deg);
+}
+.rotate-three {
+  transform: rotate(45deg);
+}
+.opacity {
+  opacity: 0;
+}
+/* */
 
 .index {
   display: flex;
@@ -165,6 +225,7 @@ header {
 }
 
 .header-container {
+  position: relative;
   justify-content: space-between;
   align-items: center;
   display: flex;
@@ -738,6 +799,12 @@ footer div {
 }
 
 @media (min-width: 1000px) {
+  .desktop-nav {
+    display: flex;
+  }
+  .mobile-nav {
+    display: none;
+  }
   .logo__img {
     height: 56, 7px;
     width: 90px;
@@ -751,10 +818,13 @@ footer div {
   }
 
   nav {
-    display: flex !important;
+    /* display: flex !important; */
     position: static;
     flex-direction: row;
     background: none;
+  }
+  .ham-container {
+    display: none;
   }
 
   .hamburger {
